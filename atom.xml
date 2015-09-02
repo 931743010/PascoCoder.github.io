@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-09-02T02:43:21.000Z</updated>
+  <updated>2015-09-02T09:26:39.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/objc-associated-object/"/>
+    <id>http://pascocoder.github.io/2015/09/02/objc-associated-object/</id>
+    <published>2015-09-02T09:12:42.000Z</published>
+    <updated>2015-09-02T09:26:39.000Z</updated>
+    <content type="html"><![CDATA[<p>转载自codingcoder的博客，<a href="http://blog.codingcoder.com/objc-associated-object/" target="_blank" rel="external">原文地址</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>转载自codingcoder的博客，<a href="http://blog.codingcoder.com/objc-associated-object/" target="_blank" rel="external">原文地址</a></p>
+]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="转载" scheme="http://pascocoder.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Java中的 length 和 length()]]></title>
@@ -242,43 +265,6 @@ the NSObject meta-class’ class is itself.
       <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[网站监控iOS客户端]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/"/>
-    <id>http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
-<h2 id="服务器端的程序">服务器端的程序</h2><p>服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访问的总时间。</p>
-<h2 id="客户端程序的实现">客户端程序的实现</h2><ol>
-<li>使用多组数据，每个网站条目算是一组（section）。</li>
-<li>自定义化每组数据的HeaderView，并添加点击手势识别。</li>
-<li>默认情况下，每组下的行数(row)为0.</li>
-<li>当点击headerView时，为该section添加一行，行的内容就是网站的详细情况。</li>
-<li>再次点击header时，就删除该section的一行数据，从而实现tableView的下拉菜单功能。</li>
-</ol>
-<h2 id="学习到的知识点">学习到的知识点</h2><ol>
-<li>更加熟悉了objective-c的面向对象编程。</li>
-<li>复习了UINavigationController，UITableView的使用，单例模式的使用。</li>
-<li>动手实现自定义的HeaderView</li>
-</ol>
-<h2 id="下一步的打算">下一步的打算</h2><ol>
-<li>把数据固化。假如没有联网，就会显示最后一次请求的数据。（因为数据量较小，不需要保存历史数据，所以不采用CoreData）</li>
-<li>加入APNS,当有新的网站无法访问，或者网站恢复正常，推送提示</li>
-<li>美化外观</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
-<h2 id]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
     
   </entry>
   
@@ -571,6 +557,43 @@ After running your function, the board should be:
   </entry>
   
   <entry>
+    <title><![CDATA[Java中的 null 到底是什么？]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/what-exactly-is-null-in-java/"/>
+    <id>http://pascocoder.github.io/2015/09/02/what-exactly-is-null-in-java/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>先看下面的声明语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+<p>这个声明语句到底做了什么</p>
+<p>回想一下，什么是变量？什么是值？一个常见的比喻就是：变量就像是一个盒子，你可以用盒子来存放东西，你可以用变量来存放值。当声明一个变量，我们需要设置它的类型。</p>
+<p>Java中主要有两大类：基本数据类型和引用。声明为基本数据类型的变量存储值，声明为引用类型的变量存储引用。上面的表达式中，初始化语句声明一个变量“x”。“x”存储字符串引用。在这里是 null。</p>
+<p>看下图可以更清楚的理解这个概念。</p>
+<p><img src="/assets/images/what-is-null-150x150.png" alt="pic1"></p>
+<p>如果是 x = “abc”，会像下图所示：</p>
+<p><img src="/assets/images/variable-reference-300x144.png" alt="pic2"></p>
+<h3 id="null在内存中是什么？">null在内存中是什么？</h3><p>null在内存中是什么？或者说Java中的 null是什么？</p>
+<p>首先，null不是一个有效的对象实例，所以并没有给它分配内存。它是一个表示对象的引用还没有指向一个对象的值。</p>
+<p><a href="http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.4" target="_blank" rel="external">JVM规范</a>中：</p>
+<blockquote>
+<p>The Java Virtual Machine specification does not mandate a concrete value encoding null.<br>Java虚拟机规范并没有强制要求一个具体的值编码为空<br>x 在内存里是什么？</p>
+</blockquote>
+<p>现在我们知道了 null是什么。我们也知道变量是一个储存位置相关的符号名（标示符），它包含了值，x在内存中是什么？</p>
+<p>从JVM 运行时数据区的图看来，因为每个方法在线程栈 (thread’stack)中都有私人栈帧 (private stack frame)，局部变量就位于这个栈帧中。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>先看下面的声明语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[leetcode No.198 House Robber]]></title>
     <link href="http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/"/>
     <id>http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/</id>
@@ -692,39 +715,39 @@ After running your function, the board should be:
   </entry>
   
   <entry>
-    <title><![CDATA[Java中的 null 到底是什么？]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/what-exactly-is-null-in-java/"/>
-    <id>http://pascocoder.github.io/2015/09/02/what-exactly-is-null-in-java/</id>
+    <title><![CDATA[网站监控iOS客户端]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/"/>
+    <id>http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/</id>
     <published>2015-09-01T17:45:57.000Z</published>
     <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>先看下面的声明语句</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
-<p>这个声明语句到底做了什么</p>
-<p>回想一下，什么是变量？什么是值？一个常见的比喻就是：变量就像是一个盒子，你可以用盒子来存放东西，你可以用变量来存放值。当声明一个变量，我们需要设置它的类型。</p>
-<p>Java中主要有两大类：基本数据类型和引用。声明为基本数据类型的变量存储值，声明为引用类型的变量存储引用。上面的表达式中，初始化语句声明一个变量“x”。“x”存储字符串引用。在这里是 null。</p>
-<p>看下图可以更清楚的理解这个概念。</p>
-<p><img src="/assets/images/what-is-null-150x150.png" alt="pic1"></p>
-<p>如果是 x = “abc”，会像下图所示：</p>
-<p><img src="/assets/images/variable-reference-300x144.png" alt="pic2"></p>
-<h3 id="null在内存中是什么？">null在内存中是什么？</h3><p>null在内存中是什么？或者说Java中的 null是什么？</p>
-<p>首先，null不是一个有效的对象实例，所以并没有给它分配内存。它是一个表示对象的引用还没有指向一个对象的值。</p>
-<p><a href="http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.4" target="_blank" rel="external">JVM规范</a>中：</p>
-<blockquote>
-<p>The Java Virtual Machine specification does not mandate a concrete value encoding null.<br>Java虚拟机规范并没有强制要求一个具体的值编码为空<br>x 在内存里是什么？</p>
-</blockquote>
-<p>现在我们知道了 null是什么。我们也知道变量是一个储存位置相关的符号名（标示符），它包含了值，x在内存中是什么？</p>
-<p>从JVM 运行时数据区的图看来，因为每个方法在线程栈 (thread’stack)中都有私人栈帧 (private stack frame)，局部变量就位于这个栈帧中。</p>
+    <content type="html"><![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
+<h2 id="服务器端的程序">服务器端的程序</h2><p>服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访问的总时间。</p>
+<h2 id="客户端程序的实现">客户端程序的实现</h2><ol>
+<li>使用多组数据，每个网站条目算是一组（section）。</li>
+<li>自定义化每组数据的HeaderView，并添加点击手势识别。</li>
+<li>默认情况下，每组下的行数(row)为0.</li>
+<li>当点击headerView时，为该section添加一行，行的内容就是网站的详细情况。</li>
+<li>再次点击header时，就删除该section的一行数据，从而实现tableView的下拉菜单功能。</li>
+</ol>
+<h2 id="学习到的知识点">学习到的知识点</h2><ol>
+<li>更加熟悉了objective-c的面向对象编程。</li>
+<li>复习了UINavigationController，UITableView的使用，单例模式的使用。</li>
+<li>动手实现自定义的HeaderView</li>
+</ol>
+<h2 id="下一步的打算">下一步的打算</h2><ol>
+<li>把数据固化。假如没有联网，就会显示最后一次请求的数据。（因为数据量较小，不需要保存历史数据，所以不采用CoreData）</li>
+<li>加入APNS,当有新的网站无法访问，或者网站恢复正常，推送提示</li>
+<li>美化外观</li>
+</ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>先看下面的声明语句</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code]]>
+    <![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
+<h2 id]]>
     </summary>
     
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
     
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
     
   </entry>
   

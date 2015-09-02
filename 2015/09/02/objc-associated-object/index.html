@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="iOS,objective-c,转载," />
 
 
 
@@ -39,15 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="O ever youthful, O ever weeping.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pasco's blog">
-<meta property="og:url" content="http://pascocoder.github.io/page/4/index.html">
+<meta name="description" content="转载自codingcoder的博客，原文地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)">
+<meta property="og:url" content="http://pascocoder.github.io/2015/09/02/objc-associated-object/index.html">
 <meta property="og:site_name" content="Pasco's blog">
-<meta property="og:description" content="O ever youthful, O ever weeping.">
+<meta property="og:description" content="转载自codingcoder的博客，原文地址">
+<meta property="og:updated_time" content="2015-09-02T09:26:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pasco's blog">
-<meta name="twitter:description" content="O ever youthful, O ever weeping.">
+<meta name="twitter:title" content="深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)">
+<meta name="twitter:description" content="转载自codingcoder的博客，原文地址">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +58,7 @@
   };
 </script>
 
-  <title> Pasco's blog </title>
+  <title> 深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects) | Pasco's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,9 +86,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -192,9 +191,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -205,9 +204,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/02/diagram-to-show-java-strings-immutability/" itemprop="url">
-                图解Java 字符串的不变性
-              </a>
+              深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)
             
           
         </h1>
@@ -216,293 +213,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/diagram-to-show-java-strings-immutability/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/diagram-to-show-java-strings-immutability/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            本篇文章用一组图表来说明Java的String不变性。
-声明一个字符串1String s = "abcd";
-变量s储存字符串对象的引用，下面的箭头应该解释为‘字符串变量s储存字符串’abcd’的引用’。
-
-把一个字符变量复制给另一个字符变量1String s2 = s;
-S2也储存同样的引用，因为
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/diagram-to-show-java-strings-immutability/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/" itemprop="url">
-                创建字符串，用双引号“ ” 还是 用构造器（Constructor）
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            在Java中，创建字符串有两种方式：
-12String x = "abc";String y = new String("abc");
-那么问题来了，创建字符串到底哪家强？
-双引号 vs 构造器这个问题可以有下面两个简单的例子回答
-12345String a = "abcd";String b = 
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/website-monitor-iOS-client/" itemprop="url">
-                网站监控iOS客户端
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/iOS/" itemprop="url" rel="index">
-                  <span itemprop="name">iOS</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/website-monitor-iOS-client/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/website-monitor-iOS-client/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            iOS客户端源代码here
-服务器端的程序服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/website-monitor-iOS-client/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/Objective-C-Sorting-an-array/" itemprop="url">
-                Objective-C数组排序
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
+          <time itemprop="dateCreated" datetime="2015-09-02T17:12:42+08:00" content="2015-09-02">
             2015-09-02
           </time>
         </span>
@@ -528,8 +239,8 @@ S2也储存同样的引用，因为
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/02/Objective-C-Sorting-an-array/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/Objective-C-Sorting-an-array/" itemprop="commentsCount"></span>
+              <a href="/2015/09/02/objc-associated-object/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/objc-associated-object/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -543,52 +254,81 @@ S2也储存同样的引用，因为
       
 
       
-        
-          <span itemprop="articleBody">
-            
-            Objective C中常用的数组排序有以下几种方法:
-
-sortedArrayUsingSelector:
-sortedArrayUsingComparator:
-sortedArrayUsingDescriptors:
-
-1. 简单排序（sortedArrayUsingSelector:）如果只
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/Objective-C-Sorting-an-array/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+        <span itemprop="articleBody"><p>转载自codingcoder的博客，<a href="http://blog.codingcoder.com/objc-associated-object/" target="_blank" rel="external">原文地址</a></p>
+</span>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/objective-c/" rel="tag">#objective-c</a>
+          
+            <a href="/tags/转载/" rel="tag">#转载</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/02/start-from-length-length-in-java/" rel="next">Java中的 length 和 length()</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/02/objc-associated-object/"
+     data-title="深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)"
+     data-content=""
+     data-url="http://pascocoder.github.io/2015/09/02/objc-associated-object/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/02/objc-associated-object/"
+                   data-title="深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)" data-url="http://pascocoder.github.io/2015/09/02/objc-associated-object/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -605,6 +345,15 @@ sortedArrayUsingDescriptors:
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -669,6 +418,17 @@ sortedArrayUsingDescriptors:
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -756,6 +516,165 @@ sortedArrayUsingDescriptors:
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
