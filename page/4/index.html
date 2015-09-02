@@ -42,7 +42,7 @@
 <meta name="description" content="O ever youthful, O ever weeping.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pasco's blog">
-<meta property="og:url" content="http://pascocoder.github.io/index.html">
+<meta property="og:url" content="http://pascocoder.github.io/page/4/index.html">
 <meta property="og:site_name" content="Pasco's blog">
 <meta property="og:description" content="O ever youthful, O ever weeping.">
 <meta name="twitter:card" content="summary">
@@ -184,8 +184,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/02/start-from-length-length-in-java/" itemprop="url">
-                Java中的 length 和 length()
+              <a class="post-title-link" href="/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/" itemprop="url">
+                创建字符串，用双引号“ ” 还是 用构造器（Constructor）
               </a>
             
           
@@ -195,7 +195,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
+          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
             2015-09-02
           </time>
         </span>
@@ -221,8 +221,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/02/start-from-length-length-in-java/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/start-from-length-length-in-java/" itemprop="commentsCount"></span>
+              <a href="/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -239,14 +239,15 @@
         
           <span itemprop="articleBody">
             
-            首先，你能快速回答下面的问题吗？！
-
-Without code autocompletion of any IDE, how to get the length of an array? And how to get the length of a String?
-在没有代码自动补全的IDE工具的情
+            在Java中，创建字符串有两种方式：
+12String x = "abc";String y = new String("abc");
+那么问题来了，创建字符串到底哪家强？
+双引号 vs 构造器这个问题可以有下面两个简单的例子回答
+12345String a = "abcd";String b = 
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/start-from-length-length-in-java/#more" rel="contents">
+            <a class="btn" href="/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -279,8 +280,8 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
           
           
             
-              <a class="post-title-link" href="/2015/09/02/what-is-meta-class-in-objective-c/" itemprop="url">
-                Objective-C 中的 meta-class 是什么？
+              <a class="post-title-link" href="/2015/09/02/what-exactly-is-null-in-java/" itemprop="url">
+                Java中的 null 到底是什么？
               </a>
             
           
@@ -290,7 +291,103 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
+          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
+            2015-09-02
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Java/" itemprop="url" rel="index">
+                  <span itemprop="name">Java</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/02/what-exactly-is-null-in-java/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/what-exactly-is-null-in-java/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            先看下面的声明语句
+1String = null;
+这个声明语句到底做了什么
+回想一下，什么是变量？什么是值？一个常见的比喻就是：变量就像是一个盒子，你可以用盒子来存放东西，你可以用变量来存放值。当声明一个变量，我们需要设置它的类型。
+Java中主要有两大类：基本数据类型和引用。声明为基本数据类型的
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/02/what-exactly-is-null-in-java/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/02/Objective-C-Sorting-an-array/" itemprop="url">
+                Objective-C数组排序
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
             2015-09-02
           </time>
         </span>
@@ -316,8 +413,8 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/02/what-is-meta-class-in-objective-c/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/what-is-meta-class-in-objective-c/" itemprop="commentsCount"></span>
+              <a href="/2015/09/02/Objective-C-Sorting-an-array/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/Objective-C-Sorting-an-array/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -334,292 +431,17 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
         
           <span itemprop="articleBody">
             
-            中文翻译转载地址
-英文原文地址
-在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类
+            Objective C中常用的数组排序有以下几种方法:
+
+sortedArrayUsingSelector:
+sortedArrayUsingComparator:
+sortedArrayUsingDescriptors:
+
+1. 简单排序（sortedArrayUsingSelector:）如果只
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/what-is-meta-class-in-objective-c/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" itemprop="url">
-                JDK6和JDK7中substring() 方法的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)
-substring()方
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/check-if-array-contains-a-value-java/" itemprop="url">
-                怎样更有效率的检查一个数组是否包含某个元素
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/check-if-array-contains-a-value-java/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/check-if-array-contains-a-value-java/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            怎样去检验一个数组（未排序）是否包含某个元素？这是Java中的一个非常有用和非常常用的一个操作。这也是stackoverflow网站上的一个投票很高的问题。在投票很高的几个回答中，有很多不同的方法，但是时间复杂度也是不同的，下面我将介绍每种方法的时间成本。
-检查数组是否包含某个元素的四种不同的方法1
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/check-if-array-contains-a-value-java/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/website-monitor-iOS-client/" itemprop="url">
-                网站监控iOS客户端
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/iOS/" itemprop="url" rel="index">
-                  <span itemprop="name">iOS</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/website-monitor-iOS-client/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/website-monitor-iOS-client/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            iOS客户端源代码here
-服务器端的程序服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/website-monitor-iOS-client/#more" rel="contents">
+            <a class="btn" href="/2015/09/02/Objective-C-Sorting-an-array/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -645,7 +467,7 @@ substring()方
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
   </nav>
 
  </div>

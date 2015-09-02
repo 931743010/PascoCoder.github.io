@@ -1,0 +1,797 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="O ever youthful, O ever weeping." />
+
+
+
+  <meta name="keywords" content="meta-class,objective-c,翻译,转载," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pasco's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="中文翻译转载地址
+英文原文地址
+在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类开始。通过查看 “class pair”，我会解释 meta-class 是什么，同时也会谈谈在 O">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Objective-C 中的 meta-class 是什么？">
+<meta property="og:url" content="http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/index.html">
+<meta property="og:site_name" content="Pasco's blog">
+<meta property="og:description" content="中文翻译转载地址
+英文原文地址
+在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类开始。通过查看 “class pair”，我会解释 meta-class 是什么，同时也会谈谈在 O">
+<meta property="og:updated_time" content="2015-09-02T02:43:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Objective-C 中的 meta-class 是什么？">
+<meta name="twitter:description" content="中文翻译转载地址
+英文原文地址
+在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类开始。通过查看 “class pair”，我会解释 meta-class 是什么，同时也会谈谈在 O">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Objective-C 中的 meta-class 是什么？ | Pasco's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7df0feee828233ba1c899e0e9f9a619c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Pasco's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Objective-C 中的 meta-class 是什么？
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
+            2015-09-02
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/objective-c/" itemprop="url" rel="index">
+                  <span itemprop="name">objective-c</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/02/what-is-meta-class-in-objective-c/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/what-is-meta-class-in-objective-c/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><a href="http://blog.cocoabit.com/2013-12-08-meta-class/" target="_blank" rel="external">中文翻译转载地址</a></p>
+<p><a href="http://www.cocoawithlove.com/2010/01/what-is-meta-class-in-objective-c.html" target="_blank" rel="external">英文原文地址</a></p>
+<p>在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类开始。通过查看 “class pair”，我会解释 meta-class 是什么，同时也会谈谈在 Objective-C 中的对象或者类相关的一些一般主题。</p>
+<h3 id="在运行时创建一个类">在运行时创建一个类</h3><p>下面的代码在运行时创建了一个 NSError 的子类同时为它添加了一个方法：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class newClass =</span><br><span class="line">    objc_allocateClassPair([<span class="built_in">NSError</span> class], <span class="string">"RuntimeErrorSubclass"</span>, <span class="number">0</span>);</span><br><span class="line">class_addMethod(newClass, <span class="keyword">@selector</span>(report), (IMP)ReportFunction, <span class="string">"v@:"</span>);</span><br><span class="line">objc_registerClassPair(newClass);</span><br></pre></td></tr></table></figure>
+<p>添加的方法使用叫 ReportFunction 的函数作为实现，定义如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> ReportFunction(<span class="keyword">id</span> <span class="keyword">self</span>, SEL _cmd)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"This object is %p."</span>, <span class="keyword">self</span>);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Class is %@, and super is %@."</span>, [<span class="keyword">self</span> class], [<span class="keyword">self</span> superclass]);</span><br><span class="line"></span><br><span class="line">    Class currentClass = [<span class="keyword">self</span> class];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Following the isa pointer %d times gives %p"</span>, i, currentClass);</span><br><span class="line">        currentClass = object_getClass(currentClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"NSObject's class is %p"</span>, [<span class="built_in">NSObject</span> class]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"NSObject's meta class is %p"</span>, object_getClass([<span class="built_in">NSObject</span> class]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>表面上来看，非常简单。在运行时创建一个类只需要这三步：</p>
+<ol>
+<li>为 “class pair” 创建存储空间（使用 objc_allocateClassPair）。</li>
+<li>为这个类添加所需的 methods 和 ivars（我已经使用 class_addMethod 添加过一个方法了）。</li>
+<li>注册这个类，然后就可以使用了（使用 objc_registerClassPair）。</li>
+</ol>
+<p>然后，中级问题是：“class pair” 是什么？函数 objc_allocateClassPair 只返回了一个值：这个 class。这一对中的另一个在哪？（译注：pair 有 “一对，一双” 的意思）</p>
+<p>我敢肯定你已经猜到了另一半就是 meta-class（就是这篇文章的标题），但是要解释那是什么和你为什么需要它，我需要介绍一些在 Objective-C 中的关于对象和类的背景知识。</p>
+<h3 id="把一个数据结构变为对象需要什么？">把一个数据结构变为对象需要什么？</h3><p>每个对象都有一个类。这是面相对象概念的基础知识，但在 Objective-C 中不是这样，它（译注：class）同样是这个数据的一部分。每个可以被当成对象的数据结构都在恰当的位置有一个指向一个类的指针。</p>
+<p>在 Objective-C，一个对象的类由它的 isa 指针决定。isa 指针指向这个对象的 Class。</p>
+<p>事实上，在 Objective-C 中的对象的定义看起来像这样：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125; *<span class="keyword">id</span>;</span><br></pre></td></tr></table></figure>
+<p>这就是说：任何结构体只要以一个指向 Class 结构的指针开始的就可以被当成是 objc_object。</p>
+<p>在 Objective-C 中的对象的一个重要的特性是，你可以向它们发送消息：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">@"stringValue"</span></span><br><span class="line">    writeToFile:<span class="string">@"/file.txt"</span> atomically:<span class="literal">YES</span> encoding:<span class="built_in">NSUTF8StringEncoding</span> error:<span class="literal">NULL</span>];</span><br></pre></td></tr></table></figure>
+<p>你可以这么做是因为，当你向一个 Objective-C 的对象（像这里的 NSCFString）发送消息的时候，runtime 沿着对象的 isa 指针找到了这个对象的 Class（这里是 NSCFString 的类）结构体。 Class 结构体中包含了一个这个类的方法列表和一个指向父类的指针，用于查找继承的方法。</p>
+<p>关键点是 Class 结构体中定义了你可以向一个对象发送的消息。</p>
+<h3 id="meta-class_是什么？">meta-class 是什么？</h3><p>现在，你可能已经知道，在 Objective-C 中一个 Class 也是一个对象。这就意味着你也可以向一个 Class 发送消息。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSStringEncoding</span> defaultStringEncoding = [<span class="built_in">NSString</span> defaultStringEncoding];</span><br></pre></td></tr></table></figure>
+<p>这里，向 NSString 类发送了 defaultStringEncoding。</p>
+<p>可以这么做是因为在 Objective-C 中每个 Class 它自己同样也是个对象。也就是说 Class 结构体必须以 isa 指针开始，然后就可以在二进制兼容（binary compatible）我上面介绍的 objc_object 结构了，接着下一个字段必须是一个指向它的父类的指针（要是类就是基类就是 nil）。</p>
+<p>我上周已经介绍过，定义一个类有好几种方法，主要依赖于你正在运行的 runtime 的版本。但，是的，都是由一个 isa 字段开始然后是 superclass 字段。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_class *Class;</span><br><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">    Class super_class;</span><br><span class="line">    <span class="comment">/* 以下依赖于 runtime 的具体实现 …… */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>然而，为了让我们在 Class 上调用一个方法，Class 的 isa 指针必须指向一个 Class 结构体，并且那个 Class 结构体必须包含我们可以在那个 Class 上调用的方法的列表。</p>
+<p>这就引出了 meta-class 的定义：meta-class 是 Class 对象的类（the meta-class is the class for a Class object）。</p>
+<p>简单来说：</p>
+<ul>
+<li>当你向一个对象发送消息，就在那个对象的方法列表中查找那个消息。</li>
+<li>当你想一个类发送消息，就再那个类的 meta-class 中查找那个消息。</li>
+</ul>
+<p>meta-class 是必须的，因为它为一个 Class 存储类方法。每个类都必须有一个唯一的 meta-class，因为每个 Class 都有一个可能不一样的类方法。</p>
+<h3 id="meta-class_的类是什么？">meta-class 的类是什么？</h3><p>meta-class，如之前的 Class，同样是个对象。这就意味着你也可以在它上面调用方法。自然的，这就意味着它也必须有一个类（译注：isa 指针）。</p>
+<p>所有的 meta-class 使用它们基类的 meta-class （继承层次中最顶层的 Class 的 meta-class）作为它们自己的类。这就是说所有继承自 NSObject 的类（大部分的类），以 NSObject 的 meta-class 作为自己的 meta-class 的类。</p>
+<p>遵循这个规则，所有的 meta-class 使用基类的 meta-class 作为他们的类，任何基类的 meta-class 将会是他们自己（它们的 isa 指向他们自己）。这就是说 NSObject 的 meta-class 的 isa 指针指向它们自己（是自己的一个实例）。</p>
+<h3 id="class_和_meta-class_的继承">class 和 meta-class 的继承</h3><p>和 Class 以 super_class 指针指向它的父类的方法一样，meta-class 以 super_class 指针指向 Class 的 super_class 的 meta-class。（译注：这句话有点绕，就是 super-class 一个指向 Class 的父类，一个指向 meta-class 的父类。Class 是一般对象的类型，meta-class 是 Class 的类型。）</p>
+<p>进一步来讲，基类的 meta-class 设置 super_class 指针指向基类自己。</p>
+<p>这个继承层次的结果就是，所有在这个继承层次中的的实例，类和 meta-class 都继承了基类的层次。</p>
+<p>对于所有在 NSObject 层次中的实例，类和 meta-class，这就意味着所有 NSObject 的实例方法都是有效的。对于类和 meta-class，所有 NSObject 的类方法也同样是有效的。</p>
+<p>所有这些在字面上相当让人困惑。<a href="http://www.sealiesoftware.com/blog/" target="_blank" rel="external">Greg Parker</a> 已经<a href="http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html" target="_blank" rel="external">把实例，类，meta-class 还有他们的超类以非常棒的图解的方式聚合在一起</a>，展示他们是如何在一起工作的。</p>
+<h3 id="用实验验证这点">用实验验证这点</h3><p>为了验证这些，让我们看看在我文章开头提供的 ReportFunction 的输出。这个函数的目的是顺着 isa 指针打引出它找到的。</p>
+<p>要运行 ReportFunction，我们需要为这个动态创建的类创建一个实例，然后在上面调用这个方法。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">id</span> instanceOfNewClass =</span><br><span class="line">    [[newClass alloc] initWithDomain:<span class="string">@"someDomain"</span> code:<span class="number">0</span> userInfo:<span class="literal">nil</span>];</span><br><span class="line">[instanceOfNewClass performSelector:<span class="keyword">@selector</span>(report)];</span><br><span class="line">[instanceOfNewClass release];</span><br></pre></td></tr></table></figure>
+<p>因为没有这个方法的声明，所以我使用 performSelector: 调用这个方法，这样编译器就不会输出警告了。</p>
+<p>现在 ReportFunction 会沿着 isa 指针告诉我们这个对象使用了哪些类，meta-class 和 meta-class 的类。</p>
+<p>获取一个对象的类：ReportFunction 使用 object_getClass 跟随 isa 指针，因为 isa 指针是一个类中一个受保护的成员变量（你不能直接访问其他对象的 isa 指针）。ReportFunction 没有以类方法的形式这样调用，因为在 Class 对象上调用类方法不会返回 meta-class，而是再次返回 Class 对象（所以 [NSString class] 会返回 NSString 的类而不是 NSString 的 meta-class）。</p>
+<p>这个是程序运行后的结果（省去了 NSLog 的前缀）。</p>
+<pre><code>This object <span class="keyword">is</span> <span class="number">0x10010c810</span>.
+Class <span class="keyword">is</span> RuntimeErrorSubclass, <span class="keyword">and</span> super <span class="keyword">is</span> NSError.
+Following <span class="keyword">the</span> isa pointer <span class="number">1</span> <span class="keyword">times</span> gives <span class="number">0x10010c600</span>
+Following <span class="keyword">the</span> isa pointer <span class="number">2</span> <span class="keyword">times</span> gives <span class="number">0x10010c630</span>
+Following <span class="keyword">the</span> isa pointer <span class="number">3</span> <span class="keyword">times</span> gives <span class="number">0x7fff71038480</span>
+Following <span class="keyword">the</span> isa pointer <span class="number">4</span> <span class="keyword">times</span> gives <span class="number">0x7fff71038480</span>
+NSObject's <span class="type">class</span> <span class="keyword">is</span> <span class="number">0x7fff710384a8</span>
+NSObject's meta <span class="type">class</span> <span class="keyword">is</span> <span class="number">0x7fff71038480</span>
+</code></pre><p>看看通过递归的查看 isa 的地址：</p>
+<pre><code>the <span class="tag">object</span> is <span class="tag">address</span> <span class="number">0</span>x10010c810.
+the class is <span class="tag">address</span> <span class="number">0</span>x10010c600.
+the meta-class is <span class="tag">address</span> <span class="number">0</span>x10010c630.
+the meta-class’s class (<span class="tag">i</span><span class="class">.e</span>. the NSObject meta-class) is <span class="tag">address</span>     <span class="number">0</span>x7fff71038480.
+the NSObject meta-class’ class is itself.
+</code></pre><p>地址的值不是很重要，只是演示了上面讨论的从类到 meta-class 到 NSObject 的 meta-class 的过程。</p>
+<h3 id="结论_meta-class_是_Class_对象的类。">结论 meta-class 是 Class 对象的类。</h3><p>每个 Class 都有个不同的自己的 meta-class（因此每个 Class 都可以有一个自己不同的方法列表）。也就是说每个类的 Class 不完全相同。</p>
+<p>meta-class 总是会保证 Class 对象会有从基类继承的所有的的实例和类方法，加上之后继承的类方法。如从 NSObject 继承的类，就意味着在所有的 Class（和 meta-class）对象中定义了所有从 NSObject 继承的实例和协议方法。</p>
+<p>所有的 meta-class 使用基类的 meta-class（NSObject 的 meta-class 用于继承自 NSObject 的类）作为他们自己的类，包括在运行时自己定义的基础的 meta-class。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/meta-class/" rel="tag">#meta-class</a>
+          
+            <a href="/tags/objective-c/" rel="tag">#objective-c</a>
+          
+            <a href="/tags/翻译/" rel="tag">#翻译</a>
+          
+            <a href="/tags/转载/" rel="tag">#转载</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/02/start-from-length-length-in-java/" rel="prev">Java中的 length 和 length()</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" rel="next">JDK6和JDK7中substring() 方法的区别</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/02/what-is-meta-class-in-objective-c/"
+     data-title="Objective-C 中的 meta-class 是什么？"
+     data-content=""
+     data-url="http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/02/what-is-meta-class-in-objective-c/"
+                   data-title="Objective-C 中的 meta-class 是什么？" data-url="http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="Pasco" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Pasco</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">O ever youthful, O ever weeping.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/PascoCoder" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/pascocoder" target="_blank">weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+              <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在运行时创建一个类"><span class="nav-number">1.</span> <span class="nav-text">在运行时创建一个类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把一个数据结构变为对象需要什么？"><span class="nav-number">2.</span> <span class="nav-text">把一个数据结构变为对象需要什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-class_是什么？"><span class="nav-number">3.</span> <span class="nav-text">meta-class 是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-class_的类是什么？"><span class="nav-number">4.</span> <span class="nav-text">meta-class 的类是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class_和_meta-class_的继承"><span class="nav-number">5.</span> <span class="nav-text">class 和 meta-class 的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用实验验证这点"><span class="nav-number">6.</span> <span class="nav-text">用实验验证这点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论_meta-class_是_Class_对象的类。"><span class="nav-number">7.</span> <span class="nav-text">结论 meta-class 是 Class 对象的类。</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pasco</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"pasco"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+  	<script src="/js/ua-parser.min.js"></script>
+  	<script src="/js/hook-duoshuo.js"></script>
+  
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

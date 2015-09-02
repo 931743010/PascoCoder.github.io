@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Pasco's blog]]></title>
+  <subtitle><![CDATA[subtitle]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://pascocoder.github.io/"/>
+  <updated>2015-09-02T02:43:21.000Z</updated>
+  <id>http://pascocoder.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Pasco]]></name>
+    <email><![CDATA[pascocoder@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Java中的 length 和 length()]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/start-from-length-length-in-java/"/>
+    <id>http://pascocoder.github.io/2015/09/02/start-from-length-length-in-java/</id>
+    <published>2015-09-02T02:43:21.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>首先，你能快速回答下面的问题吗？！</p>
+<blockquote>
+<p>Without code autocompletion of any IDE, how to get the length of an array? And how to get the length of a String?</p>
+<p>在没有代码自动补全的IDE工具的情况下，怎么得到数组的长度？又怎么得到字符串的长度？</p>
+</blockquote>
+<p>我向不同级别的开发者问过这个问题：包括入门的和中级的开发者。他们都不能准确且自信的回答这个问题。IDE工具提供了方便的代码自动补全功能，这也导致了我们停留在表面上的理解。在这篇文章里，我将解释关于Java数组的一些关键概念。</p>
+<p>答案：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">System.out.println(arr.length);<span class="comment">//length for array </span></span><br><span class="line">String str = <span class="string">"abc"</span>;</span><br><span class="line">System.out.println(str.length());<span class="comment">//length() for string</span></span><br></pre></td></tr></table></figure>
+<p>问题是，为什么数组有 length 字段，而字符串却没有呢？或者为什么字符串有 length() 方法，而数组却没有呢？</p>
+<h3 id="问题_1_为什么数组有_length_属性？">问题 1 为什么数组有 length 属性？</h3><p>首先，数组是一个保存固定个数的单一类型值的容器对象，数组一旦被创建后，它的长度就不会在改变。数组的长度可以作为最终实例的长度。因此，length 可以看做是一个数组的定义属性。</p>
+<p>有两种方法创建数组：<br>1、数组创建表达式<br>2、数组初始化</p>
+<p>当数组被创建，大小就被指定了。</p>
+<p>上面的例子使用的就是数组表达式。它指定元素的类型，维数，和至少一个维度的长度（length）。</p>
+<p>下面的数组的声明是合法的，因为它指定了一个维度的长度。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][];</span><br></pre></td></tr></table></figure>
+<p>数组初始化创建数组并给予所有的初始值。这是由逗号分隔的表达式，用花括号{}括起来。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="问题_2_为什么不定义一个像字符串的数组类">问题 2 为什么不定义一个像字符串的数组类</h3><p>因为数组是一个对象，下面的代码是合法的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object obj = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
+<p>数组包含了所有继承自Object类（除克隆）的成员。为什么没有定义一个数组的类呢？我们无法找到Array.java文件。粗略的解释是，他们被隐藏了。你可以想想这个问题 - 如果有数组的类，会是什么模样？它仍然需要一个数组来保存数组数据。所以不定义这样一个类。</p>
+<p>我们可以用下面的代码得到数组的类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">System.out.println(arr.getClass());</span><br></pre></td></tr></table></figure>
+<pre><code><span class="string">Output:</span><span class="class"><span class="keyword">class</span> [<span class="title">I</span></span>
+</code></pre><p>“class [I”代表int型数组再运行时的类型签名。</p>
+<h3 id="问题_3_为什么_String_有_length()_方法？">问题 3 为什么 String 有 length() 方法？</h3><p>字符串的后备的数据结构是字符数组，没有必要为每一个字符串定义一个 length 属性。不像C语言，在Java中字符数组不是字符串。</p>
+<p>参考：</p>
+<p>[1] <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank" rel="external">Arrays</a></p>
+<p>[2] <a href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-10.html#jls-10.7" target="_blank" rel="external">JLS Array</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>首先，你能快速回答下面的问题吗？！</p>
+<blockquote>
+<p>Without code autocompletion of any IDE, how to get the length of an array? And how to get the lengt]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Objective-C 中的 meta-class 是什么？]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/"/>
+    <id>http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/</id>
+    <published>2015-09-02T02:43:21.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://blog.cocoabit.com/2013-12-08-meta-class/" target="_blank" rel="external">中文翻译转载地址</a></p>
+<p><a href="http://www.cocoawithlove.com/2010/01/what-is-meta-class-in-objective-c.html" target="_blank" rel="external">英文原文地址</a></p>
+<p>在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类开始。通过查看 “class pair”，我会解释 meta-class 是什么，同时也会谈谈在 Objective-C 中的对象或者类相关的一些一般主题。</p>
+<h3 id="在运行时创建一个类">在运行时创建一个类</h3><p>下面的代码在运行时创建了一个 NSError 的子类同时为它添加了一个方法：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class newClass =</span><br><span class="line">    objc_allocateClassPair([<span class="built_in">NSError</span> class], <span class="string">"RuntimeErrorSubclass"</span>, <span class="number">0</span>);</span><br><span class="line">class_addMethod(newClass, <span class="keyword">@selector</span>(report), (IMP)ReportFunction, <span class="string">"v@:"</span>);</span><br><span class="line">objc_registerClassPair(newClass);</span><br></pre></td></tr></table></figure>
+<p>添加的方法使用叫 ReportFunction 的函数作为实现，定义如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> ReportFunction(<span class="keyword">id</span> <span class="keyword">self</span>, SEL _cmd)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"This object is %p."</span>, <span class="keyword">self</span>);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Class is %@, and super is %@."</span>, [<span class="keyword">self</span> class], [<span class="keyword">self</span> superclass]);</span><br><span class="line"></span><br><span class="line">    Class currentClass = [<span class="keyword">self</span> class];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Following the isa pointer %d times gives %p"</span>, i, currentClass);</span><br><span class="line">        currentClass = object_getClass(currentClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"NSObject's class is %p"</span>, [<span class="built_in">NSObject</span> class]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"NSObject's meta class is %p"</span>, object_getClass([<span class="built_in">NSObject</span> class]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>表面上来看，非常简单。在运行时创建一个类只需要这三步：</p>
+<ol>
+<li>为 “class pair” 创建存储空间（使用 objc_allocateClassPair）。</li>
+<li>为这个类添加所需的 methods 和 ivars（我已经使用 class_addMethod 添加过一个方法了）。</li>
+<li>注册这个类，然后就可以使用了（使用 objc_registerClassPair）。</li>
+</ol>
+<p>然后，中级问题是：“class pair” 是什么？函数 objc_allocateClassPair 只返回了一个值：这个 class。这一对中的另一个在哪？（译注：pair 有 “一对，一双” 的意思）</p>
+<p>我敢肯定你已经猜到了另一半就是 meta-class（就是这篇文章的标题），但是要解释那是什么和你为什么需要它，我需要介绍一些在 Objective-C 中的关于对象和类的背景知识。</p>
+<h3 id="把一个数据结构变为对象需要什么？">把一个数据结构变为对象需要什么？</h3><p>每个对象都有一个类。这是面相对象概念的基础知识，但在 Objective-C 中不是这样，它（译注：class）同样是这个数据的一部分。每个可以被当成对象的数据结构都在恰当的位置有一个指向一个类的指针。</p>
+<p>在 Objective-C，一个对象的类由它的 isa 指针决定。isa 指针指向这个对象的 Class。</p>
+<p>事实上，在 Objective-C 中的对象的定义看起来像这样：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125; *<span class="keyword">id</span>;</span><br></pre></td></tr></table></figure>
+<p>这就是说：任何结构体只要以一个指向 Class 结构的指针开始的就可以被当成是 objc_object。</p>
+<p>在 Objective-C 中的对象的一个重要的特性是，你可以向它们发送消息：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">@"stringValue"</span></span><br><span class="line">    writeToFile:<span class="string">@"/file.txt"</span> atomically:<span class="literal">YES</span> encoding:<span class="built_in">NSUTF8StringEncoding</span> error:<span class="literal">NULL</span>];</span><br></pre></td></tr></table></figure>
+<p>你可以这么做是因为，当你向一个 Objective-C 的对象（像这里的 NSCFString）发送消息的时候，runtime 沿着对象的 isa 指针找到了这个对象的 Class（这里是 NSCFString 的类）结构体。 Class 结构体中包含了一个这个类的方法列表和一个指向父类的指针，用于查找继承的方法。</p>
+<p>关键点是 Class 结构体中定义了你可以向一个对象发送的消息。</p>
+<h3 id="meta-class_是什么？">meta-class 是什么？</h3><p>现在，你可能已经知道，在 Objective-C 中一个 Class 也是一个对象。这就意味着你也可以向一个 Class 发送消息。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSStringEncoding</span> defaultStringEncoding = [<span class="built_in">NSString</span> defaultStringEncoding];</span><br></pre></td></tr></table></figure>
+<p>这里，向 NSString 类发送了 defaultStringEncoding。</p>
+<p>可以这么做是因为在 Objective-C 中每个 Class 它自己同样也是个对象。也就是说 Class 结构体必须以 isa 指针开始，然后就可以在二进制兼容（binary compatible）我上面介绍的 objc_object 结构了，接着下一个字段必须是一个指向它的父类的指针（要是类就是基类就是 nil）。</p>
+<p>我上周已经介绍过，定义一个类有好几种方法，主要依赖于你正在运行的 runtime 的版本。但，是的，都是由一个 isa 字段开始然后是 superclass 字段。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_class *Class;</span><br><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">    Class super_class;</span><br><span class="line">    <span class="comment">/* 以下依赖于 runtime 的具体实现 …… */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>然而，为了让我们在 Class 上调用一个方法，Class 的 isa 指针必须指向一个 Class 结构体，并且那个 Class 结构体必须包含我们可以在那个 Class 上调用的方法的列表。</p>
+<p>这就引出了 meta-class 的定义：meta-class 是 Class 对象的类（the meta-class is the class for a Class object）。</p>
+<p>简单来说：</p>
+<ul>
+<li>当你向一个对象发送消息，就在那个对象的方法列表中查找那个消息。</li>
+<li>当你想一个类发送消息，就再那个类的 meta-class 中查找那个消息。</li>
+</ul>
+<p>meta-class 是必须的，因为它为一个 Class 存储类方法。每个类都必须有一个唯一的 meta-class，因为每个 Class 都有一个可能不一样的类方法。</p>
+<h3 id="meta-class_的类是什么？">meta-class 的类是什么？</h3><p>meta-class，如之前的 Class，同样是个对象。这就意味着你也可以在它上面调用方法。自然的，这就意味着它也必须有一个类（译注：isa 指针）。</p>
+<p>所有的 meta-class 使用它们基类的 meta-class （继承层次中最顶层的 Class 的 meta-class）作为它们自己的类。这就是说所有继承自 NSObject 的类（大部分的类），以 NSObject 的 meta-class 作为自己的 meta-class 的类。</p>
+<p>遵循这个规则，所有的 meta-class 使用基类的 meta-class 作为他们的类，任何基类的 meta-class 将会是他们自己（它们的 isa 指向他们自己）。这就是说 NSObject 的 meta-class 的 isa 指针指向它们自己（是自己的一个实例）。</p>
+<h3 id="class_和_meta-class_的继承">class 和 meta-class 的继承</h3><p>和 Class 以 super_class 指针指向它的父类的方法一样，meta-class 以 super_class 指针指向 Class 的 super_class 的 meta-class。（译注：这句话有点绕，就是 super-class 一个指向 Class 的父类，一个指向 meta-class 的父类。Class 是一般对象的类型，meta-class 是 Class 的类型。）</p>
+<p>进一步来讲，基类的 meta-class 设置 super_class 指针指向基类自己。</p>
+<p>这个继承层次的结果就是，所有在这个继承层次中的的实例，类和 meta-class 都继承了基类的层次。</p>
+<p>对于所有在 NSObject 层次中的实例，类和 meta-class，这就意味着所有 NSObject 的实例方法都是有效的。对于类和 meta-class，所有 NSObject 的类方法也同样是有效的。</p>
+<p>所有这些在字面上相当让人困惑。<a href="http://www.sealiesoftware.com/blog/" target="_blank" rel="external">Greg Parker</a> 已经<a href="http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html" target="_blank" rel="external">把实例，类，meta-class 还有他们的超类以非常棒的图解的方式聚合在一起</a>，展示他们是如何在一起工作的。</p>
+<h3 id="用实验验证这点">用实验验证这点</h3><p>为了验证这些，让我们看看在我文章开头提供的 ReportFunction 的输出。这个函数的目的是顺着 isa 指针打引出它找到的。</p>
+<p>要运行 ReportFunction，我们需要为这个动态创建的类创建一个实例，然后在上面调用这个方法。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">id</span> instanceOfNewClass =</span><br><span class="line">    [[newClass alloc] initWithDomain:<span class="string">@"someDomain"</span> code:<span class="number">0</span> userInfo:<span class="literal">nil</span>];</span><br><span class="line">[instanceOfNewClass performSelector:<span class="keyword">@selector</span>(report)];</span><br><span class="line">[instanceOfNewClass release];</span><br></pre></td></tr></table></figure>
+<p>因为没有这个方法的声明，所以我使用 performSelector: 调用这个方法，这样编译器就不会输出警告了。</p>
+<p>现在 ReportFunction 会沿着 isa 指针告诉我们这个对象使用了哪些类，meta-class 和 meta-class 的类。</p>
+<p>获取一个对象的类：ReportFunction 使用 object_getClass 跟随 isa 指针，因为 isa 指针是一个类中一个受保护的成员变量（你不能直接访问其他对象的 isa 指针）。ReportFunction 没有以类方法的形式这样调用，因为在 Class 对象上调用类方法不会返回 meta-class，而是再次返回 Class 对象（所以 [NSString class] 会返回 NSString 的类而不是 NSString 的 meta-class）。</p>
+<p>这个是程序运行后的结果（省去了 NSLog 的前缀）。</p>
+<pre><code>This object <span class="keyword">is</span> <span class="number">0x10010c810</span>.
+Class <span class="keyword">is</span> RuntimeErrorSubclass, <span class="keyword">and</span> super <span class="keyword">is</span> NSError.
+Following <span class="keyword">the</span> isa pointer <span class="number">1</span> <span class="keyword">times</span> gives <span class="number">0x10010c600</span>
+Following <span class="keyword">the</span> isa pointer <span class="number">2</span> <span class="keyword">times</span> gives <span class="number">0x10010c630</span>
+Following <span class="keyword">the</span> isa pointer <span class="number">3</span> <span class="keyword">times</span> gives <span class="number">0x7fff71038480</span>
+Following <span class="keyword">the</span> isa pointer <span class="number">4</span> <span class="keyword">times</span> gives <span class="number">0x7fff71038480</span>
+NSObject's <span class="type">class</span> <span class="keyword">is</span> <span class="number">0x7fff710384a8</span>
+NSObject's meta <span class="type">class</span> <span class="keyword">is</span> <span class="number">0x7fff71038480</span>
+</code></pre><p>看看通过递归的查看 isa 的地址：</p>
+<pre><code>the <span class="tag">object</span> is <span class="tag">address</span> <span class="number">0</span>x10010c810.
+the class is <span class="tag">address</span> <span class="number">0</span>x10010c600.
+the meta-class is <span class="tag">address</span> <span class="number">0</span>x10010c630.
+the meta-class’s class (<span class="tag">i</span><span class="class">.e</span>. the NSObject meta-class) is <span class="tag">address</span>     <span class="number">0</span>x7fff71038480.
+the NSObject meta-class’ class is itself.
+</code></pre><p>地址的值不是很重要，只是演示了上面讨论的从类到 meta-class 到 NSObject 的 meta-class 的过程。</p>
+<h3 id="结论_meta-class_是_Class_对象的类。">结论 meta-class 是 Class 对象的类。</h3><p>每个 Class 都有个不同的自己的 meta-class（因此每个 Class 都可以有一个自己不同的方法列表）。也就是说每个类的 Class 不完全相同。</p>
+<p>meta-class 总是会保证 Class 对象会有从基类继承的所有的的实例和类方法，加上之后继承的类方法。如从 NSObject 继承的类，就意味着在所有的 Class（和 meta-class）对象中定义了所有从 NSObject 继承的实例和协议方法。</p>
+<p>所有的 meta-class 使用基类的 meta-class（NSObject 的 meta-class 用于继承自 NSObject 的类）作为他们自己的类，包括在运行时自己定义的基础的 meta-class。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://blog.cocoabit.com/2013-12-08-meta-class/" target="_blank" rel="external">中文翻译转载地址</a></p>
+<p><a href="http://www.cocoawit]]>
+    </summary>
+    
+      <category term="meta-class" scheme="http://pascocoder.github.io/tags/meta-class/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="转载" scheme="http://pascocoder.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JDK6和JDK7中substring() 方法的区别]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/"/>
+    <id>http://pascocoder.github.io/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/</id>
+    <published>2015-09-02T02:43:21.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)</p>
+<h3 id="substring()方法是做什么用的？">substring()方法是做什么用的？</h3><p>其实substring(int beginIndex,int endIndex)方法就是返回一个从beginIndex开始到endIndex-1结束的字符串.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String x = <span class="string">"abcdef"</span>;</span><br><span class="line">x = x.substring(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">System.out.println(x);</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>bc
+</code></pre><h3 id="当substring()被调用时，究竟发生了什么！！！">当substring()被调用时，究竟发生了什么！！！</h3><p>你可能认为（但事实并非如此！），因为字符串对象的不变性（详见文章6、字符串的不变性），当x被赋值为x.substring(1,3)时，x储存的引用将会指向一个新的字符串对象（string对象），如下图所示：</p>
+<p><img src="/assets/images/string-immutability1-650x303.jpeg" alt="pic1"></p>
+<p>然而，这个图并没能准确的表示出内存上（堆，the heap）上发生了什么，当substring()方法被调用时，到底发生了什么呢，在JDK6和JDK7上又有什么不同呢？</p>
+<h3 id="JDK6中的substring()方法">JDK6中的substring()方法</h3><p>字符串是通过字符数组实现的，在JDK6中，字符串类（the string class）包含3个字段（即数据成员）：char value[] , int offset , int count . 它们分别用来储存真实的字符数组（char value[]）、第一个字符所在原字符数组的偏移量（int offset）、字符串中字符的数量（int count）。</p>
+<p><img src="/assets/images/string-substring-jdk6-650x389.jpeg" alt="pic2"></p>
+<p>为了解释这个问题的关键点，下面是字符串的简化代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JDK 6</span></span><br><span class="line"> </span><br><span class="line">String(<span class="keyword">int</span> offset, <span class="keyword">int</span> count, <span class="keyword">char</span> value[]) &#123;</span><br><span class="line">  <span class="keyword">this</span>.value = value;</span><br><span class="line">  <span class="keyword">this</span>.offset = offset;</span><br><span class="line">  <span class="keyword">this</span>.count = count;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//check boundary</span></span><br><span class="line">    <span class="keyword">return</span>  <span class="keyword">new</span> String(offset + beginIndex, endIndex - beginIndex, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JDK6中的substring()方法会导致一个问题！">JDK6中的substring()方法会导致一个问题！</h3><p>如果你有一个特别长的字符串，但你每次只需要很短的一部分，所以你使用substring()方法，这就会导致一个性能问题，因为你只需要很小的一部分，substring()方法得到的字符串对象中的char value[]字段却保留了父数组的全部字符数组（也就是导致了空间浪费）。所以对于JDK6，解决方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x.substring(a, b) + <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<h3 id="JDK7中的substring()方法">JDK7中的substring()方法</h3><p>这个问题在JDK7中得到了改善，JDK7中的substring()方法会再内存堆里创建一个新的字符数组。</p>
+<p><img src="/assets/images/string-substring-jdk71-650x389.jpeg" alt="pic3"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JDK 7</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">char</span> value[], <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//check boundary</span></span><br><span class="line">    <span class="keyword">this</span>.value = Arrays.copyOfRange(value, offset, offset + count);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//check boundary</span></span><br><span class="line">    <span class="keyword">int</span> subLen = endIndex - beginIndex;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(value, beginIndex, subLen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[怎样更有效率的检查一个数组是否包含某个元素]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/check-if-array-contains-a-value-java/"/>
+    <id>http://pascocoder.github.io/2015/09/02/check-if-array-contains-a-value-java/</id>
+    <published>2015-09-02T02:43:21.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>怎样去检验一个数组（未排序）是否包含某个元素？这是Java中的一个非常有用和非常常用的一个操作。这也是stackoverflow网站上的一个投票很高的问题。在投票很高的几个回答中，有很多不同的方法，但是时间复杂度也是不同的，下面我将介绍每种方法的时间成本。</p>
+<h2 id="检查数组是否包含某个元素的四种不同的方法">检查数组是否包含某个元素的四种不同的方法</h2><h3 id="1-_使用_List:">1. 使用 List:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useList</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Arrays.asList(arr).contains(targetValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-_使用_Set:">2. 使用 Set:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useSet</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;(Arrays.asList(arr));</span><br><span class="line">    <span class="keyword">return</span> set.contains(targetValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-_使用简单的循环：">3. 使用简单的循环：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useLoop</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String s: arr)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.equals(targetValue))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-_使用_Arrays-binarySearch():">4. 使用 Arrays.binarySearch():</h3><p>下面的代码是错误的，binarySearch()只能适用于已经排过序的数组。运行下面的代码结果会很奇怪。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useArraysBinarySearch</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> a =  Arrays.binarySearch(arr, targetValue);</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="时间复杂度">时间复杂度</h2><p>需要的时间可以通过使用以下代码来测量。其基本思路是，以搜寻大小分别为5、1000、10000的数组。该方法可能不准确，但这个想法是简单明了的。</p>
+<p>使用大小为5的数组：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//use list</span></span><br><span class="line">    String[] arr = <span class="keyword">new</span> String[] &#123;<span class="string">"CD"</span>,<span class="string">"BC"</span>,<span class="string">"EF"</span>,<span class="string">"DE"</span>,<span class="string">"AB"</span>&#125;;</span><br><span class="line">        <span class="keyword">long</span> startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useList(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> endTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">long</span> duration = endTime - startTime;</span><br><span class="line">     <span class="comment">//use set</span></span><br><span class="line">    System.out.println(<span class="string">"useList:  "</span> + duration / <span class="number">1000000</span>);</span><br><span class="line">    startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useSet(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    endTime = System.nanoTime();</span><br><span class="line">    duration = endTime - startTime;</span><br><span class="line">    <span class="comment">//use loop</span></span><br><span class="line">    System.out.println(<span class="string">"useSet:  "</span> + duration / <span class="number">1000000</span>);   </span><br><span class="line">    startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useLoop(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    endTime = System.nanoTime();</span><br><span class="line">    duration = endTime - startTime;</span><br><span class="line">    <span class="comment">//use Arrays.binarySearch()</span></span><br><span class="line">    System.out.println(<span class="string">"useLoop:  "</span> + duration / <span class="number">1000000</span>);  </span><br><span class="line">    startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useArraysBinarySearch(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    endTime = System.nanoTime();</span><br><span class="line">    duration = endTime - startTime;</span><br><span class="line">    System.out.println(<span class="string">"useArrayBinary:  "</span> + duration / <span class="number">1000000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code><span class="attribute">useList</span>: <span class="string"> 13</span>
+<span class="attribute">useSet</span>: <span class="string"> 72</span>
+<span class="attribute">useLoop</span>: <span class="string"> 5</span>
+<span class="attribute">useArraysBinarySearch</span>: <span class="string"> 9</span>
+</code></pre><p>使用大小为1000的数组：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] arr = <span class="keyword">new</span> String[<span class="number">1000</span>];</span><br><span class="line">Random s = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">    arr[i] = String.valueOf(s.nextInt());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code><span class="attribute">useList</span>: <span class="string"> 112</span>
+<span class="attribute">useSet</span>: <span class="string"> 2055</span>
+<span class="attribute">useLoop</span>: <span class="string"> 99</span>
+<span class="attribute">useArrayBinary</span>: <span class="string"> 12</span>
+</code></pre><p>使用大小为10000的数组：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] arr = <span class="keyword">new</span> String[<span class="number">10000</span>];</span><br><span class="line">Random s = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; <span class="number">10000</span>; i++)&#123;</span><br><span class="line">    arr[i] = String.valueOf(s.nextInt());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code><span class="attribute">useList</span>: <span class="string"> 1590</span>
+<span class="attribute">useSet</span>: <span class="string"> 23819</span>
+<span class="attribute">useLoop</span>: <span class="string"> 1526</span>
+<span class="attribute">useArrayBinary</span>: <span class="string"> 12</span>
+</code></pre><p>很显然，使用循环的方法任何Collection的效率高，很多程序员使用第一种（使用 List）,其实效率并不好。把数组放入另一个Collection，在使用Collection处理数据前，需要先把数组中的每一个元素读进Collection中。</p>
+<p>在使用 Arrays.binarySearch()方法之前，数组必须是已经排过序的。本文中的数组没有排序，所以不应该使用它。</p>
+<p>其实，如果你真的需要高效率的检查 数组/Collection 中是否包含某个值，已排序的list或树可以做到在时间复杂度为O(log(N))，HashSet的可以在时间复杂度为O(1)做到这一点。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>怎样去检验一个数组（未排序）是否包含某个元素？这是Java中的一个非常有用和非常常用的一个操作。这也是stackoverflow网站上的一个投票很高的问题。在投票很高的几个回答中，有很多不同的方法，但是时间复杂度也是不同的，下面我将介绍每种方法的时间成本。</p>
+<h2 ]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[网站监控iOS客户端]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/"/>
+    <id>http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
+<h2 id="服务器端的程序">服务器端的程序</h2><p>服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访问的总时间。</p>
+<h2 id="客户端程序的实现">客户端程序的实现</h2><ol>
+<li>使用多组数据，每个网站条目算是一组（section）。</li>
+<li>自定义化每组数据的HeaderView，并添加点击手势识别。</li>
+<li>默认情况下，每组下的行数(row)为0.</li>
+<li>当点击headerView时，为该section添加一行，行的内容就是网站的详细情况。</li>
+<li>再次点击header时，就删除该section的一行数据，从而实现tableView的下拉菜单功能。</li>
+</ol>
+<h2 id="学习到的知识点">学习到的知识点</h2><ol>
+<li>更加熟悉了objective-c的面向对象编程。</li>
+<li>复习了UINavigationController，UITableView的使用，单例模式的使用。</li>
+<li>动手实现自定义的HeaderView</li>
+</ol>
+<h2 id="下一步的打算">下一步的打算</h2><ol>
+<li>把数据固化。假如没有联网，就会显示最后一次请求的数据。（因为数据量较小，不需要保存历史数据，所以不采用CoreData）</li>
+<li>加入APNS,当有新的网站无法访问，或者网站恢复正常，推送提示</li>
+<li>美化外观</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
+<h2 id]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[GitHub Permission to user/repo denied to another user]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/GitHub-Permission-to-repository-denied-to-username/"/>
+    <id>http://pascocoder.github.io/2015/09/02/GitHub-Permission-to-repository-denied-to-username/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="遇到的问题">遇到的问题</h3><p>今天给自己去了一个英文名，于是就新注册了gmail账号和新的Github账号在搭建blog时，使用git命令向Github上push的时候，出现了下面的提示信息：</p>
+<blockquote>
+<p>‘GitHub Permission to user/repo denied to another user’</p>
+</blockquote>
+<p>我已经添加了新账号的ssh keys，<br>another user显示的是我的github旧账号</p>
+<h3 id="原因">原因</h3><p>Mac的keychain储存了久的账号和密码</p>
+<h3 id="解决方法">解决方法</h3><p>Sadly I kept receiving a 403 error saying my usual username couldn’t access the repository with my usual account details. Somehow my username and password were being cached. Now I don’t recall setting this up but somewhere along the line I used KeyChain to save my password. I tried a number of things on the command line to resolve this (all I really wanted to get was a prompt for a username and password). In the end I found that I had to delete the Keychain entry for my old account and Magically the username and password prompt came back.</p>
+<p>To delete a keychain entry on Mavericks. Pres cmd + space then type key chain. Select Keychain Access. In the new window that pops up search for GitHub. Then bring up the context menu for the GitHub entry and choose delete. Now when you try to push from command line, it will prompt you for your username and password.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="遇到的问题">遇到的问题</h3><p>今天给自己去了一个英文名，于是就新注册了gmail账号和新的Github账号在搭建blog时，使用git命令向Github上push的时候，出现了下面的提示信息：</p>
+<blockquote>
+<p>‘GitHub Pe]]>
+    </summary>
+    
+      <category term="github" scheme="http://pascocoder.github.io/tags/github/"/>
+    
+      <category term="issues" scheme="http://pascocoder.github.io/tags/issues/"/>
+    
+      <category term="github" scheme="http://pascocoder.github.io/categories/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[leetcode No.130 Surrounded Regions]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/surrounded-regions/"/>
+    <id>http://pascocoder.github.io/2015/09/02/surrounded-regions/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="No-130_题目：被包围的区域">No.130 题目：被包围的区域</h3><pre><code>Given a <span class="number">2</span>D board containing <span class="string">'X'</span> and <span class="string">'O'</span>, capture all regions surrounded by <span class="string">'X'</span>.
+A region is captured by flipping all <span class="string">'O'</span>s into <span class="string">'X'</span>s in that surrounded region.
+
+For example,
+
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> O O <span class="keyword">X</span>
+<span class="keyword">X</span> <span class="keyword">X</span> O <span class="keyword">X</span>
+<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
+
+After running your function, the board should be:
+
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
+
+
+给出一个二维的数组 board 里面包含字符 <span class="string">'X'</span>和字符 <span class="string">'O'</span>,找到所有被字符 <span class="string">'X'</span>包围的区域。把被包围区域的字符 <span class="string">'O'</span>变成字符 <span class="string">'X'</span>。
+
+例如：
+
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> O O <span class="keyword">X</span>
+<span class="keyword">X</span> <span class="keyword">X</span> O <span class="keyword">X</span>
+<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
+
+你的程序运行后，二维数组 board应该是：
+
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
+<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
+</code></pre><h3 id="我的代码">我的代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Location</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> hei;</span><br><span class="line">		<span class="keyword">int</span> len;</span><br><span class="line">		<span class="keyword">char</span> value;</span><br><span class="line">		Location(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">char</span> val)&#123;</span><br><span class="line">			hei = x;</span><br><span class="line">			len = y;</span><br><span class="line">			value = val;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasC</span><span class="params">(ArrayList&lt;Location&gt; list)</span></span>&#123;</span><br><span class="line">		Iterator&lt;Location&gt; iterator = list.iterator();</span><br><span class="line">		<span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">			Location L = iterator.next();</span><br><span class="line">			<span class="keyword">if</span>(L.value == <span class="string">'C'</span>)&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">		Queue&lt;Location&gt; queue = <span class="keyword">new</span> LinkedList&lt;Location&gt;();</span><br><span class="line">		ArrayList&lt;Location&gt; list = <span class="keyword">new</span> ArrayList&lt;Location&gt;();</span><br><span class="line">		<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> hei = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (board == <span class="keyword">null</span> || board.length == <span class="number">0</span>)</span><br><span class="line">		    <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> height = board.length;</span><br><span class="line">        <span class="keyword">if</span> (board[<span class="number">0</span>] == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> length = board[<span class="number">0</span>].length;</span><br><span class="line">		<span class="keyword">for</span>(len=<span class="number">0</span>;len&lt;length;len++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(hei=<span class="number">0</span>;hei&lt;height;hei++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(board[hei][len]==<span class="string">'O'</span>)&#123;</span><br><span class="line">						board[hei][len] = <span class="string">'B'</span>;</span><br><span class="line">					queue.offer(<span class="keyword">new</span> Location(hei,len,board[hei][len]));</span><br><span class="line">					<span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">						Location Lcur = queue.poll();</span><br><span class="line">						<span class="keyword">if</span>(Lcur.hei-<span class="number">1</span>&lt;<span class="number">0</span>||Lcur.hei+<span class="number">1</span>&gt;=height||Lcur.len-<span class="number">1</span>&lt;<span class="number">0</span>||Lcur.len+<span class="number">1</span>&gt;=length)&#123;</span><br><span class="line">							board[Lcur.hei][Lcur.len] = <span class="string">'C'</span>;</span><br><span class="line">						&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">							<span class="comment">//up</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei-<span class="number">1</span>][Lcur.len] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei-<span class="number">1</span>][Lcur.len] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei-<span class="number">1</span>,Lcur.len,board[Lcur.hei-<span class="number">1</span>][Lcur.len]));</span><br><span class="line">								board[Lcur.hei-<span class="number">1</span>][Lcur.len] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="comment">//down</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei+<span class="number">1</span>][Lcur.len] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei+<span class="number">1</span>][Lcur.len] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei+<span class="number">1</span>,Lcur.len,board[Lcur.hei+<span class="number">1</span>][Lcur.len]));</span><br><span class="line">								board[Lcur.hei+<span class="number">1</span>][Lcur.len] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="comment">//left</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei][Lcur.len-<span class="number">1</span>] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei][Lcur.len-<span class="number">1</span>] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei,Lcur.len-<span class="number">1</span>,board[Lcur.hei][Lcur.len-<span class="number">1</span>]));</span><br><span class="line">								board[Lcur.hei][Lcur.len-<span class="number">1</span>] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="comment">//right</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei][Lcur.len+<span class="number">1</span>] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei][Lcur.len+<span class="number">1</span>] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei,Lcur.len+<span class="number">1</span>,board[Lcur.hei][Lcur.len+<span class="number">1</span>]));</span><br><span class="line">								board[Lcur.hei][Lcur.len+<span class="number">1</span>] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">						list.add(<span class="keyword">new</span> Location(Lcur.hei,Lcur.len,board[Lcur.hei][Lcur.len]));</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="comment">//is queue1 contains Character 'C',if yes ,change all element in queue1 into 'C' </span></span><br><span class="line">					<span class="keyword">if</span>(hasC(list))&#123;</span><br><span class="line">						Iterator&lt;Location&gt; iterator = list.iterator();</span><br><span class="line">						<span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">							Location L2 = iterator.next();</span><br><span class="line">							board[L2.hei][L2.len] = <span class="string">'C'</span>;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">					list.clear();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(len=<span class="number">0</span>;len&lt;length;len++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(hei=<span class="number">0</span>;hei&lt;height;hei++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(board[hei][len]==<span class="string">'B'</span>)&#123;</span><br><span class="line">					board[hei][len] = <span class="string">'X'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(board[hei][len]==<span class="string">'C'</span>)&#123;</span><br><span class="line">					board[hei][len] = <span class="string">'O'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="No-130_题目：被包围的区域">No.130 题目：被包围的区域</h3><pre><code>Given a <span class="number">2</span>D board containing <span class="string">'X'</]]>
+    </summary>
+    
+      <category term="algorithm" scheme="http://pascocoder.github.io/tags/algorithm/"/>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java中字符串的引用传递]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/string-is-passed-by-reference-in-java/"/>
+    <id>http://pascocoder.github.io/2015/09/02/string-is-passed-by-reference-in-java/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>这是Java中的一个经典问题，stackoverflow网站上有很多类似的问题和很多不正确/不完整的答案。如果你不去多想，这个问题很简单，但是如果你多思考一会，你会觉得这个问题很令人困惑。</p>
+<h3 id="下面的一段代码既令人感兴趣又让人困惑。">下面的一段代码既令人感兴趣又让人困惑。</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String x = <span class="keyword">new</span> String(<span class="string">"ab"</span>);</span><br><span class="line">    change(x);</span><br><span class="line">    System.out.println(x);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(String x)</span> </span>&#123;</span><br><span class="line">    x = <span class="string">"cd"</span>;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">	ab</span><br><span class="line"></span><br><span class="line">在c++中，代码如下：</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(string &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="string">"cd"</span>;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string x = <span class="string">"ab"</span>;</span><br><span class="line">    change(x);</span><br><span class="line">    cout &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<pre><code><span class="built_in">cd</span>
+</code></pre><h3 id="常见的令人困惑的问题（高能预警！以下是错误解释！）">常见的令人困惑的问题（高能预警！以下是错误解释！）</h3><p>x储存一个指向内存堆中的字符串的引用，所以当x被当做参数传递给change()方法时，它依然指向这内存中的”ab”如下图</p>
+<p><img src="/assets/images/string-pass-by-reference--650x247.jpeg" alt="pic1"></p>
+<p>因为Java是按值传递的，x的值是指向”ab”的引用，当change()方法被调用，它创建了新的对象”cd”，x现在就指向了字符串对象”cd”,如下图：</p>
+<p><img src="/assets/images/string-pass-by-reference-2-650x247.jpeg" alt="pic2"></p>
+<p>这似乎是一个非常合理的解释。他们明确表示，Java是永远传递按值。但是，什么是错在这里？</p>
+<h3 id="程序究竟是怎么运行的！！！">程序究竟是怎么运行的！！！</h3><p>当字符串”ab”被创建，Java分配内存来储存字符串对象。然后这个对象分配给了变量x，其实变量x只是被分配了对象的引用，并非对象本身。引用就是对象被储存在内存中的地址。</p>
+<p>变量x包含字符串对象的引用，x不是引用，它是一个变量，只不过储存了一个引用（内存地址）（被绕晕了没…）</p>
+<p>Java只能按值传递，当x传递给了change()方法，一个x变量的副本被传递过去了，change()方法创建另一个对象”cd”，它有着和前者不同的引用，是这个变量x改变了把原本的引用改成了指向对象”cd”的引用，并不是改变了引用本身。（我快翻译哭了，原博主解释能力捉急%&gt;_&lt;%）</p>
+<p>下图能解释到底发生了什么。</p>
+<p><img src="/assets/images/string-pass-by-reference-3-650x244.jpeg" alt="pic3"></p>
+<h3 id="错误解释">错误解释</h3><p>这个问题跟前面讲到的字符串对象的不变性没有任何关系。就算是使用StringBuilder来创建，运行结果还是一样的。问题的关键在于储存引用的变量，而不是引用本身！！！</p>
+<h3 id="解决问题的方法">解决问题的方法</h3><p>首先，对象必须是可改变的，如StringBuilding。第二，要确保没有新对象被创建并分配给了参数变量，因为Java是按值传递的。</p>
+<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+    StringBuilder x = <span class="keyword">new</span> StringBuilder(<span class="string">"ab"</span>);
+    change(x);
+    System.out.println(x);
+}
+
+<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(StringBuilder x)</span> </span>{
+    x.delete(<span class="number">0</span>, <span class="number">2</span>).append(<span class="string">"cd"</span>);
+}
+</code></pre>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这是Java中的一个经典问题，stackoverflow网站上有很多类似的问题和很多不正确/不完整的答案。如果你不去多想，这个问题很简单，但是如果你多思考一会，你会觉得这个问题很令人困惑。</p>
+<h3 id="下面的一段代码既令人感兴趣又让人困惑。">下面的一段代码既令]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Start Learning iOS]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/start-learning-ios/"/>
+    <id>http://pascocoder.github.io/2015/09/02/start-learning-ios/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="基础">基础</h2><ul>
+<li>首先要熟悉面向对象编程思想：开发中会一直伴随着OOP思想，封装继承多态，提高代码的重用性，减少代码耦合。</li>
+<li>开发模式：需要先了解常用的单例模式，代理模式，观察者模式，MVC基本的原理。</li>
+<li>Objective-C：OC语法还是相当奇怪的，要对Foundation很熟悉，封装的基本数据类型之类的很了解。</li>
+<li>cocoa touch层：iOS系统分为:cocoa touch，media，core services，core os四层。cocoa touch是初学者最先打交道的一层，而UIKit框架使这层中最重要的框架，要想做iOS开发，要先熟悉UIKit框架中的各种控件，比如UIView，UIScrollView，UITabelView等大部分常见的控件和方法。</li>
+</ul>
+<h2 id="书籍">书籍</h2><ul>
+<li><a href="http://book.douban.com/subject/19962787/" target="_blank" rel="external">Objective-C编程</a></li>
+<li><a href="http://book.douban.com/subject/26287812/" target="_blank" rel="external">iOS编程</a></li>
+<li><a href="http://book.douban.com/subject/25976913/" target="_blank" rel="external">iOS编程实战</a></li>
+<li><a href="http://book.douban.com/subject/25829244/" target="_blank" rel="external">Effective Objective C 2.0</a>｜<a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">英文版</a></li>
+</ul>
+<h2 id="视频">视频</h2><ul>
+<li><a href="http://v.163.com/special/opencourse/ios7.html" target="_blank" rel="external">斯坦福公开课</a></li>
+<li>英语不好的同学看这个传智播客的<a href="http://ios.itcast.cn/ios/video.shtml" target="_blank" rel="external">培训视频</a></li>
+</ul>
+<h2 id="博客">博客</h2><p>看大牛的博客能加深对iOS的理解，不过需要自己也有一定的基础。</p>
+<ul>
+<li>大牛iOS<a href="https://github.com/tangqiaoboy/iOSBlogCN" target="_blank" rel="external">博客列表</a>(推荐使用软件inoreader来订阅博客)</li>
+</ul>
+<h2 id="网站">网站</h2><ul>
+<li><a href="http://www.objc.io/" target="_blank" rel="external">objc.io</a></li>
+<li><a href="http://objcio.cn/" target="_blank" rel="external">objcio.cn</a></li>
+<li><a href="http://www.cocoachina.com/bbs/" target="_blank" rel="external">cocoaChina</a></li>
+<li><a href="https://developer.apple.com/library/ios/navigation/" target="_blank" rel="external">苹果官网doc</a></li>
+</ul>
+<h2 id="入门开源项目">入门开源项目</h2><ul>
+<li><a href="https://github.com/dingdaojun/iOSProgramming4ed" target="_blank" rel="external">iOS Programming书籍源代码</a></li>
+<li><a href="https://github.com/logy-bai/learning-ios" target="_blank" rel="external">李明杰老师视频源代码</a></li>
+</ul>
+<h2 id="包管理工具">包管理工具</h2><ul>
+<li><a href="http://cocoapods.org/" target="_blank" rel="external">cocoapods</a></li>
+<li><a href="https://github.com/Carthage/Carthage" target="_blank" rel="external">Carthage</a></li>
+</ul>
+<h2 id="常用的开源框架">常用的开源框架</h2><p>简单介绍几个常用的，具体的请看<a href="https://github.com/vsouza/awesome-ios" target="_blank" rel="external">Awesome ios</a>，<a href="http://www.jianshu.com/p/896ea28688dc" target="_blank" rel="external">中文</a></p>
+<ol>
+<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a>: Objective-C下网络请求库。</li>
+<li><a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">MBProgressHUD</a>: 经典的透明指示层控件</li>
+<li><a href="https://github.com/tonymillion/Reachability" target="_blank" rel="external">Reachability</a>: 检测网络连接状态</li>
+</ol>
+<p>还有太多太多很好用的开源框架，全在上面的<a href="https://github.com/vsouza/awesome-ios" target="_blank" rel="external">awesome-ios</a>里面</p>
+<h2 id="其他学习资源">其他学习资源</h2><ol>
+<li><a href="https://github.com/Aufree/trip-to-iOS" target="_blank" rel="external">trip-to-iOS</a></li>
+<li><a href="http://iosdevweekly.com/" target="_blank" rel="external">iOS Dev Weekly</a>订阅邮件</li>
+<li><a href="http://iosdesign.co/" target="_blank" rel="external">iOS Design Weekly</a>订阅邮件</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="基础">基础</h2><ul>
+<li>首先要熟悉面向对象编程思想：开发中会一直伴随着OOP思想，封装继承多态，提高代码的重用性，减少代码耦合。</li>
+<li>开发模式：需要先了解常用的单例模式，代理模式，观察者模式，MVC基本的原理。</li>
+<li>Ob]]>
+    </summary>
+    
+      <category term="how-to" scheme="http://pascocoder.github.io/tags/how-to/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="start" scheme="http://pascocoder.github.io/tags/start/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[为什么Java中的字符串具有不可变性?]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/why-string-is-immutable-in-java/"/>
+    <id>http://pascocoder.github.io/2015/09/02/why-string-is-immutable-in-java/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>java中的字符串（string）是一个不可变的类，不可变的类就是这个类的实例不能被修改，当实例被创建后，这个实例的所有信息都被初始化，这些信息将不能再被修改。不可变的类有很多优点。本文总结为什么字符串类被设计为不可变的类。要回答这个问题需要深入理解内存，同步，数据结构等知识。</p>
+<h3 id="字符串池（string_pool）">字符串池（string pool）</h3><p>字符串池是方法区（Method Area，这又是什么鬼？）中的一个特殊的储存区域。当创建一个字符串时，如果这个字符串之前就已经存在于字符串池中，那么就会返回这个之前就已经存在字符串的引用，而不是去创建一个新的实例对象并返回引用。</p>
+<p>下面的代码只会创建一个字符串实例对象在内存堆中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String string1 = <span class="string">"abcd"</span>;</span><br><span class="line">String string2 = <span class="string">"abcd"</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/images/java-string-pool.jpeg" alt="pic1"></p>
+<h3 id="缓存哈希码（caching_hashcode）">缓存哈希码（caching hashcode）</h3><p>字符串的hashcode在Java中很用，如HashMap。具有了不可变性就保证了hashcode不会变化，所以就可以缓存hashcode而不必担心它会发生。这就意味着，当不可变类的实例对象每次被使用就不需要再去计算它的hashcode。这样更有效率。</p>
+<p>在字符串类里，有下面的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> hash;<span class="comment">//this is used to cache hash code.</span></span><br></pre></td></tr></table></figure>
+<h3 id="方便其他类的使用">方便其他类的使用</h3><p>为了更具体的理解，请看下面的程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HashSet&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">set.add(<span class="keyword">new</span> String(<span class="string">"a"</span>));</span><br><span class="line">set.add(<span class="keyword">new</span> String(<span class="string">"b"</span>));</span><br><span class="line">set.add(<span class="keyword">new</span> String(<span class="string">"c"</span>));</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span>(String a: set)</span><br><span class="line">    a.value = <span class="string">"a"</span>;</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，如果字符串类的实例是可变的，那么这些值就会被改变进而违反了hashset的设计原则（hashset只包含不重复的元素）。这个例子只是为了简单理解，实际上真正的字符串类没有value字段。（就是说a.value是语法错误的，作者为了让大家理解自己造的…实际上上面的代码执行后并没有改变set里的值，输出的仍然是abc。不知道这样说大家理解了没。）</p>
+<p>###安全性</p>
+<p>在很多java类中，字符串被广泛的当做参数，比如网络连接，打开文件等等类，如果字符串不具有不变性，上述的网络连接，文件将会改变，导致一系列的安全问题。该方法认为它连接到一台电脑，但其实并不是这样的。可变的字符串同样会导致安全问题映射，因为这些参数都是字符串。</p>
+<p>  下面是例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">connect</span><span class="params">(string s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!isSecure(s)) &#123; </span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SecurityException(); </span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//here will cause problem, if s is changed before this by using other references. </span></span><br><span class="line"><span class="comment">//如果在这之前通过使用其他的引用改变了s的值，那这里就会出现问题   </span></span><br><span class="line">    causeProblem(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不可变的对象是线程安全的">不可变的对象是线程安全的</h3><p>因为不可变的对象是不能被修改的，所以他们就能在多个线程之间自由的共享。这就从根本上消除了在不同线程之间做同步的需求。</p>
+<p>总之，字符串为了效率和安全的原因被设计成不可变的，这也是为什么一般情况下不可变类更受青睐。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>java中的字符串（string）是一个不可变的类，不可变的类就是这个类的实例不能被修改，当实例被创建后，这个实例的所有信息都被初始化，这些信息将不能再被修改。不可变的类有很多优点。本文总结为什么字符串类被设计为不可变的类。要回答这个问题需要深入理解内存，同步，数据结构等知]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[在GitHub Pages上快速搭建自己的博客]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/"/>
+    <id>http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>###Jekyll-Bootstrap<br><a href="http://jekyllbootstrap.com/" target="_blank" rel="external">Jekyll-Bootstrap</a>是一个基于Jekyll的博客框架。<a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html" target="_blank" rel="external">Jekyll介绍</a>。</p>
+<p>###Jekyll搭建博客的优点</p>
+<ul>
+<li>支持markdown和textile</li>
+<li>使用git管理</li>
+<li>使用terminal发布</li>
+<li>没有数据库</li>
+</ul>
+<p>###3分钟在GitHub-Pages上搭建自己的博客<br><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll快速开始</a></p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[This is my first GitHub-Pages article.]]>
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://pascocoder.github.io/tags/Blog/"/>
+    
+      <category term="GitHub" scheme="http://pascocoder.github.io/tags/GitHub/"/>
+    
+      <category term="Jekyll-Bootstrap" scheme="http://pascocoder.github.io/tags/Jekyll-Bootstrap/"/>
+    
+      <category term="Pages" scheme="http://pascocoder.github.io/tags/Pages/"/>
+    
+      <category term="GitHub" scheme="http://pascocoder.github.io/categories/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[快速排序思想及Java实现]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/quick-sort/"/>
+    <id>http://pascocoder.github.io/2015/09/02/quick-sort/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;## &#31639;&#27861;&#24605;&#24819;&#10;&#24555;&#36895;&#25490;&#24207;&#30340;&#31639;&#27861;&#24605;&#24819;&#20854;&#23454;&#27604;&#36739;&#31616;&#21333;&#65292;&#20808;&#25214;&#20986;&#19968;&#20010;&#25968;&#20316;&#20026;&#22522;&#20934;&#25968;&#65288;&#36825;&#37324;&#21462;&#25968;&#32452;&#26368;&#20013;&#38388;&#30340;&#19968;&#20301;&#65289;&#12290;&#23450;&#20041;&#20004;&#20010;&#21464;&#37327;&#20316;&#20026;&#8220;&#21736;&#20853;&#8221;&#65292;&#28982;&#21518;&#20998;&#21035;&#20174;&#21518;&#21521;&#21069;&#65292;&#20174;&#21069;&#21521;&#21518;&#20004;&#20010;&#26041;&#21521;&#21435;&#8220;&#25506;&#27979;&#8221;&#65306;&#10;&#10;1. &#20174;&#21518;&#21521;&#21069;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#23567;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;2. &#20174;&#21069;&#21521;&#21518;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#22823;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;3. &#22914;&#26524;&#20004;&#20010;&#26041;&#21521;&#30340;&#8220;&#25506;&#27979;&#8221;&#37117;&#25214;&#21040;&#20102;&#31526;&#21512;&#35201;&#27714;&#30340;&#25968;&#25454;&#65292;&#21017;&#20132;&#25442;&#25968;&#25454;&#65292;&#32487;&#32493;&#39034;&#30528;&#26041;&#21521;&#23547;&#25214;&#10;4. &#30452;&#21040;&#20004;&#20010;&#21736;&#20853;&#30896;&#21040;&#19968;&#36215;&#65292;&#27492;&#26102;&#25226;&#30456;&#36935;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#21644;&#22522;&#20934;&#25968;&#65288;&#21363;&#25968;&#32452;&#30340;&#20013;&#38388;&#20301;&#65289;&#20132;&#25442;&#25968;&#25454;&#10;5. &#27492;&#26102;&#65292;&#22522;&#20934;&#25968;&#24038;&#20391;&#30340;&#25968;&#37117;&#23567;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#20391;&#30340;&#25968;&#37117;&#22823;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#10;6. &#21516;&#26679;&#30340;&#26041;&#27861;&#21435;&#8220;&#25506;&#27979;&#8221;&#22522;&#20934;&#25968;&#24038;&#20391;&#21644;&#21491;&#20391;&#30340;&#25968;&#25454;&#65288;&#20351;&#29992;&#36882;&#24402;&#65289;&#10;&#10;&#10;&#27604;&#22914;&#26377;&#19979;&#38754;&#19968;&#20010;&#25968;&#32452;:&#10;&#10;&#9;6&#65292;1&#65292;2&#65292;7&#65292;9&#65292;3&#65292;4&#65292;5&#65292;10&#65292;8&#9;&#10;&#10;&#25105;&#20204;&#38656;&#35201;&#33258;&#24049;&#23450;&#20041;&#20960;&#20010;&#21464;&#37327;&#65306;&#10;* low : &#25968;&#32452;&#30340;&#26368;&#20302;&#20301;&#10;* high : &#25968;&#32452;&#30340;&#26368;&#39640;&#20301;&#10;* pivot : &#25968;&#32452;&#30340;&#22522;&#20934;&#20301;&#10;&#10;quickSort(low=0,high=9)&#10;&#9;6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;&#9;&#8593;           &#8593;               &#8593;&#10;&#9;i         pivot             j&#10;&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;&#9;&#9;i++&#10;&#10;        6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;                    &#8593;               &#8593;&#10;                  pivot             j&#10;&#9;&#9;    &#8593;&#10;&#9;&#9;    i&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;            exchange(i,j)&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                    &#8593;               &#8593;&#10;                    i               j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                                 &#8593;  &#8593;&#10;                                 i  j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                             &#8593;   &#8593;&#10;                             j   i&#10;&#10;&#9;&#9;   i&#62;j&#10;&#9;&#9;&#19981;&#20132;&#25442;&#25968;&#25454;&#10;&#9;      &#160;&#27492;&#26102;i=8,j=7&#10;&#10;&#20351;&#29992;&#36882;&#24402;&#20998;&#21035;&#25191;&#34892;&#10;quicksort(low,high=i)&#10;quicksort(low=j,high)&#10;&#10;##Java&#23454;&#29616;&#10;```java&#10;public class Quicksort  &#123;&#10;  private int[] numbers;&#10;  private int number;&#10;&#10;  public void sort(int[] values) &#123;&#10;    // &#26816;&#26597;&#25968;&#32452;&#26159;&#21542;&#20026;&#31354;&#10;    if (values ==null || values.length==0)&#123;&#10;      return;&#10;    &#125;&#10;    this.numbers = values;&#10;    number = values.length;&#10;    quicksort(0, number - 1);&#10;  &#125;&#10;&#10;  private void quicksort(int low, int high) &#123;&#10;    int i = low, j = high;&#10;    // &#25226;&#25968;&#32452;&#20013;&#38388;&#30340;&#20803;&#32032;&#35774;&#32622;&#20026;&#22522;&#20934;&#25968;&#10;    int pivot = numbers[low + (high-low)/2];&#10;&#10;    // &#20998;&#24320;&#25104;&#20004;&#20010;&#25968;&#32452;&#10;    while (i &#60;= j) &#123;&#10;    //&#20174;&#24038;&#21521;&#21491;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[i] &#60; pivot) &#123;&#10;        i++;&#10;      &#125;&#10;      //&#20174;&#21491;&#21521;&#24038;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[j] &#62; pivot) &#123;&#10;        j--;&#10;      &#125;&#10;&#10;      // &#22914;&#26524;&#24038;&#36793;&#25506;&#27979;&#32467;&#26524;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#36793;&#25506;&#27979;&#32467;&#26524;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#37027;&#20040;&#20132;&#25442;&#36825;&#20004;&#20010;&#20803;&#32032;&#10;      // &#28982;&#21518;&#32487;&#32493;&#25506;&#27979;&#10;      if (i &#60;= j) &#123;&#10;        exchange(i, j);&#10;        i++;&#10;        j--;&#10;      &#125;&#10;    &#125;&#10;    // &#36882;&#24402;&#10;    if (low &#60; j)&#10;      quicksort(low, j);&#10;    if (i &#60; high)&#10;      quicksort(i, high);&#10;  &#125;&#10;&#10;  private void exchange(int i, int j) &#123;&#10;    int temp = numbers[i];&#10;    numbers[i] = numbers[j];&#10;    numbers[j] = temp;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutte]]>
+    </summary>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
+    
+      <category term="quick sort" scheme="http://pascocoder.github.io/tags/quick-sort/"/>
+    
+      <category term="sort" scheme="http://pascocoder.github.io/tags/sort/"/>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[leetcode No.198 House Robber]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/"/>
+    <id>http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night</strong>.</p>
+<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight <strong>without alerting the police</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="解题思路">解题思路</h2><p>本题采用动态规划思想：</p>
+<pre><code>抢劫<span class="keyword">n</span>间房子的金钱总和＝<span class="literal">MAX</span>( 抢劫<span class="keyword">n</span>-2间房子的金钱总和＋第<span class="keyword">n</span>间房子的金钱 , 抢劫<span class="keyword">n</span>-1间房子的金钱总和 )
+</code></pre><hr>
+<h2 id="Java代码">Java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//如果总共有0个房子，则返回0</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//如果总共有1个房子，那么返回这个房子里的金钱</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">1</span>)</span><br><span class="line">    		<span class="keyword">return</span> num[<span class="number">0</span>];</span><br><span class="line">	<span class="comment">//如果总共有两个房子，那么抢劫钱多的那个房子</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">2</span>)</span><br><span class="line">    		<span class="keyword">return</span> Math.max(num[<span class="number">0</span>], num[<span class="number">1</span>]);</span><br><span class="line">	<span class="comment">//如果房屋数大于2</span></span><br><span class="line">	<span class="comment">//先分别算出只有一间房子时抢劫金钱数prior</span></span><br><span class="line">	<span class="comment">//和只有两间房子时的抢劫金钱数next</span></span><br><span class="line">	<span class="comment">//prior可能等于next</span></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> prior=num[<span class="number">0</span>];</span><br><span class="line">    	<span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> next=Math.max(num[<span class="number">0</span>],num[<span class="number">1</span>]);</span><br><span class="line">    	<span class="comment">//当有三间房子的时候</span></span><br><span class="line">	<span class="comment">//抢劫金钱最大数要么等于只有两间房子时的最大数</span></span><br><span class="line">	<span class="comment">//要么等于只有一间房子的金钱数＋第三间房子的金钱数</span></span><br><span class="line">	<span class="comment">//以此类推4间房子、5间房子、等等</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=num.length;i++)&#123;</span><br><span class="line">        	temp=prior;</span><br><span class="line">        	prior=next;</span><br><span class="line">        	next=Math.max(temp+num[i-<span class="number">1</span>], prior);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(prior, next);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount ]]>
+    </summary>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
+    
+      <category term="Dynamic Programming" scheme="http://pascocoder.github.io/tags/Dynamic-Programming/"/>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java可变参数]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/java-varargs-examples/"/>
+    <id>http://pascocoder.github.io/2015/09/02/java-varargs-examples/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"a"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String ... s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String a: s)</span><br><span class="line">        System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-_可变参数是怎样工作的？">1. 可变参数是怎样工作的？</h3><p>当使用可变参数功能时，实际上会先创建一个数组，大小为调用位置传过来参数的数量。然后把参数的值放进数组，最后把数组当做参数传进方法（method）中。</p>
+<h3 id="2-_什么时候使用可变参数？">2. 什么时候使用可变参数？</h3><p>作为其定义，当方法需要处理任意数量的对象时，可变参数是非常有用的。Java SDK中的 String.format(String format, Object… args) 就是一个很好的例子。字符串可以格式化任何数目的参数，使用了可变参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"An integer: %d"</span>, i);</span><br><span class="line">String.format(<span class="string">"An integer: %d and a string: %s"</span>, i, s);</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[图解Java 字符串的不变性]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/diagram-to-show-java-strings-immutability/"/>
+    <id>http://pascocoder.github.io/2015/09/02/diagram-to-show-java-strings-immutability/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>本篇文章用一组图表来说明Java的String不变性。</p>
+<h3 id="声明一个字符串">声明一个字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"abcd"</span>;</span><br></pre></td></tr></table></figure>
+<p>变量s储存字符串对象的引用，下面的箭头应该解释为‘字符串变量s储存字符串’abcd’的引用’。</p>
+<p><img src="/assets/images/String-Immutability-1.jpeg" alt="pic1"></p>
+<h3 id="把一个字符变量复制给另一个字符变量">把一个字符变量复制给另一个字符变量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s2 = s;</span><br></pre></td></tr></table></figure>
+<p>S2也储存同样的引用，因为引用了同样的字符串对象。</p>
+<p><img src="/assets/images/String-Immutability-2.jpeg" alt="pic2"></p>
+<h3 id="拼接字符串">拼接字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = s.concat(<span class="string">"ef"</span>);</span><br></pre></td></tr></table></figure>
+<p>s现在储存新建字符串对象的引用。</p>
+<p><img src="/assets/images/String-Immutability-650x279.jpeg" alt="pic3"></p>
+<h3 id="总结">总结</h3><p> 一旦字符串对象在内存（堆）中被创建，就不能再被改变。所有字符串方法都不能改变字符串对象，但是可以返回一个新建的字符串对象。</p>
+<p>如果你需要一个可以被修改的字符串，则需要使用StringBuffer或者StringBuilder。否则，将会大量的时间浪费在垃圾回收上（Garbage Collection），因为每次都会创建一个新的String对象在内存上。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本篇文章用一组图表来说明Java的String不变性。</p>
+<h3 id="声明一个字符串">声明一个字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span clas]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[创建字符串，用双引号“ ” 还是 用构造器（Constructor）]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/"/>
+    <id>http://pascocoder.github.io/2015/09/02/create-java-string-by-double-quotes-vs-by-constructor/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>在Java中，创建字符串有两种方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String x = <span class="string">"abc"</span>;</span><br><span class="line">String y = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br></pre></td></tr></table></figure>
+<p>那么问题来了，创建字符串到底哪家强？</p>
+<h2 id="双引号_vs_构造器">双引号 vs 构造器</h2><p>这个问题可以有下面两个简单的例子回答</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="string">"abcd"</span>;</span><br><span class="line">String b = <span class="string">"abcd"</span>;</span><br><span class="line">System.out.println(a == b);  <span class="comment">// True</span></span><br><span class="line">System.out.println(a.equals(b)); <span class="comment">// True</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<p>a == b 返回true是因为 a 和 b 引用了方法区类同一个字符串。内存引用是相同的，当同样的字符串多次被创建，只有一个字符串的值被储存，这就是所谓的“字符串驻留”，Java中所有编译期间的常量字符串将会自动驻留。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String c = <span class="keyword">new</span> String(<span class="string">"abcd"</span>);</span><br><span class="line">String d = <span class="keyword">new</span> String(<span class="string">"abcd"</span>);</span><br><span class="line">System.out.println(c == d);  <span class="comment">// False</span></span><br><span class="line">System.out.println(c.equals(d)); <span class="comment">// True</span></span><br></pre></td></tr></table></figure>
+<p>c == d 返回false因为 c 和 d 引用了内存堆中的不同对象，不同的对象有不同的内存引用。</p>
+<p>下面的图可以说明上面的原因：</p>
+<p><img src="/assets/images/constructor-vs-double-quotes-Java-String-New-Page-650x324.png" alt="pic1"> </p>
+<h2 id="运行期（Run-Time）字符串驻留">运行期（Run-Time）字符串驻留</h2><p>字符串驻留也会发生在运行期，即使两个字符串都是使用构造器创建：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String c = <span class="keyword">new</span> String(<span class="string">"abcd"</span>).intern();</span><br><span class="line">String d = <span class="keyword">new</span> String(<span class="string">"abcd"</span>).intern();</span><br><span class="line">System.out.println(c == d);  <span class="comment">// Now true</span></span><br><span class="line">System.out.println(c.equals(d)); <span class="comment">// True</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h2 id="什么时候该使用哪一种呢？">什么时候该使用哪一种呢？</h2><p>因为字符串“abcd”已经是字符串类型了，使用构造器会创建一个额外不必要的对象，因此，你应该使用双引号来创建字符串。</p>
+<p>如果你真的需要在内存堆中创建一个新的对象，就应该使用构造器。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在Java中，创建字符串有两种方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java中的 null 到底是什么？]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/what-exactly-is-null-in-java/"/>
+    <id>http://pascocoder.github.io/2015/09/02/what-exactly-is-null-in-java/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>先看下面的声明语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+<p>这个声明语句到底做了什么</p>
+<p>回想一下，什么是变量？什么是值？一个常见的比喻就是：变量就像是一个盒子，你可以用盒子来存放东西，你可以用变量来存放值。当声明一个变量，我们需要设置它的类型。</p>
+<p>Java中主要有两大类：基本数据类型和引用。声明为基本数据类型的变量存储值，声明为引用类型的变量存储引用。上面的表达式中，初始化语句声明一个变量“x”。“x”存储字符串引用。在这里是 null。</p>
+<p>看下图可以更清楚的理解这个概念。</p>
+<p><img src="/assets/images/what-is-null-150x150.png" alt="pic1"></p>
+<p>如果是 x = “abc”，会像下图所示：</p>
+<p><img src="/assets/images/variable-reference-300x144.png" alt="pic2"></p>
+<h3 id="null在内存中是什么？">null在内存中是什么？</h3><p>null在内存中是什么？或者说Java中的 null是什么？</p>
+<p>首先，null不是一个有效的对象实例，所以并没有给它分配内存。它是一个表示对象的引用还没有指向一个对象的值。</p>
+<p><a href="http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.4" target="_blank" rel="external">JVM规范</a>中：</p>
+<blockquote>
+<p>The Java Virtual Machine specification does not mandate a concrete value encoding null.<br>Java虚拟机规范并没有强制要求一个具体的值编码为空<br>x 在内存里是什么？</p>
+</blockquote>
+<p>现在我们知道了 null是什么。我们也知道变量是一个储存位置相关的符号名（标示符），它包含了值，x在内存中是什么？</p>
+<p>从JVM 运行时数据区的图看来，因为每个方法在线程栈 (thread’stack)中都有私人栈帧 (private stack frame)，局部变量就位于这个栈帧中。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>先看下面的声明语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Objective-C数组排序]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/Objective-C-Sorting-an-array/"/>
+    <id>http://pascocoder.github.io/2015/09/02/Objective-C-Sorting-an-array/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Objective C中常用的数组排序有以下几种方法:</p>
+<ol>
+<li>sortedArrayUsingSelector:</li>
+<li>sortedArrayUsingComparator:</li>
+<li>sortedArrayUsingDescriptors:</li>
+</ol>
+<h2 id="1-_简单排序（sortedArrayUsingSelector:）">1. 简单排序（sortedArrayUsingSelector:）</h2><p>如果只是对字符串的排序，可以利用sortedArrayUsingSelector:方法就可以了，代码如下</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简单排序</span></span><br><span class="line"><span class="keyword">void</span> sortArray1()&#123;</span><br><span class="line">    <span class="built_in">NSArray</span> *array = [<span class="built_in">NSArray</span> arrayWithObjects:<span class="string">@"abc"</span>,<span class="string">@"456"</span>,<span class="string">@"123"</span>,<span class="string">@"789"</span>,<span class="string">@"ef"</span>, <span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingSelector:<span class="keyword">@selector</span>(compare:)];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，除了利用字符串自带的compare:方法，也可以自己写compare:方法，进行对象的比较；如下：<br>首先是新建了Person类，实现方法如下（头文件就省了）：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"Person.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//直接实现静态方法，获取带有name和age的Person对象</span></span><br><span class="line">+(Person *)personWithAge:(<span class="keyword">int</span>) age withName:(<span class="built_in">NSString</span> *)name&#123;</span><br><span class="line">    Person *person = [[Person alloc] init];</span><br><span class="line">    person<span class="variable">.age</span> = age;</span><br><span class="line">    person<span class="variable">.name</span> = name;</span><br><span class="line">    <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义排序方法</span></span><br><span class="line">-(<span class="built_in">NSComparisonResult</span>)comparePerson:(Person *)person&#123;</span><br><span class="line">  <span class="comment">//默认按年龄排序</span></span><br><span class="line">    <span class="built_in">NSComparisonResult</span> result = [[<span class="built_in">NSNumber</span> numberWithInt:person<span class="variable">.age</span>] compare:[<span class="built_in">NSNumber</span> numberWithInt:<span class="keyword">self</span><span class="variable">.age</span>]];<span class="comment">//注意:基本数据类型要进行数据转换</span></span><br><span class="line">  <span class="comment">//如果年龄一样，就按照名字排序</span></span><br><span class="line">    <span class="keyword">if</span> (result == <span class="built_in">NSOrderedSame</span>) &#123;</span><br><span class="line">        result = [<span class="keyword">self</span><span class="variable">.name</span> compare:person<span class="variable">.name</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>主函数代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> sortArray2()&#123;</span><br><span class="line">    Person *p1 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"zhangsan"</span>];</span><br><span class="line">    Person *p2 = [Person personWithAge:<span class="number">21</span> withName:<span class="string">@"lisi"</span>];</span><br><span class="line">    Person *p3 = [Person personWithAge:<span class="number">24</span> withName:<span class="string">@"wangwu"</span>];</span><br><span class="line">    Person *p4 = [Person personWithAge:<span class="number">24</span> withName:<span class="string">@"liwu"</span>];</span><br><span class="line">    Person *p5 = [Person personWithAge:<span class="number">20</span> withName:<span class="string">@"liwu"</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *array = [<span class="built_in">NSArray</span> arrayWithObjects:p1,p2,p3,p4,p5, <span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingSelector:<span class="keyword">@selector</span>(comparePerson:)];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-_利用block语法（sortedArrayUsingComparator:）">2. 利用block语法（sortedArrayUsingComparator:）</h2><p>苹果官方提供了block语法，比较方便。其中数组排序可以用sortedArrayUsingComparator:方法，代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> sortArray3()&#123;</span><br><span class="line">    <span class="built_in">NSArray</span> *array = [<span class="built_in">NSArray</span> arrayWithObjects:<span class="string">@"1bc"</span>,<span class="string">@"4b6"</span>,<span class="string">@"123"</span>,<span class="string">@"789"</span>,<span class="string">@"3ef"</span>, <span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="keyword">id</span> obj1, <span class="keyword">id</span> obj2) &#123;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//这里的代码可以参照上面compare:默认的排序方法，也可以把自定义的方法写在这里，给对象排序</span></span><br><span class="line">        <span class="built_in">NSComparisonResult</span> result = [obj1 compare:obj2];</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"排序后:%@"</span>,sortedArray);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-_高级排序（sortedArrayUsingDescriptors:）">3. 高级排序（sortedArrayUsingDescriptors:）</h2><p>如果是这样一种情况呢？Person类里有另外一个类的变量，比如说Person类除了name，age变量，还有一辆车Car类型，Car类里有个 name属性。对Person对象进行排序，有这样的要求：按照Car的name排序，如果是同一辆车，也就是Car的name相同，那么再按照年龄进行 排序，如果年龄也相同，最后按照Person的name进行排序。</p>
+<p>上面这样就要使用第三种方法，利用排序描述器，不多说，有兴趣可以看看API介绍。代码如下：</p>
+<p>首先写个Car类，实现类Car.m代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"Car.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Car</span></span></span><br><span class="line"></span><br><span class="line">+(Car *)initWithName:(<span class="built_in">NSString</span> *)name&#123;</span><br><span class="line">    Car *car = [Car alloc] init];</span><br><span class="line">    car<span class="variable">.name</span> = name;</span><br><span class="line">    <span class="keyword">return</span> car;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>然后改写Person类，实现类Person.m代码如下:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"Person.h"</span></span></span><br><span class="line"><span class="preprocessor">#import <span class="title">"Car.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></span><br><span class="line"></span><br><span class="line">+(Person *)personWithAge:(<span class="keyword">int</span>)age withName:(<span class="built_in">NSString</span> *)name withCar:(Car *)car&#123;</span><br><span class="line">    Person *person = [[Person alloc] init];</span><br><span class="line">    person<span class="variable">.age</span> = age;</span><br><span class="line">    person<span class="variable">.name</span> = name;</span><br><span class="line">    person<span class="variable">.car</span> = car;</span><br><span class="line">    <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这里重写description方法，用于最后测试排序结果显示</span></span><br><span class="line">-(<span class="built_in">NSString</span> *)description&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"age is %zi , name is %@, car is %@"</span>,_age,_name,_car<span class="variable">.name</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>主函数代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> sortArray4()&#123;</span><br><span class="line">        <span class="comment">//首先来3辆车，分别是奥迪、劳斯莱斯、宝马</span></span><br><span class="line">        Car *car1 = [Car initWithName:<span class="string">@"Audio"</span>];</span><br><span class="line">        Car *car2 = [Car initWithName:<span class="string">@"Rolls-Royce"</span>];</span><br><span class="line">        Car *car3 = [Car initWithName:<span class="string">@"BMW"</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//再来5个Person，每人送辆车，分别为car2、car1、car1、car3、car2</span></span><br><span class="line">        Person *p1 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"zhangsan"</span> withCar:car2];</span><br><span class="line">        Person *p2 = [Person personWithAge:<span class="number">21</span> withName:<span class="string">@"zhangsan"</span> withCar:car1];</span><br><span class="line">        Person *p3 = [Person personWithAge:<span class="number">24</span> withName:<span class="string">@"lisi"</span> withCar:car1];</span><br><span class="line">        Person *p4 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"wangwu"</span> withCar:car3];</span><br><span class="line">        Person *p5 = [Person personWithAge:<span class="number">23</span> withName:<span class="string">@"wangwu"</span> withCar:car2];</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">        <span class="comment">//加入数组</span></span><br><span class="line">        <span class="built_in">NSArray</span> *array = [<span class="built_in">NSArray</span> arrayWithObjects:p1,p2,p3,p4,p5, <span class="literal">nil</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//构建排序描述器</span></span><br><span class="line">        <span class="built_in">NSSortDescriptor</span> *carNameDesc = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"car.name"</span> ascending:<span class="literal">YES</span>];</span><br><span class="line">        <span class="built_in">NSSortDescriptor</span> *personNameDesc = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"name"</span> ascending:<span class="literal">YES</span>];</span><br><span class="line">        <span class="built_in">NSSortDescriptor</span> *personAgeDesc = [<span class="built_in">NSSortDescriptor</span> sortDescriptorWithKey:<span class="string">@"age"</span> ascending:<span class="literal">YES</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//把排序描述器放进数组里，放入的顺序就是你想要排序的顺序</span></span><br><span class="line">        <span class="comment">//我这里是：首先按照年龄排序，然后是车的名字，最后是按照人的名字</span></span><br><span class="line">        <span class="built_in">NSArray</span> *descriptorArray = [<span class="built_in">NSArray</span> arrayWithObjects:personAgeDesc,carNameDesc,personNameDesc, <span class="literal">nil</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSArray</span> *sortedArray = [array sortedArrayUsingDescriptors: descriptorArray];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,sortedArray);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果如下：<br>从结果看出，先按照age排序，如果age相同，按照car排序，如果car相同，按照name排序。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Objective C中常用的数组排序有以下几种方法:</p>
+<ol>
+<li>sortedArrayUsingSelector:</li>
+<li>sortedArrayUsingComparator:</li>
+<li>sortedArrayUsingDescript]]>
+    </summary>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="排序" scheme="http://pascocoder.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,720 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="O ever youthful, O ever weeping." />
+
+
+
+  <meta name="keywords" content="Algorithm,quick sort,sort," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pasco's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="快速排序快速排序是最常用的排序算法之一，相比于时间复杂度为O(N2)的冒泡排序算法，快速排序的时间复杂度只是1&amp;#10;## &amp;#31639;&amp;#27861;&amp;#24605;&amp;#24819;&amp;#10;&amp;#24555;&amp;#36895;&amp;#25490;&amp;#24207;&amp;#30340;&amp;#31639;&amp;#27861;&amp;#24605;&amp;#24819;&amp;#20854;&amp;#23454;&amp;#27604;&amp;#36">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速排序思想及Java实现">
+<meta property="og:url" content="http://pascocoder.github.io/2015/09/02/quick-sort/index.html">
+<meta property="og:site_name" content="Pasco's blog">
+<meta property="og:description" content="快速排序快速排序是最常用的排序算法之一，相比于时间复杂度为O(N2)的冒泡排序算法，快速排序的时间复杂度只是1&amp;#10;## &amp;#31639;&amp;#27861;&amp;#24605;&amp;#24819;&amp;#10;&amp;#24555;&amp;#36895;&amp;#25490;&amp;#24207;&amp;#30340;&amp;#31639;&amp;#27861;&amp;#24605;&amp;#24819;&amp;#20854;&amp;#23454;&amp;#27604;&amp;#36">
+<meta property="og:updated_time" content="2015-09-02T02:43:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快速排序思想及Java实现">
+<meta name="twitter:description" content="快速排序快速排序是最常用的排序算法之一，相比于时间复杂度为O(N2)的冒泡排序算法，快速排序的时间复杂度只是1&amp;#10;## &amp;#31639;&amp;#27861;&amp;#24605;&amp;#24819;&amp;#10;&amp;#24555;&amp;#36895;&amp;#25490;&amp;#24207;&amp;#30340;&amp;#31639;&amp;#27861;&amp;#24605;&amp;#24819;&amp;#20854;&amp;#23454;&amp;#27604;&amp;#36">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 快速排序思想及Java实现 | Pasco's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7df0feee828233ba1c899e0e9f9a619c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Pasco's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              快速排序思想及Java实现
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
+            2015-09-02
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                  <span itemprop="name">Algorithm</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/02/quick-sort/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/quick-sort/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;## &#31639;&#27861;&#24605;&#24819;&#10;&#24555;&#36895;&#25490;&#24207;&#30340;&#31639;&#27861;&#24605;&#24819;&#20854;&#23454;&#27604;&#36739;&#31616;&#21333;&#65292;&#20808;&#25214;&#20986;&#19968;&#20010;&#25968;&#20316;&#20026;&#22522;&#20934;&#25968;&#65288;&#36825;&#37324;&#21462;&#25968;&#32452;&#26368;&#20013;&#38388;&#30340;&#19968;&#20301;&#65289;&#12290;&#23450;&#20041;&#20004;&#20010;&#21464;&#37327;&#20316;&#20026;&#8220;&#21736;&#20853;&#8221;&#65292;&#28982;&#21518;&#20998;&#21035;&#20174;&#21518;&#21521;&#21069;&#65292;&#20174;&#21069;&#21521;&#21518;&#20004;&#20010;&#26041;&#21521;&#21435;&#8220;&#25506;&#27979;&#8221;&#65306;&#10;&#10;1. &#20174;&#21518;&#21521;&#21069;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#23567;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;2. &#20174;&#21069;&#21521;&#21518;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#22823;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;3. &#22914;&#26524;&#20004;&#20010;&#26041;&#21521;&#30340;&#8220;&#25506;&#27979;&#8221;&#37117;&#25214;&#21040;&#20102;&#31526;&#21512;&#35201;&#27714;&#30340;&#25968;&#25454;&#65292;&#21017;&#20132;&#25442;&#25968;&#25454;&#65292;&#32487;&#32493;&#39034;&#30528;&#26041;&#21521;&#23547;&#25214;&#10;4. &#30452;&#21040;&#20004;&#20010;&#21736;&#20853;&#30896;&#21040;&#19968;&#36215;&#65292;&#27492;&#26102;&#25226;&#30456;&#36935;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#21644;&#22522;&#20934;&#25968;&#65288;&#21363;&#25968;&#32452;&#30340;&#20013;&#38388;&#20301;&#65289;&#20132;&#25442;&#25968;&#25454;&#10;5. &#27492;&#26102;&#65292;&#22522;&#20934;&#25968;&#24038;&#20391;&#30340;&#25968;&#37117;&#23567;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#20391;&#30340;&#25968;&#37117;&#22823;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#10;6. &#21516;&#26679;&#30340;&#26041;&#27861;&#21435;&#8220;&#25506;&#27979;&#8221;&#22522;&#20934;&#25968;&#24038;&#20391;&#21644;&#21491;&#20391;&#30340;&#25968;&#25454;&#65288;&#20351;&#29992;&#36882;&#24402;&#65289;&#10;&#10;&#10;&#27604;&#22914;&#26377;&#19979;&#38754;&#19968;&#20010;&#25968;&#32452;:&#10;&#10;&#9;6&#65292;1&#65292;2&#65292;7&#65292;9&#65292;3&#65292;4&#65292;5&#65292;10&#65292;8&#9;&#10;&#10;&#25105;&#20204;&#38656;&#35201;&#33258;&#24049;&#23450;&#20041;&#20960;&#20010;&#21464;&#37327;&#65306;&#10;* low : &#25968;&#32452;&#30340;&#26368;&#20302;&#20301;&#10;* high : &#25968;&#32452;&#30340;&#26368;&#39640;&#20301;&#10;* pivot : &#25968;&#32452;&#30340;&#22522;&#20934;&#20301;&#10;&#10;quickSort(low=0,high=9)&#10;&#9;6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;&#9;&#8593;           &#8593;               &#8593;&#10;&#9;i         pivot             j&#10;&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;&#9;&#9;i++&#10;&#10;        6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;                    &#8593;               &#8593;&#10;                  pivot             j&#10;&#9;&#9;    &#8593;&#10;&#9;&#9;    i&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;            exchange(i,j)&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                    &#8593;               &#8593;&#10;                    i               j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                                 &#8593;  &#8593;&#10;                                 i  j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                             &#8593;   &#8593;&#10;                             j   i&#10;&#10;&#9;&#9;   i&#62;j&#10;&#9;&#9;&#19981;&#20132;&#25442;&#25968;&#25454;&#10;&#9;      &#160;&#27492;&#26102;i=8,j=7&#10;&#10;&#20351;&#29992;&#36882;&#24402;&#20998;&#21035;&#25191;&#34892;&#10;quicksort(low,high=i)&#10;quicksort(low=j,high)&#10;&#10;##Java&#23454;&#29616;&#10;```java&#10;public class Quicksort  &#123;&#10;  private int[] numbers;&#10;  private int number;&#10;&#10;  public void sort(int[] values) &#123;&#10;    // &#26816;&#26597;&#25968;&#32452;&#26159;&#21542;&#20026;&#31354;&#10;    if (values ==null || values.length==0)&#123;&#10;      return;&#10;    &#125;&#10;    this.numbers = values;&#10;    number = values.length;&#10;    quicksort(0, number - 1);&#10;  &#125;&#10;&#10;  private void quicksort(int low, int high) &#123;&#10;    int i = low, j = high;&#10;    // &#25226;&#25968;&#32452;&#20013;&#38388;&#30340;&#20803;&#32032;&#35774;&#32622;&#20026;&#22522;&#20934;&#25968;&#10;    int pivot = numbers[low + (high-low)/2];&#10;&#10;    // &#20998;&#24320;&#25104;&#20004;&#20010;&#25968;&#32452;&#10;    while (i &#60;= j) &#123;&#10;    //&#20174;&#24038;&#21521;&#21491;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[i] &#60; pivot) &#123;&#10;        i++;&#10;      &#125;&#10;      //&#20174;&#21491;&#21521;&#24038;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[j] &#62; pivot) &#123;&#10;        j--;&#10;      &#125;&#10;&#10;      // &#22914;&#26524;&#24038;&#36793;&#25506;&#27979;&#32467;&#26524;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#36793;&#25506;&#27979;&#32467;&#26524;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#37027;&#20040;&#20132;&#25442;&#36825;&#20004;&#20010;&#20803;&#32032;&#10;      // &#28982;&#21518;&#32487;&#32493;&#25506;&#27979;&#10;      if (i &#60;= j) &#123;&#10;        exchange(i, j);&#10;        i++;&#10;        j--;&#10;      &#125;&#10;    &#125;&#10;    // &#36882;&#24402;&#10;    if (low &#60; j)&#10;      quicksort(low, j);&#10;    if (i &#60; high)&#10;      quicksort(i, high);&#10;  &#125;&#10;&#10;  private void exchange(int i, int j) &#123;&#10;    int temp = numbers[i];&#10;    numbers[i] = numbers[j];&#10;    numbers[j] = temp;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/quick-sort/" rel="tag">#quick sort</a>
+          
+            <a href="/tags/sort/" rel="tag">#sort</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/02/quick-way-to-blog-on-GitHub-Pages/" rel="prev">在GitHub Pages上快速搭建自己的博客</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/02/leetcode-no198-house-robber/" rel="next">leetcode No.198 House Robber</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/02/quick-sort/"
+     data-title="快速排序思想及Java实现"
+     data-content=""
+     data-url="http://pascocoder.github.io/2015/09/02/quick-sort/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/02/quick-sort/"
+                   data-title="快速排序思想及Java实现" data-url="http://pascocoder.github.io/2015/09/02/quick-sort/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="Pasco" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Pasco</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">O ever youthful, O ever weeping.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/PascoCoder" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/pascocoder" target="_blank">weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+              <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">1.</span> <span class="nav-text">快速排序</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pasco</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"pasco"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+  	<script src="/js/ua-parser.min.js"></script>
+  	<script src="/js/hook-duoshuo.js"></script>
+  
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
