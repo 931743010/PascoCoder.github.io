@@ -41,23 +41,23 @@
 
 <meta name="description" content="转载自codingcoder的博客，原文地址
 今天看了下 objc 2.0 引入的强大特性：关联对象，下面把我的理解与大家分享一下。
-我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目只是用来扩展方法的，不">
+使用类目遇到的问题我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目(c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)">
 <meta property="og:url" content="http://pascocoder.github.io/2015/09/02/objc-associated-object/index.html">
 <meta property="og:site_name" content="Pasco's blog">
 <meta property="og:description" content="转载自codingcoder的博客，原文地址
 今天看了下 objc 2.0 引入的强大特性：关联对象，下面把我的理解与大家分享一下。
-我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目只是用来扩展方法的，不">
+使用类目遇到的问题我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目(c">
 <meta property="og:image" content="http://pascocoder.github.io/img/objc-associated-objects/1.png">
 <meta property="og:image" content="http://pascocoder.github.io/img/objc-associated-objects/2.png">
 <meta property="og:image" content="http://pascocoder.github.io/img/objc-associated-objects/3.png">
-<meta property="og:updated_time" content="2015-09-02T12:32:58.000Z">
+<meta property="og:updated_time" content="2015-09-02T13:13:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)">
 <meta name="twitter:description" content="转载自codingcoder的博客，原文地址
 今天看了下 objc 2.0 引入的强大特性：关联对象，下面把我的理解与大家分享一下。
-我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目只是用来扩展方法的，不">
+使用类目遇到的问题我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目(c">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -265,32 +265,31 @@
       
         <span itemprop="articleBody"><p>转载自codingcoder的博客，<a href="http://blog.codingcoder.com/objc-associated-object/" target="_blank" rel="external">原文地址</a></p>
 <p>今天看了下 objc 2.0 引入的强大特性：关联对象，下面把我的理解与大家分享一下。</p>
-<p>我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。因为普通的类目只是用来扩展方法的，不能用来扩展成员变量。</p>
+<h3 id="使用类目遇到的问题">使用类目遇到的问题</h3><p>我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。<strong>因为普通的类目(category)只是用来扩展方法的，不能用来扩展成员变量。</strong></p>
 <p>有些时候，我们在设计代码时，会把代码分离成很多个类目，这样方便代码的管理。如下所示：</p>
 <p><img src="/img/objc-associated-objects/1.png" alt="image1"></p>
 <p>对每种类型的 API 单独放在对应的类目中，在代码组织上就非常清晰。但是，现在有一个这样的问题，有时候，我们需要在类目中保存一些状态，可以使用成员变量的形式来实现，但是，这些状态又是相对独立的，只在这个类目中会被用到，其他的类目不会使用它。所以，我们想把这个成员变量隐藏在这个类目中，对于其他的类目，这个成员变量都不可见。</p>
-<p>如果类目允许扩展成员变量的话，这个问题就很好解决，直接在类目的实现文件里声明一个成员变量即可。这样既能对外部隐藏这个成员变量，又能在这个类目中使用它。很完美的解决方案，但是不幸的是，objc 不允许在类目中扩展成员变量。所以你不得不在类的声明中声明需要的成员变量，而且还需要把它暴露出来，以使你的类目能够使用它。这样，随着类目越来越多，你不得不在类中声明越来越多原本需要对外隐藏的成员变量。</p>
+<p>如果类目允许扩展成员变量的话，这个问题就很好解决，直接在类目的实现文件里声明一个成员变量即可。这样既能对外部隐藏这个成员变量，又能在这个类目中使用它。很完美的解决方案，<strong>但是不幸的是，objc 不允许在类目中扩展成员变量</strong>。所以你不得不在类的声明中声明需要的成员变量，而且还需要把它暴露出来，以使你的类目能够使用它。这样，随着类目越来越多，你不得不在类中声明越来越多原本需要对外隐藏的成员变量。</p>
 <p>我们上面遇到的问题，在一定程度上可以使用关联对象来解决，稍后我们会看一个具体的例子。现在，我们先来看看关联对象的基本使用方法。</p>
-<p>我们在使用关联对象时，主要会用到下面两个方法：</p>
+<h3 id="关联对象">关联对象</h3><p>我们在使用关联对象时，主要会用到下面两个方法：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_setAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">void</span> *key, <span class="keyword">id</span> value, objc_AssociationPolicy policy)</span><br><span class="line"></span><br><span class="line"><span class="keyword">id</span> objc_getAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">void</span> *key)</span><br></pre></td></tr></table></figure>
 <p>我们通过代码来看看如何使用它：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *u1 = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"blog.codingcoder.com"</span>];</span><br><span class="line">objc_setAssociatedObject(u1, <span class="string">@"u1key"</span>, <span class="string">@"s1assciated"</span>, OBJC_ASSO<span class="built_in">CIATION_COPY</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">id</span> get1 = objc_getAssociatedObject(u1, <span class="string">@"u1key"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURL</span> *u2 = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"u2"</span>];</span><br><span class="line"><span class="keyword">id</span> get2 = objc_getAssociatedObject(u2, <span class="string">@"u1key"</span>);</span><br></pre></td></tr></table></figure>
-<p>objc_setAssociatedObject 就是把一个对象关联到另外一个对象上去，比如下面的代码就是把一个字符串@”XXXX”关联到对象u1上面。这样就类似于对象u1对象上多了一个成员变量。</p>
+<p>objc_setAssociatedObject 就是把一个对象关联到另外一个对象上去，比如下面的代码就是把一个字符串@”XXXX”关联到对象u1上面。这样就<strong>类似于对象u1对象上多了一个成员变量。</strong></p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objc_setAssociatedObject(u1, <span class="string">@"u1key"</span>, <span class="string">@"XXXX"</span>, OBJC_ASSO<span class="built_in">CIATION_COPY</span>);</span><br></pre></td></tr></table></figure>
-<p>特别注意一点，这里的关联对象，是关联到某一个具体的对象的，并不是关联到类的。</p>
+<p>特别注意一点，这里的<strong>关联对象，是关联到某一个具体的对象的，并不是关联到类的</strong>。</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *u2 = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"u2"</span>];</span><br><span class="line"><span class="keyword">id</span> get2 = objc_getAssociatedObject(u2, <span class="string">@"u1key"</span>);</span><br></pre></td></tr></table></figure>
-<p>上面的代码中，u2变量并没有关联一个对象，所以，你不能通过objc_getAssociatedObject获取一个值。<br>另外需要注意一点，对象和被关联对象的生命周期是相互独立的。</p>
+<p>上面的代码中，u2变量并没有关联一个对象，所以，你不能通过objc_getAssociatedObject获取一个值。<br>另外需要注意一点，<strong>对象和被关联对象的生命周期是相互独立的</strong>。</p>
 <blockquote>
 <p>根据WWDC 2011, Session 322 (第36分钟左右)发布的内存销毁时间表，被关联的对象在生命周期内要比对象本身释放的晚很多。它们会在被 NSObject -dealloc 调用的 object_dispose() 方法中释放。</p>
 </blockquote>
-<p>下面我们来看一个例子，相信 AFNetworking 这个类库大家应该都很熟悉。在这个类库中，有一个UIImageView+AFNetworking的类目。</p>
+<h3 id="AFNetworking中的例子">AFNetworking中的例子</h3><p>下面我们来看一个例子，相信 AFNetworking 这个类库大家应该都很熟悉。在这个类库中，有一个UIImageView+AFNetworking的类目。</p>
 <p><img src="/img/objc-associated-objects/2.png" alt="image2"></p>
 <p>我们看一下源码：</p>
 <p><img src="/img/objc-associated-objects/3.png" alt="image3"></p>
-<p>我们可以看到，它生命了一个私有属性af_imageRequestOperation，而它通过自定义 getter / setter 方法，使用objc_getAssociatedObject 和 objc_setAssociatedObject方法来达到类似与添加成员变量的目的，而这个变量对外部是完全隐藏的。所以，这也就解决了我们最开始描述的那个类目无法扩展成员变量的问题。</p>
+<p>我们可以看到，<strong>它声明了一个私有属性af_imageRequestOperation，而它通过自定义 getter / setter 方法，使用objc_getAssociatedObject 和 objc_setAssociatedObject方法来达到类似与添加成员变量的目的</strong>，而这个变量对外部是完全隐藏的。所以，这也就解决了我们最开始描述的那个类目无法扩展成员变量的问题。</p>
 <p>最后，需要注意的一点是，这种objc_setAssociatedObject的方式是运用了 objc runtime 的特性，它确实很强大，但是，相对应的，不正确的使用或者滥用 runtime 会带来比较麻烦的 bug。所以，只有在你确定必须要使用 runtime 特性时，而且你完全明白你这么做所带来的影响时，才使用这种特性。一定不要为了使用这种技术而使用它。</p>
-<p>参考文章：</p>
-<ul>
+<h3 id="参考文章：">参考文章：</h3><ul>
 <li><p><a href="http://nshipster.cn/associated-objects/" target="_blank" rel="external">Associated Objects</a></p>
 </li>
 <li><p><a href="http://www.justinyan.me/post/1624" target="_blank" rel="external">理解 Objective-C Runtime</a></p>
@@ -317,11 +316,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2015/09/02/dig-into-objc/" rel="prev">深入学习Objective-C（一）：揭开NSObject的面纱</a>
+            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/02/start-from-length-length-in-java/" rel="next">Java中的 length 和 length()</a>
+              <a href="/2015/09/02/what-is-meta-class-in-objective-c/" rel="next">Objective-C 中的 meta-class 是什么？</a>
             
           </div>
         </div>
@@ -406,7 +407,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -420,7 +421,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -465,7 +466,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用类目遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">使用类目遇到的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联对象"><span class="nav-number">2.</span> <span class="nav-text">关联对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AFNetworking中的例子"><span class="nav-number">3.</span> <span class="nav-text">AFNetworking中的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章："><span class="nav-number">4.</span> <span class="nav-text">参考文章：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
