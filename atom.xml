@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-09-05T05:28:58.000Z</updated>
+  <updated>2015-09-08T16:41:30.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[隐藏iOS的状态栏]]></title>
+    <link href="http://pascocoder.github.io/2015/09/09/ios-statusBar-hidden/"/>
+    <id>http://pascocoder.github.io/2015/09/09/ios-statusBar-hidden/</id>
+    <published>2015-09-08T16:32:00.000Z</published>
+    <updated>2015-09-08T16:41:30.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="隐藏iOS的状态栏">隐藏iOS的状态栏</h3><ol>
+<li><p>在应用的AppDelegate.m文件中的application:didFinishLaunchingWithOptions:方法中添加以下代码</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] setStatusBarHidden:<span class="literal">YES</span> withAnimation:<span class="built_in">UIStatusBarAnimationFade</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在ViewController.m文件中添加prefersStatusBarHidden方法，并返回YES</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)prefersStatusBarHidden</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="隐藏iOS的状态栏">隐藏iOS的状态栏</h3><ol>
+<li><p>在应用的AppDelegate.m文件中的application:didFinishLaunchingWithOptions:方法中添加以下代码</p>
+<figure class="hig]]>
+    </summary>
+    
+      <category term="Tips" scheme="http://pascocoder.github.io/tags/Tips/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[effective objective c 2.0 读书笔记]]></title>
@@ -509,29 +538,6 @@ the NSObject meta-class’ class is itself.
   </entry>
   
   <entry>
-    <title><![CDATA[快速排序思想及Java实现]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/quick-sort/"/>
-    <id>http://pascocoder.github.io/2015/09/02/quick-sort/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;## &#31639;&#27861;&#24605;&#24819;&#10;&#24555;&#36895;&#25490;&#24207;&#30340;&#31639;&#27861;&#24605;&#24819;&#20854;&#23454;&#27604;&#36739;&#31616;&#21333;&#65292;&#20808;&#25214;&#20986;&#19968;&#20010;&#25968;&#20316;&#20026;&#22522;&#20934;&#25968;&#65288;&#36825;&#37324;&#21462;&#25968;&#32452;&#26368;&#20013;&#38388;&#30340;&#19968;&#20301;&#65289;&#12290;&#23450;&#20041;&#20004;&#20010;&#21464;&#37327;&#20316;&#20026;&#8220;&#21736;&#20853;&#8221;&#65292;&#28982;&#21518;&#20998;&#21035;&#20174;&#21518;&#21521;&#21069;&#65292;&#20174;&#21069;&#21521;&#21518;&#20004;&#20010;&#26041;&#21521;&#21435;&#8220;&#25506;&#27979;&#8221;&#65306;&#10;&#10;1. &#20174;&#21518;&#21521;&#21069;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#23567;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;2. &#20174;&#21069;&#21521;&#21518;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#22823;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;3. &#22914;&#26524;&#20004;&#20010;&#26041;&#21521;&#30340;&#8220;&#25506;&#27979;&#8221;&#37117;&#25214;&#21040;&#20102;&#31526;&#21512;&#35201;&#27714;&#30340;&#25968;&#25454;&#65292;&#21017;&#20132;&#25442;&#25968;&#25454;&#65292;&#32487;&#32493;&#39034;&#30528;&#26041;&#21521;&#23547;&#25214;&#10;4. &#30452;&#21040;&#20004;&#20010;&#21736;&#20853;&#30896;&#21040;&#19968;&#36215;&#65292;&#27492;&#26102;&#25226;&#30456;&#36935;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#21644;&#22522;&#20934;&#25968;&#65288;&#21363;&#25968;&#32452;&#30340;&#20013;&#38388;&#20301;&#65289;&#20132;&#25442;&#25968;&#25454;&#10;5. &#27492;&#26102;&#65292;&#22522;&#20934;&#25968;&#24038;&#20391;&#30340;&#25968;&#37117;&#23567;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#20391;&#30340;&#25968;&#37117;&#22823;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#10;6. &#21516;&#26679;&#30340;&#26041;&#27861;&#21435;&#8220;&#25506;&#27979;&#8221;&#22522;&#20934;&#25968;&#24038;&#20391;&#21644;&#21491;&#20391;&#30340;&#25968;&#25454;&#65288;&#20351;&#29992;&#36882;&#24402;&#65289;&#10;&#10;&#10;&#27604;&#22914;&#26377;&#19979;&#38754;&#19968;&#20010;&#25968;&#32452;:&#10;&#10;&#9;6&#65292;1&#65292;2&#65292;7&#65292;9&#65292;3&#65292;4&#65292;5&#65292;10&#65292;8&#9;&#10;&#10;&#25105;&#20204;&#38656;&#35201;&#33258;&#24049;&#23450;&#20041;&#20960;&#20010;&#21464;&#37327;&#65306;&#10;* low : &#25968;&#32452;&#30340;&#26368;&#20302;&#20301;&#10;* high : &#25968;&#32452;&#30340;&#26368;&#39640;&#20301;&#10;* pivot : &#25968;&#32452;&#30340;&#22522;&#20934;&#20301;&#10;&#10;quickSort(low=0,high=9)&#10;&#9;6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;&#9;&#8593;           &#8593;               &#8593;&#10;&#9;i         pivot             j&#10;&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;&#9;&#9;i++&#10;&#10;        6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;                    &#8593;               &#8593;&#10;                  pivot             j&#10;&#9;&#9;    &#8593;&#10;&#9;&#9;    i&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;            exchange(i,j)&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                    &#8593;               &#8593;&#10;                    i               j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                                 &#8593;  &#8593;&#10;                                 i  j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                             &#8593;   &#8593;&#10;                             j   i&#10;&#10;&#9;&#9;   i&#62;j&#10;&#9;&#9;&#19981;&#20132;&#25442;&#25968;&#25454;&#10;&#9;      &#160;&#27492;&#26102;i=8,j=7&#10;&#10;&#20351;&#29992;&#36882;&#24402;&#20998;&#21035;&#25191;&#34892;&#10;quicksort(low,high=i)&#10;quicksort(low=j,high)&#10;&#10;##Java&#23454;&#29616;&#10;```java&#10;public class Quicksort  &#123;&#10;  private int[] numbers;&#10;  private int number;&#10;&#10;  public void sort(int[] values) &#123;&#10;    // &#26816;&#26597;&#25968;&#32452;&#26159;&#21542;&#20026;&#31354;&#10;    if (values ==null || values.length==0)&#123;&#10;      return;&#10;    &#125;&#10;    this.numbers = values;&#10;    number = values.length;&#10;    quicksort(0, number - 1);&#10;  &#125;&#10;&#10;  private void quicksort(int low, int high) &#123;&#10;    int i = low, j = high;&#10;    // &#25226;&#25968;&#32452;&#20013;&#38388;&#30340;&#20803;&#32032;&#35774;&#32622;&#20026;&#22522;&#20934;&#25968;&#10;    int pivot = numbers[low + (high-low)/2];&#10;&#10;    // &#20998;&#24320;&#25104;&#20004;&#20010;&#25968;&#32452;&#10;    while (i &#60;= j) &#123;&#10;    //&#20174;&#24038;&#21521;&#21491;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[i] &#60; pivot) &#123;&#10;        i++;&#10;      &#125;&#10;      //&#20174;&#21491;&#21521;&#24038;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[j] &#62; pivot) &#123;&#10;        j--;&#10;      &#125;&#10;&#10;      // &#22914;&#26524;&#24038;&#36793;&#25506;&#27979;&#32467;&#26524;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#36793;&#25506;&#27979;&#32467;&#26524;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#37027;&#20040;&#20132;&#25442;&#36825;&#20004;&#20010;&#20803;&#32032;&#10;      // &#28982;&#21518;&#32487;&#32493;&#25506;&#27979;&#10;      if (i &#60;= j) &#123;&#10;        exchange(i, j);&#10;        i++;&#10;        j--;&#10;      &#125;&#10;    &#125;&#10;    // &#36882;&#24402;&#10;    if (low &#60; j)&#10;      quicksort(low, j);&#10;    if (i &#60; high)&#10;      quicksort(i, high);&#10;  &#125;&#10;&#10;  private void exchange(int i, int j) &#123;&#10;    int temp = numbers[i];&#10;    numbers[i] = numbers[j];&#10;    numbers[j] = temp;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutte]]>
-    </summary>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
-    
-      <category term="quick sort" scheme="http://pascocoder.github.io/tags/quick-sort/"/>
-    
-      <category term="sort" scheme="http://pascocoder.github.io/tags/sort/"/>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[在GitHub Pages上快速搭建自己的博客]]></title>
     <link href="http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/"/>
     <id>http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/</id>
@@ -562,6 +568,29 @@ the NSObject meta-class’ class is itself.
       <category term="Pages" scheme="http://pascocoder.github.io/tags/Pages/"/>
     
       <category term="GitHub" scheme="http://pascocoder.github.io/categories/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[快速排序思想及Java实现]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/quick-sort/"/>
+    <id>http://pascocoder.github.io/2015/09/02/quick-sort/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;## &#31639;&#27861;&#24605;&#24819;&#10;&#24555;&#36895;&#25490;&#24207;&#30340;&#31639;&#27861;&#24605;&#24819;&#20854;&#23454;&#27604;&#36739;&#31616;&#21333;&#65292;&#20808;&#25214;&#20986;&#19968;&#20010;&#25968;&#20316;&#20026;&#22522;&#20934;&#25968;&#65288;&#36825;&#37324;&#21462;&#25968;&#32452;&#26368;&#20013;&#38388;&#30340;&#19968;&#20301;&#65289;&#12290;&#23450;&#20041;&#20004;&#20010;&#21464;&#37327;&#20316;&#20026;&#8220;&#21736;&#20853;&#8221;&#65292;&#28982;&#21518;&#20998;&#21035;&#20174;&#21518;&#21521;&#21069;&#65292;&#20174;&#21069;&#21521;&#21518;&#20004;&#20010;&#26041;&#21521;&#21435;&#8220;&#25506;&#27979;&#8221;&#65306;&#10;&#10;1. &#20174;&#21518;&#21521;&#21069;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#23567;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;2. &#20174;&#21069;&#21521;&#21518;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#22823;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;3. &#22914;&#26524;&#20004;&#20010;&#26041;&#21521;&#30340;&#8220;&#25506;&#27979;&#8221;&#37117;&#25214;&#21040;&#20102;&#31526;&#21512;&#35201;&#27714;&#30340;&#25968;&#25454;&#65292;&#21017;&#20132;&#25442;&#25968;&#25454;&#65292;&#32487;&#32493;&#39034;&#30528;&#26041;&#21521;&#23547;&#25214;&#10;4. &#30452;&#21040;&#20004;&#20010;&#21736;&#20853;&#30896;&#21040;&#19968;&#36215;&#65292;&#27492;&#26102;&#25226;&#30456;&#36935;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#21644;&#22522;&#20934;&#25968;&#65288;&#21363;&#25968;&#32452;&#30340;&#20013;&#38388;&#20301;&#65289;&#20132;&#25442;&#25968;&#25454;&#10;5. &#27492;&#26102;&#65292;&#22522;&#20934;&#25968;&#24038;&#20391;&#30340;&#25968;&#37117;&#23567;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#20391;&#30340;&#25968;&#37117;&#22823;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#10;6. &#21516;&#26679;&#30340;&#26041;&#27861;&#21435;&#8220;&#25506;&#27979;&#8221;&#22522;&#20934;&#25968;&#24038;&#20391;&#21644;&#21491;&#20391;&#30340;&#25968;&#25454;&#65288;&#20351;&#29992;&#36882;&#24402;&#65289;&#10;&#10;&#10;&#27604;&#22914;&#26377;&#19979;&#38754;&#19968;&#20010;&#25968;&#32452;:&#10;&#10;&#9;6&#65292;1&#65292;2&#65292;7&#65292;9&#65292;3&#65292;4&#65292;5&#65292;10&#65292;8&#9;&#10;&#10;&#25105;&#20204;&#38656;&#35201;&#33258;&#24049;&#23450;&#20041;&#20960;&#20010;&#21464;&#37327;&#65306;&#10;* low : &#25968;&#32452;&#30340;&#26368;&#20302;&#20301;&#10;* high : &#25968;&#32452;&#30340;&#26368;&#39640;&#20301;&#10;* pivot : &#25968;&#32452;&#30340;&#22522;&#20934;&#20301;&#10;&#10;quickSort(low=0,high=9)&#10;&#9;6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;&#9;&#8593;           &#8593;               &#8593;&#10;&#9;i         pivot             j&#10;&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;&#9;&#9;i++&#10;&#10;        6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;                    &#8593;               &#8593;&#10;                  pivot             j&#10;&#9;&#9;    &#8593;&#10;&#9;&#9;    i&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;            exchange(i,j)&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                    &#8593;               &#8593;&#10;                    i               j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                                 &#8593;  &#8593;&#10;                                 i  j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                             &#8593;   &#8593;&#10;                             j   i&#10;&#10;&#9;&#9;   i&#62;j&#10;&#9;&#9;&#19981;&#20132;&#25442;&#25968;&#25454;&#10;&#9;      &#160;&#27492;&#26102;i=8,j=7&#10;&#10;&#20351;&#29992;&#36882;&#24402;&#20998;&#21035;&#25191;&#34892;&#10;quicksort(low,high=i)&#10;quicksort(low=j,high)&#10;&#10;##Java&#23454;&#29616;&#10;```java&#10;public class Quicksort  &#123;&#10;  private int[] numbers;&#10;  private int number;&#10;&#10;  public void sort(int[] values) &#123;&#10;    // &#26816;&#26597;&#25968;&#32452;&#26159;&#21542;&#20026;&#31354;&#10;    if (values ==null || values.length==0)&#123;&#10;      return;&#10;    &#125;&#10;    this.numbers = values;&#10;    number = values.length;&#10;    quicksort(0, number - 1);&#10;  &#125;&#10;&#10;  private void quicksort(int low, int high) &#123;&#10;    int i = low, j = high;&#10;    // &#25226;&#25968;&#32452;&#20013;&#38388;&#30340;&#20803;&#32032;&#35774;&#32622;&#20026;&#22522;&#20934;&#25968;&#10;    int pivot = numbers[low + (high-low)/2];&#10;&#10;    // &#20998;&#24320;&#25104;&#20004;&#20010;&#25968;&#32452;&#10;    while (i &#60;= j) &#123;&#10;    //&#20174;&#24038;&#21521;&#21491;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[i] &#60; pivot) &#123;&#10;        i++;&#10;      &#125;&#10;      //&#20174;&#21491;&#21521;&#24038;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[j] &#62; pivot) &#123;&#10;        j--;&#10;      &#125;&#10;&#10;      // &#22914;&#26524;&#24038;&#36793;&#25506;&#27979;&#32467;&#26524;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#36793;&#25506;&#27979;&#32467;&#26524;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#37027;&#20040;&#20132;&#25442;&#36825;&#20004;&#20010;&#20803;&#32032;&#10;      // &#28982;&#21518;&#32487;&#32493;&#25506;&#27979;&#10;      if (i &#60;= j) &#123;&#10;        exchange(i, j);&#10;        i++;&#10;        j--;&#10;      &#125;&#10;    &#125;&#10;    // &#36882;&#24402;&#10;    if (low &#60; j)&#10;      quicksort(low, j);&#10;    if (i &#60; high)&#10;      quicksort(i, high);&#10;  &#125;&#10;&#10;  private void exchange(int i, int j) &#123;&#10;    int temp = numbers[i];&#10;    numbers[i] = numbers[j];&#10;    numbers[j] = temp;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutte]]>
+    </summary>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
+    
+      <category term="quick sort" scheme="http://pascocoder.github.io/tags/quick-sort/"/>
+    
+      <category term="sort" scheme="http://pascocoder.github.io/tags/sort/"/>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
     
   </entry>
   
@@ -639,6 +668,36 @@ the NSObject meta-class’ class is itself.
   </entry>
   
   <entry>
+    <title><![CDATA[leetcode No.198 House Robber]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/"/>
+    <id>http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night</strong>.</p>
+<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight <strong>without alerting the police</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="解题思路">解题思路</h2><p>本题采用动态规划思想：</p>
+<pre><code>抢劫<span class="keyword">n</span>间房子的金钱总和＝<span class="literal">MAX</span>( 抢劫<span class="keyword">n</span>-2间房子的金钱总和＋第<span class="keyword">n</span>间房子的金钱 , 抢劫<span class="keyword">n</span>-1间房子的金钱总和 )
+</code></pre><hr>
+<h2 id="Java代码">Java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//如果总共有0个房子，则返回0</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//如果总共有1个房子，那么返回这个房子里的金钱</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">1</span>)</span><br><span class="line">    		<span class="keyword">return</span> num[<span class="number">0</span>];</span><br><span class="line">	<span class="comment">//如果总共有两个房子，那么抢劫钱多的那个房子</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">2</span>)</span><br><span class="line">    		<span class="keyword">return</span> Math.max(num[<span class="number">0</span>], num[<span class="number">1</span>]);</span><br><span class="line">	<span class="comment">//如果房屋数大于2</span></span><br><span class="line">	<span class="comment">//先分别算出只有一间房子时抢劫金钱数prior</span></span><br><span class="line">	<span class="comment">//和只有两间房子时的抢劫金钱数next</span></span><br><span class="line">	<span class="comment">//prior可能等于next</span></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> prior=num[<span class="number">0</span>];</span><br><span class="line">    	<span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> next=Math.max(num[<span class="number">0</span>],num[<span class="number">1</span>]);</span><br><span class="line">    	<span class="comment">//当有三间房子的时候</span></span><br><span class="line">	<span class="comment">//抢劫金钱最大数要么等于只有两间房子时的最大数</span></span><br><span class="line">	<span class="comment">//要么等于只有一间房子的金钱数＋第三间房子的金钱数</span></span><br><span class="line">	<span class="comment">//以此类推4间房子、5间房子、等等</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=num.length;i++)&#123;</span><br><span class="line">        	temp=prior;</span><br><span class="line">        	prior=next;</span><br><span class="line">        	next=Math.max(temp+num[i-<span class="number">1</span>], prior);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(prior, next);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount ]]>
+    </summary>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
+    
+      <category term="Dynamic Programming" scheme="http://pascocoder.github.io/tags/Dynamic-Programming/"/>
+    
+      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[GitHub Permission to user/repo denied to another user]]></title>
     <link href="http://pascocoder.github.io/2015/09/02/GitHub-Permission-to-repository-denied-to-username/"/>
     <id>http://pascocoder.github.io/2015/09/02/GitHub-Permission-to-repository-denied-to-username/</id>
@@ -668,32 +727,27 @@ the NSObject meta-class’ class is itself.
   </entry>
   
   <entry>
-    <title><![CDATA[leetcode No.198 House Robber]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/"/>
-    <id>http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/</id>
+    <title><![CDATA[Java可变参数]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/java-varargs-examples/"/>
+    <id>http://pascocoder.github.io/2015/09/02/java-varargs-examples/</id>
     <published>2015-09-01T17:45:57.000Z</published>
     <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
-<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night</strong>.</p>
-<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight <strong>without alerting the police</strong>.</p>
-</blockquote>
-<hr>
-<h2 id="解题思路">解题思路</h2><p>本题采用动态规划思想：</p>
-<pre><code>抢劫<span class="keyword">n</span>间房子的金钱总和＝<span class="literal">MAX</span>( 抢劫<span class="keyword">n</span>-2间房子的金钱总和＋第<span class="keyword">n</span>间房子的金钱 , 抢劫<span class="keyword">n</span>-1间房子的金钱总和 )
-</code></pre><hr>
-<h2 id="Java代码">Java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//如果总共有0个房子，则返回0</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//如果总共有1个房子，那么返回这个房子里的金钱</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">1</span>)</span><br><span class="line">    		<span class="keyword">return</span> num[<span class="number">0</span>];</span><br><span class="line">	<span class="comment">//如果总共有两个房子，那么抢劫钱多的那个房子</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">2</span>)</span><br><span class="line">    		<span class="keyword">return</span> Math.max(num[<span class="number">0</span>], num[<span class="number">1</span>]);</span><br><span class="line">	<span class="comment">//如果房屋数大于2</span></span><br><span class="line">	<span class="comment">//先分别算出只有一间房子时抢劫金钱数prior</span></span><br><span class="line">	<span class="comment">//和只有两间房子时的抢劫金钱数next</span></span><br><span class="line">	<span class="comment">//prior可能等于next</span></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> prior=num[<span class="number">0</span>];</span><br><span class="line">    	<span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> next=Math.max(num[<span class="number">0</span>],num[<span class="number">1</span>]);</span><br><span class="line">    	<span class="comment">//当有三间房子的时候</span></span><br><span class="line">	<span class="comment">//抢劫金钱最大数要么等于只有两间房子时的最大数</span></span><br><span class="line">	<span class="comment">//要么等于只有一间房子的金钱数＋第三间房子的金钱数</span></span><br><span class="line">	<span class="comment">//以此类推4间房子、5间房子、等等</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=num.length;i++)&#123;</span><br><span class="line">        	temp=prior;</span><br><span class="line">        	prior=next;</span><br><span class="line">        	next=Math.max(temp+num[i-<span class="number">1</span>], prior);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(prior, next);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
+    <content type="html"><![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"a"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String ... s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String a: s)</span><br><span class="line">        System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-_可变参数是怎样工作的？">1. 可变参数是怎样工作的？</h3><p>当使用可变参数功能时，实际上会先创建一个数组，大小为调用位置传过来参数的数量。然后把参数的值放进数组，最后把数组当做参数传进方法（method）中。</p>
+<h3 id="2-_什么时候使用可变参数？">2. 什么时候使用可变参数？</h3><p>作为其定义，当方法需要处理任意数量的对象时，可变参数是非常有用的。Java SDK中的 String.format(String format, Object… args) 就是一个很好的例子。字符串可以格式化任何数目的参数，使用了可变参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"An integer: %d"</span>, i);</span><br><span class="line">String.format(<span class="string">"An integer: %d and a string: %s"</span>, i, s);</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
-<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount ]]>
+    <![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">]]>
     </summary>
     
-      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
     
-      <category term="Dynamic Programming" scheme="http://pascocoder.github.io/tags/Dynamic-Programming/"/>
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
-      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
     
   </entry>
   
@@ -744,31 +798,6 @@ After running your function, the board should be:
       <category term="algorithm" scheme="http://pascocoder.github.io/tags/algorithm/"/>
     
       <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java可变参数]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/java-varargs-examples/"/>
-    <id>http://pascocoder.github.io/2015/09/02/java-varargs-examples/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"a"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String ... s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String a: s)</span><br><span class="line">        System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-_可变参数是怎样工作的？">1. 可变参数是怎样工作的？</h3><p>当使用可变参数功能时，实际上会先创建一个数组，大小为调用位置传过来参数的数量。然后把参数的值放进数组，最后把数组当做参数传进方法（method）中。</p>
-<h3 id="2-_什么时候使用可变参数？">2. 什么时候使用可变参数？</h3><p>作为其定义，当方法需要处理任意数量的对象时，可变参数是非常有用的。Java SDK中的 String.format(String format, Object… args) 就是一个很好的例子。字符串可以格式化任何数目的参数，使用了可变参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"An integer: %d"</span>, i);</span><br><span class="line">String.format(<span class="string">"An integer: %d and a string: %s"</span>, i, s);</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
     
   </entry>
   
@@ -885,38 +914,6 @@ After running your function, the board should be:
       <category term="start" scheme="http://pascocoder.github.io/tags/start/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[图解Java 字符串的不变性]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/diagram-to-show-java-strings-immutability/"/>
-    <id>http://pascocoder.github.io/2015/09/02/diagram-to-show-java-strings-immutability/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>本篇文章用一组图表来说明Java的String不变性。</p>
-<h3 id="声明一个字符串">声明一个字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"abcd"</span>;</span><br></pre></td></tr></table></figure>
-<p>变量s储存字符串对象的引用，下面的箭头应该解释为‘字符串变量s储存字符串’abcd’的引用’。</p>
-<p><img src="/assets/images/String-Immutability-1.jpeg" alt="pic1"></p>
-<h3 id="把一个字符变量复制给另一个字符变量">把一个字符变量复制给另一个字符变量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s2 = s;</span><br></pre></td></tr></table></figure>
-<p>S2也储存同样的引用，因为引用了同样的字符串对象。</p>
-<p><img src="/assets/images/String-Immutability-2.jpeg" alt="pic2"></p>
-<h3 id="拼接字符串">拼接字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = s.concat(<span class="string">"ef"</span>);</span><br></pre></td></tr></table></figure>
-<p>s现在储存新建字符串对象的引用。</p>
-<p><img src="/assets/images/String-Immutability-650x279.jpeg" alt="pic3"></p>
-<h3 id="总结">总结</h3><p> 一旦字符串对象在内存（堆）中被创建，就不能再被改变。所有字符串方法都不能改变字符串对象，但是可以返回一个新建的字符串对象。</p>
-<p>如果你需要一个可以被修改的字符串，则需要使用StringBuffer或者StringBuilder。否则，将会大量的时间浪费在垃圾回收上（Garbage Collection），因为每次都会创建一个新的String对象在内存上。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>本篇文章用一组图表来说明Java的String不变性。</p>
-<h3 id="声明一个字符串">声明一个字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span clas]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
     
   </entry>
   
