@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-09-08T16:41:30.000Z</updated>
+  <updated>2015-09-18T09:01:38.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Weakify and strongify]]></title>
+    <link href="http://pascocoder.github.io/2015/09/18/Weakify-and-strongify/"/>
+    <id>http://pascocoder.github.io/2015/09/18/Weakify-and-strongify/</id>
+    <published>2015-09-18T08:48:37.000Z</published>
+    <updated>2015-09-18T09:01:38.000Z</updated>
+    <content type="html"><![CDATA[<p>有两篇文章，现在还没时间深究，先附上链接</p>
+<p><a href="http://each.dog/blog/2015/05/02/weakify-and-strongify/" target="_blank" rel="external">Weakify和strongify探究</a></p>
+<p><a href="http://onevcat.com/2014/01/black-magic-in-macro/" target="_blank" rel="external">宏定义的黑魔法 - 宏菜鸟起飞手册</a></p>
+<p><a href="http://each.dog/blog/2015/04/30/create-your-pod-library/" target="_blank" rel="external">创建你的CocoaPod库简明教程</a></p>
+<p><a href="http://www.cnblogs.com/sunnyxx/p/3544703.html" target="_blank" rel="external">Reactive Cocoa Tutorial [1] = “神奇的Macros”;</a></p>
+<p><a href="http://onevcat.com/2012/06/arc-hand-by-hand/" target="_blank" rel="external">手把手教你ARC——iOS/Mac开发ARC入门和使用</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>有两篇文章，现在还没时间深究，先附上链接</p>
+<p><a href="http://each.dog/blog/2015/05/02/weakify-and-strongify/" target="_blank" rel="external">Weakify和stron]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Objective-C中的点语法]]></title>
+    <link href="http://pascocoder.github.io/2015/09/18/objectivec-dot-grammer/"/>
+    <id>http://pascocoder.github.io/2015/09/18/objectivec-dot-grammer/</id>
+    <published>2015-09-18T07:51:33.000Z</published>
+    <updated>2015-09-18T08:31:33.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Java中的点语法">Java中的点语法</h2><p>在Java中会使用 对象名.成员变量 用来直接访问对象中的成员变量。</p>
+<h2 id="objective-c中的点语法">objective-c中的点语法</h2><p>在 objective-c中 使用 对象名.成员变量 会自动调用该成员变量的set方法，而不是直接访问</p>
+<p>objective-c中的点语法的本质是方法调用，不是直接访问成员变量。</p>
+<h2 id="自定义set方法内部">自定义set方法内部</h2><p>Java中，如果自定义set方法，要给成员变量赋值会使用 this 关键字。this 代表调用该方法的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setProperty</span><span class="params">(<span class="keyword">int</span> property)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.property = property;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>objective 中的self关键字类似于this，也是代表调用该方法的对象，</p>
+<p>但是如果在类的内部自定义的set方法中使用 self.property 的点语法，如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)setProperty:(<span class="keyword">int</span>) property&#123;</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.property</span> = property;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>点语法会自动调用property的set方法，从而造成循环调用。</p>
+<p>##下划线➕属性<br>为了解决这个问题，在类的内部可以通过 _property来直接访问对象的成员变量。所以方法要写成</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)setProperty:(<span class="keyword">int</span>) property&#123;</span><br><span class="line">	_property = property;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="建议">建议</h2><p>类内部使用下划线，类外部使用点语法。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Java中的点语法">Java中的点语法</h2><p>在Java中会使用 对象名.成员变量 用来直接访问对象中的成员变量。</p>
+<h2 id="objective-c中的点语法">objective-c中的点语法</h2><p>在 objective-c中 ]]>
+    </summary>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[loadView and viewDidLoad]]></title>
+    <link href="http://pascocoder.github.io/2015/09/16/loadView-and-viewDidLoad/"/>
+    <id>http://pascocoder.github.io/2015/09/16/loadView-and-viewDidLoad/</id>
+    <published>2015-09-15T16:41:25.000Z</published>
+    <updated>2015-09-18T08:38:14.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="LoadView">LoadView</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="LoadView">LoadView</h2>]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[AirDrop 传输失败]]></title>
+    <link href="http://pascocoder.github.io/2015/09/15/AirDrop-transfer-fail/"/>
+    <id>http://pascocoder.github.io/2015/09/15/AirDrop-transfer-fail/</id>
+    <published>2015-09-15T02:00:19.000Z</published>
+    <updated>2015-09-15T02:08:04.000Z</updated>
+    <content type="html"><![CDATA[<p>最近使用AirDrop共享传递文件时，总是提示传输失败，上网搜了一下原因。<br>是翻墙使用代理导致的。所以，先暂时关掉Shadowsocks。就OK了。</p>
+<p>有时会搜不到对方，可以试试下面的 看不到要找得人？搜索旧款mac。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近使用AirDrop共享传递文件时，总是提示传输失败，上网搜了一下原因。<br>是翻墙使用代理导致的。所以，先暂时关掉Shadowsocks。就OK了。</p>
+<p>有时会搜不到对方，可以试试下面的 看不到要找得人？搜索旧款mac。</p>
+]]>
+    </summary>
+    
+      <category term="AirDrop" scheme="http://pascocoder.github.io/tags/AirDrop/"/>
+    
+      <category term="mac" scheme="http://pascocoder.github.io/tags/mac/"/>
+    
+      <category term="mac" scheme="http://pascocoder.github.io/categories/mac/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[隐藏iOS的状态栏]]></title>
@@ -538,136 +624,6 @@ the NSObject meta-class’ class is itself.
   </entry>
   
   <entry>
-    <title><![CDATA[在GitHub Pages上快速搭建自己的博客]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/"/>
-    <id>http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>###Jekyll-Bootstrap<br><a href="http://jekyllbootstrap.com/" target="_blank" rel="external">Jekyll-Bootstrap</a>是一个基于Jekyll的博客框架。<a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html" target="_blank" rel="external">Jekyll介绍</a>。</p>
-<p>###Jekyll搭建博客的优点</p>
-<ul>
-<li>支持markdown和textile</li>
-<li>使用git管理</li>
-<li>使用terminal发布</li>
-<li>没有数据库</li>
-</ul>
-<p>###3分钟在GitHub-Pages上搭建自己的博客<br><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll快速开始</a></p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[This is my first GitHub-Pages article.]]>
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://pascocoder.github.io/tags/Blog/"/>
-    
-      <category term="GitHub" scheme="http://pascocoder.github.io/tags/GitHub/"/>
-    
-      <category term="Jekyll-Bootstrap" scheme="http://pascocoder.github.io/tags/Jekyll-Bootstrap/"/>
-    
-      <category term="Pages" scheme="http://pascocoder.github.io/tags/Pages/"/>
-    
-      <category term="GitHub" scheme="http://pascocoder.github.io/categories/GitHub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[快速排序思想及Java实现]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/quick-sort/"/>
-    <id>http://pascocoder.github.io/2015/09/02/quick-sort/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;## &#31639;&#27861;&#24605;&#24819;&#10;&#24555;&#36895;&#25490;&#24207;&#30340;&#31639;&#27861;&#24605;&#24819;&#20854;&#23454;&#27604;&#36739;&#31616;&#21333;&#65292;&#20808;&#25214;&#20986;&#19968;&#20010;&#25968;&#20316;&#20026;&#22522;&#20934;&#25968;&#65288;&#36825;&#37324;&#21462;&#25968;&#32452;&#26368;&#20013;&#38388;&#30340;&#19968;&#20301;&#65289;&#12290;&#23450;&#20041;&#20004;&#20010;&#21464;&#37327;&#20316;&#20026;&#8220;&#21736;&#20853;&#8221;&#65292;&#28982;&#21518;&#20998;&#21035;&#20174;&#21518;&#21521;&#21069;&#65292;&#20174;&#21069;&#21521;&#21518;&#20004;&#20010;&#26041;&#21521;&#21435;&#8220;&#25506;&#27979;&#8221;&#65306;&#10;&#10;1. &#20174;&#21518;&#21521;&#21069;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#23567;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;2. &#20174;&#21069;&#21521;&#21518;&#65306;&#23547;&#25214;&#27604;&#22522;&#20934;&#25968;&#22823;&#30340;&#25968;&#25454;&#65292;&#22914;&#26524;&#25214;&#21040;&#65292;&#20572;&#19979;&#26469;&#10;3. &#22914;&#26524;&#20004;&#20010;&#26041;&#21521;&#30340;&#8220;&#25506;&#27979;&#8221;&#37117;&#25214;&#21040;&#20102;&#31526;&#21512;&#35201;&#27714;&#30340;&#25968;&#25454;&#65292;&#21017;&#20132;&#25442;&#25968;&#25454;&#65292;&#32487;&#32493;&#39034;&#30528;&#26041;&#21521;&#23547;&#25214;&#10;4. &#30452;&#21040;&#20004;&#20010;&#21736;&#20853;&#30896;&#21040;&#19968;&#36215;&#65292;&#27492;&#26102;&#25226;&#30456;&#36935;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#21644;&#22522;&#20934;&#25968;&#65288;&#21363;&#25968;&#32452;&#30340;&#20013;&#38388;&#20301;&#65289;&#20132;&#25442;&#25968;&#25454;&#10;5. &#27492;&#26102;&#65292;&#22522;&#20934;&#25968;&#24038;&#20391;&#30340;&#25968;&#37117;&#23567;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#20391;&#30340;&#25968;&#37117;&#22823;&#20110;&#31561;&#20110;&#22522;&#20934;&#25968;&#10;6. &#21516;&#26679;&#30340;&#26041;&#27861;&#21435;&#8220;&#25506;&#27979;&#8221;&#22522;&#20934;&#25968;&#24038;&#20391;&#21644;&#21491;&#20391;&#30340;&#25968;&#25454;&#65288;&#20351;&#29992;&#36882;&#24402;&#65289;&#10;&#10;&#10;&#27604;&#22914;&#26377;&#19979;&#38754;&#19968;&#20010;&#25968;&#32452;:&#10;&#10;&#9;6&#65292;1&#65292;2&#65292;7&#65292;9&#65292;3&#65292;4&#65292;5&#65292;10&#65292;8&#9;&#10;&#10;&#25105;&#20204;&#38656;&#35201;&#33258;&#24049;&#23450;&#20041;&#20960;&#20010;&#21464;&#37327;&#65306;&#10;* low : &#25968;&#32452;&#30340;&#26368;&#20302;&#20301;&#10;* high : &#25968;&#32452;&#30340;&#26368;&#39640;&#20301;&#10;* pivot : &#25968;&#32452;&#30340;&#22522;&#20934;&#20301;&#10;&#10;quickSort(low=0,high=9)&#10;&#9;6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;&#9;&#8593;           &#8593;               &#8593;&#10;&#9;i         pivot             j&#10;&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;&#9;&#9;i++&#10;&#10;        6, 1, 2, 7, 9, 3, 4, 5, 10, 8&#10;                    &#8593;               &#8593;&#10;                  pivot             j&#10;&#9;&#9;    &#8593;&#10;&#9;&#9;    i&#10;&#9;numbers[i] &#60; numbers[pivot]&#10;            exchange(i,j)&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                    &#8593;               &#8593;&#10;                    i               j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                                 &#8593;  &#8593;&#10;                                 i  j&#10;&#10;        6, 1, 2, 7, 8, 3, 4, 5, 10, 9&#10;                             &#8593;   &#8593;&#10;                             j   i&#10;&#10;&#9;&#9;   i&#62;j&#10;&#9;&#9;&#19981;&#20132;&#25442;&#25968;&#25454;&#10;&#9;      &#160;&#27492;&#26102;i=8,j=7&#10;&#10;&#20351;&#29992;&#36882;&#24402;&#20998;&#21035;&#25191;&#34892;&#10;quicksort(low,high=i)&#10;quicksort(low=j,high)&#10;&#10;##Java&#23454;&#29616;&#10;```java&#10;public class Quicksort  &#123;&#10;  private int[] numbers;&#10;  private int number;&#10;&#10;  public void sort(int[] values) &#123;&#10;    // &#26816;&#26597;&#25968;&#32452;&#26159;&#21542;&#20026;&#31354;&#10;    if (values ==null || values.length==0)&#123;&#10;      return;&#10;    &#125;&#10;    this.numbers = values;&#10;    number = values.length;&#10;    quicksort(0, number - 1);&#10;  &#125;&#10;&#10;  private void quicksort(int low, int high) &#123;&#10;    int i = low, j = high;&#10;    // &#25226;&#25968;&#32452;&#20013;&#38388;&#30340;&#20803;&#32032;&#35774;&#32622;&#20026;&#22522;&#20934;&#25968;&#10;    int pivot = numbers[low + (high-low)/2];&#10;&#10;    // &#20998;&#24320;&#25104;&#20004;&#20010;&#25968;&#32452;&#10;    while (i &#60;= j) &#123;&#10;    //&#20174;&#24038;&#21521;&#21491;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[i] &#60; pivot) &#123;&#10;        i++;&#10;      &#125;&#10;      //&#20174;&#21491;&#21521;&#24038;&#8220;&#25506;&#27979;&#8221;&#65292;&#22914;&#26524;&#24038;&#36793;&#30340;&#20803;&#32032;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21017;&#21435;&#8220;&#25506;&#27979;&#8221;&#19979;&#19968;&#20010;&#20803;&#32032;&#10;      while (numbers[j] &#62; pivot) &#123;&#10;        j--;&#10;      &#125;&#10;&#10;      // &#22914;&#26524;&#24038;&#36793;&#25506;&#27979;&#32467;&#26524;&#22823;&#20110;&#22522;&#20934;&#25968;&#65292;&#21491;&#36793;&#25506;&#27979;&#32467;&#26524;&#23567;&#20110;&#22522;&#20934;&#25968;&#65292;&#37027;&#20040;&#20132;&#25442;&#36825;&#20004;&#20010;&#20803;&#32032;&#10;      // &#28982;&#21518;&#32487;&#32493;&#25506;&#27979;&#10;      if (i &#60;= j) &#123;&#10;        exchange(i, j);&#10;        i++;&#10;        j--;&#10;      &#125;&#10;    &#125;&#10;    // &#36882;&#24402;&#10;    if (low &#60; j)&#10;      quicksort(low, j);&#10;    if (i &#60; high)&#10;      quicksort(i, high);&#10;  &#125;&#10;&#10;  private void exchange(int i, int j) &#123;&#10;    int temp = numbers[i];&#10;    numbers[i] = numbers[j];&#10;    numbers[j] = temp;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="快速排序">快速排序</h2><p>快速排序是最常用的排序算法之一，相比于时间复杂度为O(N<sup>2</sup>)的冒泡排序算法，快速排序的时间复杂度只是<figure class="highlight"><table><tr><td class="gutte]]>
-    </summary>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
-    
-      <category term="quick sort" scheme="http://pascocoder.github.io/tags/quick-sort/"/>
-    
-      <category term="sort" scheme="http://pascocoder.github.io/tags/sort/"/>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[为什么Java中的字符串具有不可变性?]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/why-string-is-immutable-in-java/"/>
-    <id>http://pascocoder.github.io/2015/09/02/why-string-is-immutable-in-java/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>java中的字符串（string）是一个不可变的类，不可变的类就是这个类的实例不能被修改，当实例被创建后，这个实例的所有信息都被初始化，这些信息将不能再被修改。不可变的类有很多优点。本文总结为什么字符串类被设计为不可变的类。要回答这个问题需要深入理解内存，同步，数据结构等知识。</p>
-<h3 id="字符串池（string_pool）">字符串池（string pool）</h3><p>字符串池是方法区（Method Area，这又是什么鬼？）中的一个特殊的储存区域。当创建一个字符串时，如果这个字符串之前就已经存在于字符串池中，那么就会返回这个之前就已经存在字符串的引用，而不是去创建一个新的实例对象并返回引用。</p>
-<p>下面的代码只会创建一个字符串实例对象在内存堆中</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String string1 = <span class="string">"abcd"</span>;</span><br><span class="line">String string2 = <span class="string">"abcd"</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="/assets/images/java-string-pool.jpeg" alt="pic1"></p>
-<h3 id="缓存哈希码（caching_hashcode）">缓存哈希码（caching hashcode）</h3><p>字符串的hashcode在Java中很用，如HashMap。具有了不可变性就保证了hashcode不会变化，所以就可以缓存hashcode而不必担心它会发生。这就意味着，当不可变类的实例对象每次被使用就不需要再去计算它的hashcode。这样更有效率。</p>
-<p>在字符串类里，有下面的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> hash;<span class="comment">//this is used to cache hash code.</span></span><br></pre></td></tr></table></figure>
-<h3 id="方便其他类的使用">方便其他类的使用</h3><p>为了更具体的理解，请看下面的程序：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HashSet&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">set.add(<span class="keyword">new</span> String(<span class="string">"a"</span>));</span><br><span class="line">set.add(<span class="keyword">new</span> String(<span class="string">"b"</span>));</span><br><span class="line">set.add(<span class="keyword">new</span> String(<span class="string">"c"</span>));</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span>(String a: set)</span><br><span class="line">    a.value = <span class="string">"a"</span>;</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，如果字符串类的实例是可变的，那么这些值就会被改变进而违反了hashset的设计原则（hashset只包含不重复的元素）。这个例子只是为了简单理解，实际上真正的字符串类没有value字段。（就是说a.value是语法错误的，作者为了让大家理解自己造的…实际上上面的代码执行后并没有改变set里的值，输出的仍然是abc。不知道这样说大家理解了没。）</p>
-<p>###安全性</p>
-<p>在很多java类中，字符串被广泛的当做参数，比如网络连接，打开文件等等类，如果字符串不具有不变性，上述的网络连接，文件将会改变，导致一系列的安全问题。该方法认为它连接到一台电脑，但其实并不是这样的。可变的字符串同样会导致安全问题映射，因为这些参数都是字符串。</p>
-<p>  下面是例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">connect</span><span class="params">(string s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!isSecure(s)) &#123; </span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SecurityException(); </span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//here will cause problem, if s is changed before this by using other references. </span></span><br><span class="line"><span class="comment">//如果在这之前通过使用其他的引用改变了s的值，那这里就会出现问题   </span></span><br><span class="line">    causeProblem(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="不可变的对象是线程安全的">不可变的对象是线程安全的</h3><p>因为不可变的对象是不能被修改的，所以他们就能在多个线程之间自由的共享。这就从根本上消除了在不同线程之间做同步的需求。</p>
-<p>总之，字符串为了效率和安全的原因被设计成不可变的，这也是为什么一般情况下不可变类更受青睐。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>java中的字符串（string）是一个不可变的类，不可变的类就是这个类的实例不能被修改，当实例被创建后，这个实例的所有信息都被初始化，这些信息将不能再被修改。不可变的类有很多优点。本文总结为什么字符串类被设计为不可变的类。要回答这个问题需要深入理解内存，同步，数据结构等知]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[网站监控iOS客户端]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/"/>
-    <id>http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
-<h2 id="服务器端的程序">服务器端的程序</h2><p>服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访问的总时间。</p>
-<h2 id="客户端程序的实现">客户端程序的实现</h2><ol>
-<li>使用多组数据，每个网站条目算是一组（section）。</li>
-<li>自定义化每组数据的HeaderView，并添加点击手势识别。</li>
-<li>默认情况下，每组下的行数(row)为0.</li>
-<li>当点击headerView时，为该section添加一行，行的内容就是网站的详细情况。</li>
-<li>再次点击header时，就删除该section的一行数据，从而实现tableView的下拉菜单功能。</li>
-</ol>
-<h2 id="学习到的知识点">学习到的知识点</h2><ol>
-<li>更加熟悉了objective-c的面向对象编程。</li>
-<li>复习了UINavigationController，UITableView的使用，单例模式的使用。</li>
-<li>动手实现自定义的HeaderView</li>
-</ol>
-<h2 id="下一步的打算">下一步的打算</h2><ol>
-<li>把数据固化。假如没有联网，就会显示最后一次请求的数据。（因为数据量较小，不需要保存历史数据，所以不采用CoreData）</li>
-<li>加入APNS,当有新的网站无法访问，或者网站恢复正常，推送提示</li>
-<li>美化外观</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
-<h2 id]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[leetcode No.198 House Robber]]></title>
     <link href="http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/"/>
     <id>http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/</id>
@@ -692,110 +648,6 @@ the NSObject meta-class’ class is itself.
       <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
     
       <category term="Dynamic Programming" scheme="http://pascocoder.github.io/tags/Dynamic-Programming/"/>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[GitHub Permission to user/repo denied to another user]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/GitHub-Permission-to-repository-denied-to-username/"/>
-    <id>http://pascocoder.github.io/2015/09/02/GitHub-Permission-to-repository-denied-to-username/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="遇到的问题">遇到的问题</h3><p>今天给自己去了一个英文名，于是就新注册了gmail账号和新的Github账号在搭建blog时，使用git命令向Github上push的时候，出现了下面的提示信息：</p>
-<blockquote>
-<p>‘GitHub Permission to user/repo denied to another user’</p>
-</blockquote>
-<p>我已经添加了新账号的ssh keys，<br>another user显示的是我的github旧账号</p>
-<h3 id="原因">原因</h3><p>Mac的keychain储存了久的账号和密码</p>
-<h3 id="解决方法">解决方法</h3><p>Sadly I kept receiving a 403 error saying my usual username couldn’t access the repository with my usual account details. Somehow my username and password were being cached. Now I don’t recall setting this up but somewhere along the line I used KeyChain to save my password. I tried a number of things on the command line to resolve this (all I really wanted to get was a prompt for a username and password). In the end I found that I had to delete the Keychain entry for my old account and Magically the username and password prompt came back.</p>
-<p>To delete a keychain entry on Mavericks. Pres cmd + space then type key chain. Select Keychain Access. In the new window that pops up search for GitHub. Then bring up the context menu for the GitHub entry and choose delete. Now when you try to push from command line, it will prompt you for your username and password.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="遇到的问题">遇到的问题</h3><p>今天给自己去了一个英文名，于是就新注册了gmail账号和新的Github账号在搭建blog时，使用git命令向Github上push的时候，出现了下面的提示信息：</p>
-<blockquote>
-<p>‘GitHub Pe]]>
-    </summary>
-    
-      <category term="github" scheme="http://pascocoder.github.io/tags/github/"/>
-    
-      <category term="issues" scheme="http://pascocoder.github.io/tags/issues/"/>
-    
-      <category term="github" scheme="http://pascocoder.github.io/categories/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java可变参数]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/java-varargs-examples/"/>
-    <id>http://pascocoder.github.io/2015/09/02/java-varargs-examples/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"a"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String ... s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String a: s)</span><br><span class="line">        System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-_可变参数是怎样工作的？">1. 可变参数是怎样工作的？</h3><p>当使用可变参数功能时，实际上会先创建一个数组，大小为调用位置传过来参数的数量。然后把参数的值放进数组，最后把数组当做参数传进方法（method）中。</p>
-<h3 id="2-_什么时候使用可变参数？">2. 什么时候使用可变参数？</h3><p>作为其定义，当方法需要处理任意数量的对象时，可变参数是非常有用的。Java SDK中的 String.format(String format, Object… args) 就是一个很好的例子。字符串可以格式化任何数目的参数，使用了可变参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"An integer: %d"</span>, i);</span><br><span class="line">String.format(<span class="string">"An integer: %d and a string: %s"</span>, i, s);</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[leetcode No.130 Surrounded Regions]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/surrounded-regions/"/>
-    <id>http://pascocoder.github.io/2015/09/02/surrounded-regions/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="No-130_题目：被包围的区域">No.130 题目：被包围的区域</h3><pre><code>Given a <span class="number">2</span>D board containing <span class="string">'X'</span> and <span class="string">'O'</span>, capture all regions surrounded by <span class="string">'X'</span>.
-A region is captured by flipping all <span class="string">'O'</span>s into <span class="string">'X'</span>s in that surrounded region.
-
-For example,
-
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> O O <span class="keyword">X</span>
-<span class="keyword">X</span> <span class="keyword">X</span> O <span class="keyword">X</span>
-<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
-
-After running your function, the board should be:
-
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
-
-
-给出一个二维的数组 board 里面包含字符 <span class="string">'X'</span>和字符 <span class="string">'O'</span>,找到所有被字符 <span class="string">'X'</span>包围的区域。把被包围区域的字符 <span class="string">'O'</span>变成字符 <span class="string">'X'</span>。
-
-例如：
-
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> O O <span class="keyword">X</span>
-<span class="keyword">X</span> <span class="keyword">X</span> O <span class="keyword">X</span>
-<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
-
-你的程序运行后，二维数组 board应该是：
-
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span> <span class="keyword">X</span>
-<span class="keyword">X</span> O <span class="keyword">X</span> <span class="keyword">X</span>
-</code></pre><h3 id="我的代码">我的代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Location</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> hei;</span><br><span class="line">		<span class="keyword">int</span> len;</span><br><span class="line">		<span class="keyword">char</span> value;</span><br><span class="line">		Location(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">char</span> val)&#123;</span><br><span class="line">			hei = x;</span><br><span class="line">			len = y;</span><br><span class="line">			value = val;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasC</span><span class="params">(ArrayList&lt;Location&gt; list)</span></span>&#123;</span><br><span class="line">		Iterator&lt;Location&gt; iterator = list.iterator();</span><br><span class="line">		<span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">			Location L = iterator.next();</span><br><span class="line">			<span class="keyword">if</span>(L.value == <span class="string">'C'</span>)&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">		Queue&lt;Location&gt; queue = <span class="keyword">new</span> LinkedList&lt;Location&gt;();</span><br><span class="line">		ArrayList&lt;Location&gt; list = <span class="keyword">new</span> ArrayList&lt;Location&gt;();</span><br><span class="line">		<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> hei = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (board == <span class="keyword">null</span> || board.length == <span class="number">0</span>)</span><br><span class="line">		    <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> height = board.length;</span><br><span class="line">        <span class="keyword">if</span> (board[<span class="number">0</span>] == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> length = board[<span class="number">0</span>].length;</span><br><span class="line">		<span class="keyword">for</span>(len=<span class="number">0</span>;len&lt;length;len++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(hei=<span class="number">0</span>;hei&lt;height;hei++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(board[hei][len]==<span class="string">'O'</span>)&#123;</span><br><span class="line">						board[hei][len] = <span class="string">'B'</span>;</span><br><span class="line">					queue.offer(<span class="keyword">new</span> Location(hei,len,board[hei][len]));</span><br><span class="line">					<span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">						Location Lcur = queue.poll();</span><br><span class="line">						<span class="keyword">if</span>(Lcur.hei-<span class="number">1</span>&lt;<span class="number">0</span>||Lcur.hei+<span class="number">1</span>&gt;=height||Lcur.len-<span class="number">1</span>&lt;<span class="number">0</span>||Lcur.len+<span class="number">1</span>&gt;=length)&#123;</span><br><span class="line">							board[Lcur.hei][Lcur.len] = <span class="string">'C'</span>;</span><br><span class="line">						&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">							<span class="comment">//up</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei-<span class="number">1</span>][Lcur.len] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei-<span class="number">1</span>][Lcur.len] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei-<span class="number">1</span>,Lcur.len,board[Lcur.hei-<span class="number">1</span>][Lcur.len]));</span><br><span class="line">								board[Lcur.hei-<span class="number">1</span>][Lcur.len] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="comment">//down</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei+<span class="number">1</span>][Lcur.len] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei+<span class="number">1</span>][Lcur.len] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei+<span class="number">1</span>,Lcur.len,board[Lcur.hei+<span class="number">1</span>][Lcur.len]));</span><br><span class="line">								board[Lcur.hei+<span class="number">1</span>][Lcur.len] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="comment">//left</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei][Lcur.len-<span class="number">1</span>] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei][Lcur.len-<span class="number">1</span>] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei,Lcur.len-<span class="number">1</span>,board[Lcur.hei][Lcur.len-<span class="number">1</span>]));</span><br><span class="line">								board[Lcur.hei][Lcur.len-<span class="number">1</span>] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="comment">//right</span></span><br><span class="line">							<span class="keyword">if</span>(board[Lcur.hei][Lcur.len+<span class="number">1</span>] != <span class="string">'X'</span>&amp;&amp;board[Lcur.hei][Lcur.len+<span class="number">1</span>] != <span class="string">'B'</span>)&#123;</span><br><span class="line">								queue.offer(<span class="keyword">new</span> Location(Lcur.hei,Lcur.len+<span class="number">1</span>,board[Lcur.hei][Lcur.len+<span class="number">1</span>]));</span><br><span class="line">								board[Lcur.hei][Lcur.len+<span class="number">1</span>] = <span class="string">'B'</span>;</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">						list.add(<span class="keyword">new</span> Location(Lcur.hei,Lcur.len,board[Lcur.hei][Lcur.len]));</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="comment">//is queue1 contains Character 'C',if yes ,change all element in queue1 into 'C' </span></span><br><span class="line">					<span class="keyword">if</span>(hasC(list))&#123;</span><br><span class="line">						Iterator&lt;Location&gt; iterator = list.iterator();</span><br><span class="line">						<span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">							Location L2 = iterator.next();</span><br><span class="line">							board[L2.hei][L2.len] = <span class="string">'C'</span>;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">					list.clear();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(len=<span class="number">0</span>;len&lt;length;len++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(hei=<span class="number">0</span>;hei&lt;height;hei++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(board[hei][len]==<span class="string">'B'</span>)&#123;</span><br><span class="line">					board[hei][len] = <span class="string">'X'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(board[hei][len]==<span class="string">'C'</span>)&#123;</span><br><span class="line">					board[hei][len] = <span class="string">'O'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="No-130_题目：被包围的区域">No.130 题目：被包围的区域</h3><pre><code>Given a <span class="number">2</span>D board containing <span class="string">'X'</]]>
-    </summary>
-    
-      <category term="algorithm" scheme="http://pascocoder.github.io/tags/algorithm/"/>
     
       <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
     
@@ -914,6 +766,102 @@ After running your function, the board should be:
       <category term="start" scheme="http://pascocoder.github.io/tags/start/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[网站监控iOS客户端]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/"/>
+    <id>http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
+<h2 id="服务器端的程序">服务器端的程序</h2><p>服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访问的总时间。</p>
+<h2 id="客户端程序的实现">客户端程序的实现</h2><ol>
+<li>使用多组数据，每个网站条目算是一组（section）。</li>
+<li>自定义化每组数据的HeaderView，并添加点击手势识别。</li>
+<li>默认情况下，每组下的行数(row)为0.</li>
+<li>当点击headerView时，为该section添加一行，行的内容就是网站的详细情况。</li>
+<li>再次点击header时，就删除该section的一行数据，从而实现tableView的下拉菜单功能。</li>
+</ol>
+<h2 id="学习到的知识点">学习到的知识点</h2><ol>
+<li>更加熟悉了objective-c的面向对象编程。</li>
+<li>复习了UINavigationController，UITableView的使用，单例模式的使用。</li>
+<li>动手实现自定义的HeaderView</li>
+</ol>
+<h2 id="下一步的打算">下一步的打算</h2><ol>
+<li>把数据固化。假如没有联网，就会显示最后一次请求的数据。（因为数据量较小，不需要保存历史数据，所以不采用CoreData）</li>
+<li>加入APNS,当有新的网站无法访问，或者网站恢复正常，推送提示</li>
+<li>美化外观</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
+<h2 id]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java可变参数]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/java-varargs-examples/"/>
+    <id>http://pascocoder.github.io/2015/09/02/java-varargs-examples/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"a"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String ... s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String a: s)</span><br><span class="line">        System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-_可变参数是怎样工作的？">1. 可变参数是怎样工作的？</h3><p>当使用可变参数功能时，实际上会先创建一个数组，大小为调用位置传过来参数的数量。然后把参数的值放进数组，最后把数组当做参数传进方法（method）中。</p>
+<h3 id="2-_什么时候使用可变参数？">2. 什么时候使用可变参数？</h3><p>作为其定义，当方法需要处理任意数量的对象时，可变参数是非常有用的。Java SDK中的 String.format(String format, Object… args) 就是一个很好的例子。字符串可以格式化任何数目的参数，使用了可变参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"An integer: %d"</span>, i);</span><br><span class="line">String.format(<span class="string">"An integer: %d and a string: %s"</span>, i, s);</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">]]>
+    </summary>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
+    
+      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[在GitHub Pages上快速搭建自己的博客]]></title>
+    <link href="http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/"/>
+    <id>http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/</id>
+    <published>2015-09-01T17:45:57.000Z</published>
+    <updated>2015-09-02T02:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>###Jekyll-Bootstrap<br><a href="http://jekyllbootstrap.com/" target="_blank" rel="external">Jekyll-Bootstrap</a>是一个基于Jekyll的博客框架。<a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html" target="_blank" rel="external">Jekyll介绍</a>。</p>
+<p>###Jekyll搭建博客的优点</p>
+<ul>
+<li>支持markdown和textile</li>
+<li>使用git管理</li>
+<li>使用terminal发布</li>
+<li>没有数据库</li>
+</ul>
+<p>###3分钟在GitHub-Pages上搭建自己的博客<br><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll快速开始</a></p>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[This is my first GitHub-Pages article.]]>
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://pascocoder.github.io/tags/Blog/"/>
+    
+      <category term="GitHub" scheme="http://pascocoder.github.io/tags/GitHub/"/>
+    
+      <category term="Jekyll-Bootstrap" scheme="http://pascocoder.github.io/tags/Jekyll-Bootstrap/"/>
+    
+      <category term="Pages" scheme="http://pascocoder.github.io/tags/Pages/"/>
+    
+      <category term="GitHub" scheme="http://pascocoder.github.io/categories/GitHub/"/>
     
   </entry>
   
