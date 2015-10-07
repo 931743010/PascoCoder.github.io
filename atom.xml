@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-09-18T09:01:38.000Z</updated>
+  <updated>2015-10-07T04:06:23.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,246 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[digitalOcean referral credit]]></title>
+    <link href="http://pascocoder.github.io/2015/10/07/digitalOcean-referral-credit/"/>
+    <id>http://pascocoder.github.io/2015/10/07/digitalOcean-referral-credit/</id>
+    <published>2015-10-07T04:06:23.000Z</published>
+    <updated>2015-10-07T04:06:23.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[vim commands]]></title>
+    <link href="http://pascocoder.github.io/2015/10/07/vim-commands/"/>
+    <id>http://pascocoder.github.io/2015/10/07/vim-commands/</id>
+    <published>2015-10-07T04:04:54.000Z</published>
+    <updated>2015-10-07T04:04:54.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[about docker]]></title>
+    <link href="http://pascocoder.github.io/2015/10/07/about-docker/"/>
+    <id>http://pascocoder.github.io/2015/10/07/about-docker/</id>
+    <published>2015-10-07T04:04:05.000Z</published>
+    <updated>2015-10-07T04:04:05.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[thinkphp nginx configure]]></title>
+    <link href="http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/"/>
+    <id>http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/</id>
+    <published>2015-10-07T04:03:28.000Z</published>
+    <updated>2015-10-07T04:03:28.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[mysql export and import]]></title>
+    <link href="http://pascocoder.github.io/2015/10/07/mysql-export-and-import/"/>
+    <id>http://pascocoder.github.io/2015/10/07/mysql-export-and-import/</id>
+    <published>2015-10-07T04:03:05.000Z</published>
+    <updated>2015-10-07T04:03:05.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[linux php session]]></title>
+    <link href="http://pascocoder.github.io/2015/10/07/linux-php-session/"/>
+    <id>http://pascocoder.github.io/2015/10/07/linux-php-session/</id>
+    <published>2015-10-07T03:52:22.000Z</published>
+    <updated>2015-10-07T03:52:22.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[encrypt a message with RSA in python]]></title>
+    <link href="http://pascocoder.github.io/2015/09/29/encrypt-a-message-with-RSA-in-python/"/>
+    <id>http://pascocoder.github.io/2015/09/29/encrypt-a-message-with-RSA-in-python/</id>
+    <published>2015-09-29T07:57:57.000Z</published>
+    <updated>2015-09-29T07:57:57.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[python scrapy]]></title>
+    <link href="http://pascocoder.github.io/2015/09/29/python-scrapy/"/>
+    <id>http://pascocoder.github.io/2015/09/29/python-scrapy/</id>
+    <published>2015-09-29T07:03:29.000Z</published>
+    <updated>2015-09-29T07:03:29.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[linux中常用命令]]></title>
+    <link href="http://pascocoder.github.io/2015/09/26/linux-commands/"/>
+    <id>http://pascocoder.github.io/2015/09/26/linux-commands/</id>
+    <published>2015-09-26T14:29:08.000Z</published>
+    <updated>2015-09-27T09:22:21.000Z</updated>
+    <content type="html"><![CDATA[<p>好记性不如烂笔头，linux常用命令很多，虽然可以 man ，但还是写篇文章记录一下，这篇文章就记下我常忘记的命令吧。便于我查阅。</p>
+<ol>
+<li>远程拷贝 scp</li>
+<li>压缩解压 tar</li>
+<li>sed &amp; awk</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>好记性不如烂笔头，linux常用命令很多，虽然可以 man ，但还是写篇文章记录一下，这篇文章就记下我常忘记的命令吧。便于我查阅。</p>
+<ol>
+<li>远程拷贝 scp</li>
+<li>压缩解压 tar</li>
+<li>sed &amp; awk</li>
+</o]]>
+    </summary>
+    
+      <category term="command line" scheme="http://pascocoder.github.io/tags/command-line/"/>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CentOS6.5安装配置LNMP(linux + nginx + MySQL + PHP)]]></title>
+    <link href="http://pascocoder.github.io/2015/09/26/install-and-configure-LNMP/"/>
+    <id>http://pascocoder.github.io/2015/09/26/install-and-configure-LNMP/</id>
+    <published>2015-09-26T08:12:36.000Z</published>
+    <updated>2015-09-27T06:18:10.000Z</updated>
+    <content type="html"><![CDATA[<p>新买的阿里云系统选择了CentOS6.5，需要安装Apache，MySQL，PHP之类的东西，之前虽然配置过好几次，但是每次再配置时具体细节就记不清楚了，还需要去网上查，所以今天闲来无事配置完记录一下，也便于以后查阅。</p>
+<p>为了方便，采用 yum 安装</p>
+<h2 id="安装epel_repository">安装epel repository</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+<h2 id="安装MySQL">安装MySQL</h2><h3 id="卸载以前的MySQL相关的软件">卸载以前的MySQL相关的软件</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove mysql-server mysql mysql-libs</span><br></pre></td></tr></table></figure>
+<h3 id="使用yum安装MySQL">使用yum安装MySQL</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mysql-server</span><br></pre></td></tr></table></figure>
+<h3 id="启动MySQL">启动MySQL</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/mysqld restart</span><br></pre></td></tr></table></figure>
+<h3 id="配置MySQL">配置MySQL</h3><p>输入以下指令根据提示设置MySQL<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/bin/mysql_secure_installation</span><br></pre></td></tr></table></figure></p>
+<h3 id="开启远程访问（可选）">开启远程访问（可选）</h3><p>如果想用另一台电脑程序访问MySQL，需要开启。如果只是同一台电脑使用MySQL，无需开启。<br>需要开启的话，打开MySQL对应的端口（默认是3306）<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport <span class="number">3306</span> -m <span class="keyword">state</span> --state NEW,ESTABLISHED -j ACCEPT</span><br><span class="line">/sbin/service iptables save</span><br><span class="line">iptables -I OUTPUT -p tcp --sport <span class="number">3306</span> -m <span class="keyword">state</span> --state ESTABLISHED -j ACCEPT</span><br><span class="line">/sbin/service iptables save</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装nginx">安装nginx</h2><h3 id="yum_安装_nginx">yum 安装 nginx</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install nginx</span><br></pre></td></tr></table></figure>
+<h3 id="运行nginx">运行nginx</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx start</span><br></pre></td></tr></table></figure>
+<h2 id="安装PHP">安装PHP</h2><h3 id="yum_安装PHP">yum 安装PHP</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install php-fpm php-mysql</span><br></pre></td></tr></table></figure>
+<h3 id="配置PHP">配置PHP</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim <span class="regexp">/etc/</span>php.ini</span><br></pre></td></tr></table></figure>
+<p>把cgi.fix_pathinfo=1 改为 cgi.fix_pathinfo=0</p>
+<h2 id="配置nginx">配置nginx</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vi</span> /etc/nginx/nginx.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p>修改 work processes数目为4；</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>nginx<span class="regexp">/conf.d/</span><span class="keyword">default</span>.conf</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在index中添加index.php</li>
+<li>把server_name改为当前的IP地址</li>
+<li>把root改为 /usr/share/nginx/html</li>
+<li>去掉 location ~ .php$ 的注释</li>
+<li>把root改为真实的目录 /usr/share/nginx/html</li>
+<li>把 fastcgi_param 改为 SCRIPT_FILENAME   $document_root$fastcgi_script_name</li>
+</ol>
+<p>下面给出参考配置：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The default server</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="title">server</span> &#123;</span><br><span class="line">    <span class="title">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="title">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">    <span class="title">location</span> / &#123;</span><br><span class="line">        <span class="title">root</span>   /usr/share/nginx/html;</span><br><span class="line">        <span class="title">index</span> index.php  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title">error_page</span>  <span class="number">404</span>              /<span class="number">404</span>.html;</span><br><span class="line">    <span class="title">location</span> = /<span class="number">404</span>.html &#123;</span><br><span class="line">        <span class="title">root</span>   /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="title">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="title">root</span>   /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="title">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">        <span class="title">root</span>           /usr/share/nginx/html;</span><br><span class="line">        <span class="title">fastcgi_pass</span>   <span class="number">127.0.0.1:9000</span>;</span><br><span class="line">        <span class="title">fastcgi_index</span>  index.php;</span><br><span class="line">        <span class="title">fastcgi_param</span>  SCRIPT_FILENAME   <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">        <span class="title">include</span>        fastcgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置php-fpm">配置php-fpm</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/php-fpm.<span class="keyword">d</span>/www.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p>把user和group改为nginx<br>然后重启服务<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> service php-fpm restart</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建_phpinfo页面">创建 phpinfo页面</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/usr/</span>share<span class="regexp">/nginx/</span>html<span class="regexp">/info.php</span></span><br></pre></td></tr></table></figure>
+<p>写入如下代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">	phpinfo();</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>重启nginx服务器<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> service nginx restart</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置开机自启动">设置开机自启动</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chkconfig --<span class="keyword">levels</span> 235 mysqld <span class="keyword">on</span></span><br><span class="line">sudo chkconfig --<span class="keyword">levels</span> 235 nginx <span class="keyword">on</span></span><br><span class="line">sudo chkconfig --<span class="keyword">levels</span> 235 php-fpm <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>新买的阿里云系统选择了CentOS6.5，需要安装Apache，MySQL，PHP之类的东西，之前虽然配置过好几次，但是每次再配置时具体细节就记不清楚了，还需要去网上查，所以今天闲来无事配置完记录一下，也便于以后查阅。</p>
+<p>为了方便，采用 yum 安装</p>
+<]]>
+    </summary>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://pascocoder.github.io/tags/mysql/"/>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[delegate and block]]></title>
+    <link href="http://pascocoder.github.io/2015/09/22/delegate-and-block/"/>
+    <id>http://pascocoder.github.io/2015/09/22/delegate-and-block/</id>
+    <published>2015-09-22T12:35:53.000Z</published>
+    <updated>2015-09-22T12:35:53.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS视图层次管理]]></title>
+    <link href="http://pascocoder.github.io/2015/09/22/Managing-the-View-Hierarchy/"/>
+    <id>http://pascocoder.github.io/2015/09/22/Managing-the-View-Hierarchy/</id>
+    <published>2015-09-22T04:36:00.000Z</published>
+    <updated>2015-09-22T06:54:55.000Z</updated>
+    <content type="html"><![CDATA[<p>为了让某个view放到最上面，或者将某个view放到下层，经常需要使用bringSubviewToFront:和sendSubviewToBack:两个方法。</p>
+<h3 id="遇到的问题">遇到的问题</h3><p>设置的rootBackgroundButton用来遮盖self.view区域，但换层的时候，rootBackgroundButton被新的层覆盖，不能显示在最上面了。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.viewControllerContainView</span> addSubview:willShowViewController<span class="variable">.view</span>];</span><br><span class="line">willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">320</span>;</span><br><span class="line">     <span class="keyword">if</span> (animated) &#123;</span><br><span class="line">         [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.2</span> animations:^&#123;</span><br><span class="line">              previousViewController<span class="variable">.view</span><span class="variable">.x</span> += <span class="number">20</span>;         </span><br><span class="line">          &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</span><br><span class="line">                <span class="comment">//移除上一个ViewController</span></span><br><span class="line">                [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">          &#125;];</span><br><span class="line">                </span><br><span class="line"><span class="comment">//动画的把新的viewcontroller的origin.x设为0</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.6</span> delay:<span class="number">0</span> usingSpringWithDamping:<span class="number">1</span> initialSpringVelocity:<span class="number">1.2</span> options:<span class="built_in">UIViewAnimationOptionCurveLinear</span> animations:^&#123;</span><br><span class="line">                    willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">                &#125; completion:<span class="literal">nil</span>];</span><br><span class="line">                <span class="comment">//动画的把新的菜单栏缩回</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span> delay:<span class="number">0.1</span> options:<span class="built_in">UIViewAnimationOptionCurveEaseOut</span> animations:^&#123;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">	&#125; completion:<span class="literal">nil</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">     willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line">     <span class="keyword">self</span><span class="variable">.currentSelectedIndex</span> = index;</span><br></pre></td></tr></table></figure>
+<p>出现效果如下：<br><img src="/img/managing_the_view_hierarchy/1.png" alt="pic1"></p>
+<p>修改代码，添加<br>[self.viewControllerContainView bringSubviewToFront:self.rootBackgroundButton]</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.viewControllerContainView</span> addSubview:willShowViewController<span class="variable">.view</span>];</span><br><span class="line">willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">320</span>;</span><br><span class="line"><span class="comment">//rootBackgroundButton放在最上面</span></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.viewControllerContainView</span> bringSubviewToFront:<span class="keyword">self</span><span class="variable">.rootBackgroundButton</span>];</span><br><span class="line">     <span class="keyword">if</span> (animated) &#123;</span><br><span class="line">         [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.2</span> animations:^&#123;</span><br><span class="line">              previousViewController<span class="variable">.view</span><span class="variable">.x</span> += <span class="number">20</span>;         </span><br><span class="line">          &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</span><br><span class="line">                <span class="comment">//移除上一个ViewController</span></span><br><span class="line">                [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">          &#125;];</span><br><span class="line">                </span><br><span class="line"><span class="comment">//动画的把新的viewcontroller的origin.x设为0</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.6</span> delay:<span class="number">0</span> usingSpringWithDamping:<span class="number">1</span> initialSpringVelocity:<span class="number">1.2</span> options:<span class="built_in">UIViewAnimationOptionCurveLinear</span> animations:^&#123;</span><br><span class="line">                    willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">                &#125; completion:<span class="literal">nil</span>];</span><br><span class="line">                <span class="comment">//动画的把新的菜单栏缩回</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span> delay:<span class="number">0.1</span> options:<span class="built_in">UIViewAnimationOptionCurveEaseOut</span> animations:^&#123;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">	&#125; completion:<span class="literal">nil</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">     willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line">     <span class="keyword">self</span><span class="variable">.currentSelectedIndex</span> = index;</span><br></pre></td></tr></table></figure>
+<p>正常了！<br><img src="/img/managing_the_view_hierarchy/2.png" alt="pic2"></p>
+<h3 id="更多">更多</h3><ul>
+<li>superview    (Property)</li>
+<li>subviews    (Property)</li>
+<li>window    (Property)</li>
+<li>addSubview:</li>
+<li>bringSubviewToFront:</li>
+<li>sendSubviewToBack:</li>
+<li>removeFromSuperview</li>
+<li>insertSubview:atIndex:</li>
+<li>insertSubview:aboveSubview:</li>
+<li>insertSubview:belowSubview:</li>
+<li>exchangeSubviewAtIndex:withSubviewAtIndex:</li>
+<li>isDescendantOfView:</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>为了让某个view放到最上面，或者将某个view放到下层，经常需要使用bringSubviewToFront:和sendSubviewToBack:两个方法。</p>
+<h3 id="遇到的问题">遇到的问题</h3><p>设置的rootBackgroundButton用来]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Weakify and strongify]]></title>
@@ -134,7 +374,7 @@
     <link href="http://pascocoder.github.io/2015/09/05/effective-objective-c-reading-notes/"/>
     <id>http://pascocoder.github.io/2015/09/05/effective-objective-c-reading-notes/</id>
     <published>2015-09-05T01:32:52.000Z</published>
-    <updated>2015-09-05T05:28:58.000Z</updated>
+    <updated>2015-09-28T01:39:00.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://book.douban.com/subject/25829244/" target="_blank" rel="external">effective objective c 2.0 豆瓣地址</a></p>
 <h2 id="第1章_熟悉objective-c_1">第1章　熟悉objective-c 1</h2><h3 id="第1条：了解objective-c语言的起源_1">第1条：了解objective-c语言的起源 1</h3><ul>
 <li>objective-c使用 消息结构 而非 函数调用 。使用消息结构的语言，其运行时所执行的代码由运行环境来决定，使用函数调用的语言，则有编译器决定。如果范例代码中调用的函数是多态，那么运行时就要按照“虚方法表”（virtual table）来查出到底应该执行哪个函数实现。而采用消息结构的语言，不论是否多态，总是运行时才会去查找所要执行的方法，实际上编译器甚至不关心接受消息的对象时何种类型。接收消息的对象问题也是在运行时出路，其过程叫做“动态绑定”（dynamic binding）。</li>
@@ -179,13 +419,17 @@
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> EOCConnectionStateConnectionStatus : <span class="built_in">NSInteger</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>选项彼此组合</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="built_in">UIViewAutoresizing</span> &#123;</span><br><span class="line">    <span class="built_in">UIViewAutoresizingNone</span>                 = <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleLeftMargin</span>   = <span class="number">1</span> &lt;&lt; <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleWidth</span>        = <span class="number">1</span> &lt;&lt; <span class="number">1</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleRightMargin</span>  = <span class="number">1</span> &lt;&lt; <span class="number">2</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleTopMargin</span>    = <span class="number">1</span> &lt;&lt; <span class="number">3</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleHeight</span>       = <span class="number">1</span> &lt;&lt; <span class="number">4</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleBottomMargin</span> = <span class="number">1</span> &lt;&lt; <span class="number">5</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//It’s then possible to determine whether one of the options is set by using the bitwise AND operator:</span></span><br><span class="line"><span class="keyword">enum</span> <span class="built_in">UIVewAutoresizing</span> resizing =</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleWidth</span> |</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleHeight</span>;</span><br><span class="line"><span class="keyword">if</span> (resizing &amp; <span class="built_in">UIViewAutoresizingFlexibleWidth</span>) &#123;</span><br><span class="line">    <span class="comment">// UIViewAutoresizingFlexibleWidth is set</span></span><br><span class="line">&#125;”</span><br><span class="line"></span><br><span class="line">摘录来自: Galloway, Matt. “Effective Objective-C <span class="number">2.0</span>: <span class="number">52</span> Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)”。 iBooks.</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="built_in">UIViewAutoresizing</span> &#123;</span><br><span class="line">    <span class="built_in">UIViewAutoresizingNone</span>                 = <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleLeftMargin</span>   = <span class="number">1</span> &lt;&lt; <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleWidth</span>        = <span class="number">1</span> &lt;&lt; <span class="number">1</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleRightMargin</span>  = <span class="number">1</span> &lt;&lt; <span class="number">2</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleTopMargin</span>    = <span class="number">1</span> &lt;&lt; <span class="number">3</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleHeight</span>       = <span class="number">1</span> &lt;&lt; <span class="number">4</span>,</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleBottomMargin</span> = <span class="number">1</span> &lt;&lt; <span class="number">5</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//It’s then possible to determine whether one of the options is set by using the bitwise AND operator:</span></span><br><span class="line"><span class="keyword">enum</span> <span class="built_in">UIVewAutoresizing</span> resizing =</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleWidth</span> |</span><br><span class="line">    <span class="built_in">UIViewAutoresizingFlexibleHeight</span>;</span><br><span class="line"><span class="keyword">if</span> (resizing &amp; <span class="built_in">UIViewAutoresizingFlexibleWidth</span>) &#123;</span><br><span class="line">    <span class="comment">// UIViewAutoresizingFlexibleWidth is set</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>结合switch 语句</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, EOCConnectionState) &#123;</span><br><span class="line">    EOCConnectionStateDisconnected,</span><br><span class="line">    EOCConnectionStateConnecting,</span><br><span class="line">    EOCConnectionStateConnected,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (_currentState) &#123;</span><br><span class="line">    EOCConnectionStateDisconnected:</span><br><span class="line">        <span class="comment">// Handle disconnected state</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    EOCConnectionStateConnecting:</span><br><span class="line">        <span class="comment">// Handle connecting state</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    EOCConnectionStateConnected:</span><br><span class="line">        <span class="comment">// Handle connected state</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">摘录来自: Galloway, Matt. “Effective Objective-C <span class="number">2.0</span>: <span class="number">52</span> Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)”。 iBooks.</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, EOCConnectionState) &#123;</span><br><span class="line">    EOCConnectionStateDisconnected,</span><br><span class="line">    EOCConnectionStateConnecting,</span><br><span class="line">    EOCConnectionStateConnected,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (_currentState) &#123;</span><br><span class="line">    EOCConnectionStateDisconnected:</span><br><span class="line">        <span class="comment">// Handle disconnected state</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    EOCConnectionStateConnecting:</span><br><span class="line">        <span class="comment">// Handle connecting state</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    EOCConnectionStateConnected:</span><br><span class="line">        <span class="comment">// Handle connected state</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="第2章_对象、消息、运行期_21">第2章　对象、消息、运行期 21</h2><h3 id="第6条：理解“属性”这一概念_21">第6条：理解“属性”这一概念 21</h3><h3 id="第7条：在对象内部尽量直接访问实例变量_28">第7条：在对象内部尽量直接访问实例变量 28</h3><h3 id="第8条：理解“对象等同性”这一概念_30">第8条：理解“对象等同性”这一概念 30</h3><h3 id="第9条：以“类族模式”隐藏实现细节_35">第9条：以“类族模式”隐藏实现细节 35</h3><h3 id="第10条：在既有类中使用关联对象存放自定义数据_39">第10条：在既有类中使用关联对象存放自定义数据 39</h3><h3 id="第11条：理解objc_msgsend的作用_42">第11条：理解objc_msgsend的作用 42</h3><h3 id="第12条：理解消息转发机制_46">第12条：理解消息转发机制 46</h3><h3 id="第13条：用“方法调配技术”调试“黑盒方法”_52">第13条：用“方法调配技术”调试“黑盒方法” 52</h3><h3 id="第14条：理解“类对象”的用意_56">第14条：理解“类对象”的用意 56</h3><h2 id="第3章_接口与api设计_60">第3章　接口与api设计 60</h2><h3 id="第15条：用前缀避免命名空间冲突_60">第15条：用前缀避免命名空间冲突 60</h3><h3 id="第16条：提供“全能初始化方法”_64">第16条：提供“全能初始化方法” 64</h3><h3 id="第17条：实现description方法_69">第17条：实现description方法 69</h3><h3 id="第18条：尽量使用不可变对象_73">第18条：尽量使用不可变对象 73</h3><h3 id="第19条：使用清晰而协调的命名方式_78">第19条：使用清晰而协调的命名方式 78</h3><h3 id="第20条：为私有方法名加前缀_83">第20条：为私有方法名加前缀 83</h3><h3 id="第21条：理解objective-c错误模型_85">第21条：理解objective-c错误模型 85</h3><h3 id="第22条：理解nscopying协议_89">第22条：理解nscopying协议 89</h3><h2 id="第4章_协议与分类_94">第4章　协议与分类 94</h2><h3 id="第23条：通过委托与数据源协议进行对象间通信_94">第23条：通过委托与数据源协议进行对象间通信 94</h3><h3 id="第24条：将类的实现代码分散到便于管理的数个分类之中_101">第24条：将类的实现代码分散到便于管理的数个分类之中 101</h3><h3 id="第25条：总是为第三方类的分类名称加前缀_104">第25条：总是为第三方类的分类名称加前缀 104</h3><h3 id="第26条：勿在分类中声明属性_106">第26条：勿在分类中声明属性 106</h3><h3 id="第27条：使用“class-continuation分类”隐藏实现细节_108">第27条：使用“class-continuation分类”隐藏实现细节 108</h3><h3 id="第28条：通过协议提供匿名对象_114">第28条：通过协议提供匿名对象 114</h3><h2 id="第5章_内存管理_117">第5章　内存管理 117</h2><h3 id="第29条：理解引用计数_117">第29条：理解引用计数 117</h3><h3 id="第30条：以arc简化引用计数_122">第30条：以arc简化引用计数 122</h3><h3 id="第31条：在dealloc方法中只释放引用并解除监听_130">第31条：在dealloc方法中只释放引用并解除监听 130</h3><h3 id="第32条：编写“异常安全代码”时留意内存管理问题_132">第32条：编写“异常安全代码”时留意内存管理问题 132</h3><h3 id="第33条：以弱引用避免保留环_134">第33条：以弱引用避免保留环 134</h3><h3 id="第34条：以“自动释放池块”降低内存峰值_137">第34条：以“自动释放池块”降低内存峰值 137</h3><h3 id="第35条：用“僵尸对象”调试内存管理问题_141">第35条：用“僵尸对象”调试内存管理问题 141</h3><h3 id="第36条：不要使用retaincount_146">第36条：不要使用retaincount 146</h3><h2 id="第6章_块与大中枢派发_149">第6章　块与大中枢派发 149</h2><h3 id="第37条：理解“块”这一概念_149">第37条：理解“块”这一概念 149</h3><h3 id="第38条：为常用的块类型创建typedef_154">第38条：为常用的块类型创建typedef 154</h3><h3 id="第39条：用handler块降低代码分散程度_156">第39条：用handler块降低代码分散程度 156</h3><h3 id="第40条：用块引用其所属对象时不要出现保留环_162">第40条：用块引用其所属对象时不要出现保留环 162</h3><h3 id="第41条：多用派发队列，少用同步锁_165">第41条：多用派发队列，少用同步锁 165</h3><h3 id="第42条：多用gcd，少用performselector系列方法_169">第42条：多用gcd，少用performselector系列方法 169</h3><h3 id="第43条：掌握gcd及操作队列的使用时机_173">第43条：掌握gcd及操作队列的使用时机 173</h3><h3 id="第44条：通过dispatch_group机制，根据系统资源状况来执行任务_175">第44条：通过dispatch group机制，根据系统资源状况来执行任务 175</h3><h3 id="第45条：使用dispatch_once来执行只需运行一次的线程安全代码_179">第45条：使用dispatch_once来执行只需运行一次的线程安全代码 179</h3><h3 id="第46条：不要使用dispatch_get_current_queue_180">第46条：不要使用dispatch_get_current_queue 180</h3><h2 id="第7章_系统框架_185">第7章　系统框架 185</h2><h3 id="第47条：熟悉系统框架_185">第47条：熟悉系统框架 185</h3><h3 id="第48条：多用块枚举，少用for循环_187">第48条：多用块枚举，少用for循环 187</h3><h3 id="第49条：对自定义其内存管理语义的collection使用无缝桥接_193">第49条：对自定义其内存管理语义的collection使用无缝桥接 193</h3><h3 id="第50条：构建缓存时选用nscache而非nsdictionary_197">第50条：构建缓存时选用nscache而非nsdictionary 197</h3><h3 id="第51条：精简initialize与load的实现代码_200">第51条：精简initialize与load的实现代码 200</h3><h3 id="第52条：别忘了nstimer会保留其目标对象_205">第52条：别忘了nstimer会保留其目标对象 205</h3>]]></content>
+<h2 id="第2章_对象、消息、运行期_21">第2章　对象、消息、运行期 21</h2><h3 id="第6条：理解“属性”这一概念_21">第6条：理解“属性”这一概念 21</h3><ul>
+<li>@dynamic关键字会告诉编译器不自动创建实现属性所用的实例变量，也不要为其创建存取方法。在编译器访问属性的代码时，即使编译器发现没有定义存取方法，也不会报错，它相信这些方法能在运行期找到。</li>
+<li><h3 id="第7条：在对象内部尽量直接访问实例变量_28">第7条：在对象内部尽量直接访问实例变量 28</h3><h3 id="第8条：理解“对象等同性”这一概念_30">第8条：理解“对象等同性”这一概念 30</h3><h3 id="第9条：以“类族模式”隐藏实现细节_35">第9条：以“类族模式”隐藏实现细节 35</h3><h3 id="第10条：在既有类中使用关联对象存放自定义数据_39">第10条：在既有类中使用关联对象存放自定义数据 39</h3><h3 id="第11条：理解objc_msgsend的作用_42">第11条：理解objc_msgsend的作用 42</h3><h3 id="第12条：理解消息转发机制_46">第12条：理解消息转发机制 46</h3><h3 id="第13条：用“方法调配技术”调试“黑盒方法”_52">第13条：用“方法调配技术”调试“黑盒方法” 52</h3><h3 id="第14条：理解“类对象”的用意_56">第14条：理解“类对象”的用意 56</h3><h2 id="第3章_接口与api设计_60">第3章　接口与api设计 60</h2><h3 id="第15条：用前缀避免命名空间冲突_60">第15条：用前缀避免命名空间冲突 60</h3><h3 id="第16条：提供“全能初始化方法”_64">第16条：提供“全能初始化方法” 64</h3><h3 id="第17条：实现description方法_69">第17条：实现description方法 69</h3><h3 id="第18条：尽量使用不可变对象_73">第18条：尽量使用不可变对象 73</h3><h3 id="第19条：使用清晰而协调的命名方式_78">第19条：使用清晰而协调的命名方式 78</h3><h3 id="第20条：为私有方法名加前缀_83">第20条：为私有方法名加前缀 83</h3><h3 id="第21条：理解objective-c错误模型_85">第21条：理解objective-c错误模型 85</h3><h3 id="第22条：理解nscopying协议_89">第22条：理解nscopying协议 89</h3><h2 id="第4章_协议与分类_94">第4章　协议与分类 94</h2><h3 id="第23条：通过委托与数据源协议进行对象间通信_94">第23条：通过委托与数据源协议进行对象间通信 94</h3><h3 id="第24条：将类的实现代码分散到便于管理的数个分类之中_101">第24条：将类的实现代码分散到便于管理的数个分类之中 101</h3><h3 id="第25条：总是为第三方类的分类名称加前缀_104">第25条：总是为第三方类的分类名称加前缀 104</h3><h3 id="第26条：勿在分类中声明属性_106">第26条：勿在分类中声明属性 106</h3><h3 id="第27条：使用“class-continuation分类”隐藏实现细节_108">第27条：使用“class-continuation分类”隐藏实现细节 108</h3><h3 id="第28条：通过协议提供匿名对象_114">第28条：通过协议提供匿名对象 114</h3><h2 id="第5章_内存管理_117">第5章　内存管理 117</h2><h3 id="第29条：理解引用计数_117">第29条：理解引用计数 117</h3><h3 id="第30条：以arc简化引用计数_122">第30条：以arc简化引用计数 122</h3><h3 id="第31条：在dealloc方法中只释放引用并解除监听_130">第31条：在dealloc方法中只释放引用并解除监听 130</h3><h3 id="第32条：编写“异常安全代码”时留意内存管理问题_132">第32条：编写“异常安全代码”时留意内存管理问题 132</h3><h3 id="第33条：以弱引用避免保留环_134">第33条：以弱引用避免保留环 134</h3><h3 id="第34条：以“自动释放池块”降低内存峰值_137">第34条：以“自动释放池块”降低内存峰值 137</h3><h3 id="第35条：用“僵尸对象”调试内存管理问题_141">第35条：用“僵尸对象”调试内存管理问题 141</h3><h3 id="第36条：不要使用retaincount_146">第36条：不要使用retaincount 146</h3><h2 id="第6章_块与大中枢派发_149">第6章　块与大中枢派发 149</h2><h3 id="第37条：理解“块”这一概念_149">第37条：理解“块”这一概念 149</h3><h3 id="第38条：为常用的块类型创建typedef_154">第38条：为常用的块类型创建typedef 154</h3><h3 id="第39条：用handler块降低代码分散程度_156">第39条：用handler块降低代码分散程度 156</h3><h3 id="第40条：用块引用其所属对象时不要出现保留环_162">第40条：用块引用其所属对象时不要出现保留环 162</h3><h3 id="第41条：多用派发队列，少用同步锁_165">第41条：多用派发队列，少用同步锁 165</h3><h3 id="第42条：多用gcd，少用performselector系列方法_169">第42条：多用gcd，少用performselector系列方法 169</h3><h3 id="第43条：掌握gcd及操作队列的使用时机_173">第43条：掌握gcd及操作队列的使用时机 173</h3><h3 id="第44条：通过dispatch_group机制，根据系统资源状况来执行任务_175">第44条：通过dispatch group机制，根据系统资源状况来执行任务 175</h3><h3 id="第45条：使用dispatch_once来执行只需运行一次的线程安全代码_179">第45条：使用dispatch_once来执行只需运行一次的线程安全代码 179</h3><h3 id="第46条：不要使用dispatch_get_current_queue_180">第46条：不要使用dispatch_get_current_queue 180</h3><h2 id="第7章_系统框架_185">第7章　系统框架 185</h2><h3 id="第47条：熟悉系统框架_185">第47条：熟悉系统框架 185</h3><h3 id="第48条：多用块枚举，少用for循环_187">第48条：多用块枚举，少用for循环 187</h3><h3 id="第49条：对自定义其内存管理语义的collection使用无缝桥接_193">第49条：对自定义其内存管理语义的collection使用无缝桥接 193</h3><h3 id="第50条：构建缓存时选用nscache而非nsdictionary_197">第50条：构建缓存时选用nscache而非nsdictionary 197</h3><h3 id="第51条：精简initialize与load的实现代码_200">第51条：精简initialize与load的实现代码 200</h3><h3 id="第52条：别忘了nstimer会保留其目标对象_205">第52条：别忘了nstimer会保留其目标对象 205</h3></li>
+</ul>
+]]></content>
     <summary type="html">
     <![CDATA[<p><a href="http://book.douban.com/subject/25829244/" target="_blank" rel="external">effective objective c 2.0 豆瓣地址</a></p>
 <h2 id="第1章_熟悉ob]]>
@@ -260,608 +504,6 @@
       <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[深入学习Objective-C（一）：揭开NSObject的面纱]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/dig-into-objc/"/>
-    <id>http://pascocoder.github.io/2015/09/02/dig-into-objc/</id>
-    <published>2015-09-02T13:14:46.000Z</published>
-    <updated>2015-09-03T19:01:28.000Z</updated>
-    <content type="html"><![CDATA[<p>对于NSObject来说，我们可是非常熟悉的了，它是objc中大多数类的基类。注意，并不是所有的类都继承于NSObject，比如NSProxy类。详细的类图可以参考这篇文章IOS 整体框架类图，讲的很详细。</p>
-<p>既然要深入学习objc，我们不妨从最熟悉的NSObject类开始，让我们来看一看它的源码吧！</p>
-<p>首先，我们来看看NSObject.h这个头文件，我们很容易从Xcode中进入这个文件中。它被包含在Foundation/NSObject.h路径下，如下图所示：</p>
-<p>看了这个头文件，我们就有点疑惑了，怎么这个头文件了没有NSObject类的定义啊，只是定义了@interface NSObject (NSCoderMethods) 和 @protocol NSCopying 等几个类别和协议。那么真正的NSObject的类定义在哪里呢？</p>
-<p>是不是使用#import从其他文件中引入的呢？看看这个文件的第6行代码，果然发现了我们想找到的头文件定义。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;objc/NSObject.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>我们找到这个头文件，如下图所示：</p>
-<p>终于，我们找到了如下所示的NSObject的类定义：</p>
-<p>看到了我们熟悉的alloc、init等方法。但是，下面这个结构我们有点陌生，NSObject只有一个成员变量是Class类型的isa变量。那么Class类型又是什么东西呢？看命名应该是指所属的类。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSObject</span> &lt;<span class="title">NSObject</span>&gt; </span>&#123;</span><br><span class="line">        Class isa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们进入Class中看看它到底是个什么东西。</p>
-<p>我们发现Class就是一个结构体的指针而已。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_class *Class;</span><br></pre></td></tr></table></figure>
-<p>我们还需要在看看objc_class是个什么东西。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa  OBJC_ISA_<span class="built_in">AVAILABILITY</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#if !__OBJC2__</span></span><br><span class="line">    Class super_class                                        OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *name                                         OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">long</span> version                                             OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">long</span> info                                                OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">long</span> instance_size                                       OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">struct</span> objc_ivar_list *ivars                             OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">struct</span> objc_method_list **methodLists                    OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">struct</span> objc_cache *cache                                 OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line">    <span class="keyword">struct</span> objc_protocol_list *protocols                     OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line"><span class="preprocessor">#endif</span></span><br><span class="line"></span><br><span class="line">&#125; OBJC2_UN<span class="built_in">AVAILABLE</span>;</span><br><span class="line"><span class="comment">/* Use `Class` instead of `struct objc_class *` */</span></span><br></pre></td></tr></table></figure>
-<p>可以看出来对于objc2和objc1的实现是不同的，我们现在只看objc2.0对应的版本，我们把objc 1.0的代码删掉，就只剩下如下结构了：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>真的是好简洁啊！<br>让我们再来对比一下NSObject的定义：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSObject</span> &lt;<span class="title">NSObject</span>&gt; </span>&#123;</span><br><span class="line">        Class isa;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我靠，这俩货怎么长的这么像啊！<br>有点乱，别急，我们撸一下。<br>首先，我们知道了Class类型就是objc_class结构体的指针，如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_class *Class;</span><br></pre></td></tr></table></figure>
-<p>而objc_class又如下定义，包含了一个指向自身类型的指针的变量isa。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>我们都知道objc中id也是一种对象类型，那么它究竟是什么呢？来看下面的定义：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125; *<span class="keyword">id</span>;</span><br></pre></td></tr></table></figure>
-<p>原来id类型就是一个objc_object结构体的指针啊，这个objc_object的结构也仅仅包含一个isa变量。上述我们讨论的关键的几个数据结构NSObject，objc_class，objc_object都仅有一个objc_class * 类型，也就是Class类型的变量isa,可见isa这个变量是多么的重要啊。</p>
-<p>我们可以得出这样的结论，在objc的runtime中，类是用objc_class结构体表示的，对象是用objc_object结构体表示的。 对象的isa用来标示这个对象是哪个类的实例。</p>
-<p>下面我们来验证这一点，首先我们来看一段代码：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *str = <span class="string">@"hello world"</span>;</span><br><span class="line"><span class="keyword">if</span> ([str isMemberOfClass:[<span class="built_in">NSString</span> class]]) &#123;</span><br><span class="line">    <span class="comment">// str is actual an instance of NSString</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// str is not a NSString instance</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>这是我们在实际的开发过程中经常用到的，用来判断str变量是不是NSString类型的一个实例。我们都知道- (BOOL)isMemberOfClass:(Class)aClass可以判断对象是不是某个类的实例。我们来看一下这个方法的源码是如何实现的。</p>
-<p>首先，这些源码是属于objc runtime的，庆幸的是objc runtime的源代码苹果已经开源了，你可以在这里下载到objc的runtime源代码。打开objc/Source/NSObject.mm这个文件，这就是NSObject的实现代码。大概浏览一遍，函数是不是有很多都非常熟悉呢？可以说这些函数接口我们每天都在用，这次终于该好好看看它们是怎么实现的了。</p>
-<p>为了方便，我把其中一部分代码摘录出来，并把其中用到 Tagged Pointer 支持的代码去掉，关于 Tagged Pointer 我会单独写一篇文章来分析它，这里我们先忽略即可。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isMemberOfClass:(Class)cls &#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> class] == cls;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (Class)class &#123;</span><br><span class="line">    <span class="keyword">return</span> object_getClass(<span class="keyword">self</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Class object_getClass(<span class="keyword">id</span> obj)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> _object_getClass(obj);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">inline</span> Class _object_getClass(<span class="keyword">id</span> obj)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (obj) <span class="keyword">return</span> obj-&gt;isa;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> Nil;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的代码非常直白，无需多言。我们注意下最后这个函数：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">inline</span> Class _object_getClass(<span class="keyword">id</span> obj)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (obj) <span class="keyword">return</span> obj-&gt;isa;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> Nil;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果obj不空，返回的Class类型就是obj-&gt;isa,否则，返回的是Nil。这就从源码上证实了isa就是代表一个对象的类型。<br>通过上面的源码分析，我们搞明白了对于普通的对象实例，isa就是表明它所属的类型。通过调用[obj1 class]等方法返回的其实就是这个isa变量。<br>下面我们再来分析一下类objc_class，为什么它也有一个isa变量呢？</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>在面向对象的设计中，万物皆对象，所以类(Class)也是一个对象，它也有一个isa，那么类的isa指向谁呢？<br>我们看这句代码[NSObject class]，这里我们调用了+ (Class)class这个类方法，我们再开发中经常用到这个方法，它返回的是这个类所属的Class类型。这是不是就可以作为一个类也是一个对象的佐证呢？<br>我们继续看看objc runtime的源码，你可以在objc/Source/NSObject.mm这个文件中找到下面的代码：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+ (Class)class &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>是不是有点看不懂了？[NSObject class]这句代码返回的竟然是self，我们都知道对于一个类的实例来说，self总是指向其自身的，但是这里并没有实例啊，我们是直接调用了NSObject这个类的一个类方法+(Class)class啊。难道类本身也有一个self指针？</p>
-<p>别急，我们再来仔细看看类方法+(Class)class的文档：</p>
-<blockquote>
-<p>Returns the class object.</p>
-<p>(Class)class Return Value The class object.</p>
-</blockquote>
-<p>这个函数的返回值是一个类对象class object，所以其本质上还是一个对象而已。既然是一个对象，它拥有一个self指针是不是就不奇怪了呢？现在我们就明白了，对于像NSObject这样的类来说，它其实代表的是一个类对象，本质上还是一个普通的实例对象，类对象的self指针应该指向的是这个类对象自身。<br>是不是有点明白了？<br>但是，那这个类对象又是谁的实例呢？很遗憾，要找到这个问题的答案，我们在 objc runtime 这一层上已经没办法办到了，我们需要到更低层，也就是 objc 语言层去寻找答案了。因为self是 objc 的保留关键字，所以，objc 需要为这个关键字提供语言层面上的支持，我们要找到答案，可以从self这条线索入手，看看 objc 到底是怎样实现的？<br>感兴趣的同学可以研究下clang的源码，是用C++实现的，objc 的语言层就是用它来生成的，在clang/lib/CodeGen目录下有关于objc代码生成相关的代码，关于self到底是什么，我觉着可以从LoadObjCSelf这个函数入手去研究一下。</p>
-<p>###总结：<br>本篇文章只是从我们经常用到的一些函数的源码出发，引出了对 objc 对象模型的一些思考，但是，并没有解释的非常清楚。我也是初次接触这块的东西，我会继续把我学习的一些心得体会记录下来，欢迎大家指正与讨论。下一篇文章我希望继续把 objc meta class 相关的内容与大家一起分享。</p>
-<p>是不是觉着还不过瘾？那么请看看下面这些大牛的文章吧。</p>
-<ul>
-<li>The Objective-C object model</li>
-<li>Objective-C对象模型及应用</li>
-<li>What is a meta-class in Objective-C?</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>对于NSObject来说，我们可是非常熟悉的了，它是objc中大多数类的基类。注意，并不是所有的类都继承于NSObject，比如NSProxy类。详细的类图可以参考这篇文章IOS 整体框架类图，讲的很详细。</p>
-<p>既然要深入学习objc，我们不妨从最熟悉的NSObj]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
-    
-      <category term="转载" scheme="http://pascocoder.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/objc-associated-object/"/>
-    <id>http://pascocoder.github.io/2015/09/02/objc-associated-object/</id>
-    <published>2015-09-02T09:12:42.000Z</published>
-    <updated>2015-09-02T13:13:20.000Z</updated>
-    <content type="html"><![CDATA[<p>转载自codingcoder的博客，<a href="http://blog.codingcoder.com/objc-associated-object/" target="_blank" rel="external">原文地址</a></p>
-<p>今天看了下 objc 2.0 引入的强大特性：关联对象，下面把我的理解与大家分享一下。</p>
-<h3 id="使用类目遇到的问题">使用类目遇到的问题</h3><p>我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现文件中，甚至你也可以放在类扩展的区域中，但是，你却不能在普通的类目中声明成员变量。<strong>因为普通的类目(category)只是用来扩展方法的，不能用来扩展成员变量。</strong></p>
-<p>有些时候，我们在设计代码时，会把代码分离成很多个类目，这样方便代码的管理。如下所示：</p>
-<p><img src="/img/objc-associated-objects/1.png" alt="image1"></p>
-<p>对每种类型的 API 单独放在对应的类目中，在代码组织上就非常清晰。但是，现在有一个这样的问题，有时候，我们需要在类目中保存一些状态，可以使用成员变量的形式来实现，但是，这些状态又是相对独立的，只在这个类目中会被用到，其他的类目不会使用它。所以，我们想把这个成员变量隐藏在这个类目中，对于其他的类目，这个成员变量都不可见。</p>
-<p>如果类目允许扩展成员变量的话，这个问题就很好解决，直接在类目的实现文件里声明一个成员变量即可。这样既能对外部隐藏这个成员变量，又能在这个类目中使用它。很完美的解决方案，<strong>但是不幸的是，objc 不允许在类目中扩展成员变量</strong>。所以你不得不在类的声明中声明需要的成员变量，而且还需要把它暴露出来，以使你的类目能够使用它。这样，随着类目越来越多，你不得不在类中声明越来越多原本需要对外隐藏的成员变量。</p>
-<p>我们上面遇到的问题，在一定程度上可以使用关联对象来解决，稍后我们会看一个具体的例子。现在，我们先来看看关联对象的基本使用方法。</p>
-<h3 id="关联对象">关联对象</h3><p>我们在使用关联对象时，主要会用到下面两个方法：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_setAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">void</span> *key, <span class="keyword">id</span> value, objc_AssociationPolicy policy)</span><br><span class="line"></span><br><span class="line"><span class="keyword">id</span> objc_getAssociatedObject(<span class="keyword">id</span> object, <span class="keyword">void</span> *key)</span><br></pre></td></tr></table></figure>
-<p>我们通过代码来看看如何使用它：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *u1 = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"blog.codingcoder.com"</span>];</span><br><span class="line">objc_setAssociatedObject(u1, <span class="string">@"u1key"</span>, <span class="string">@"s1assciated"</span>, OBJC_ASSO<span class="built_in">CIATION_COPY</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">id</span> get1 = objc_getAssociatedObject(u1, <span class="string">@"u1key"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURL</span> *u2 = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"u2"</span>];</span><br><span class="line"><span class="keyword">id</span> get2 = objc_getAssociatedObject(u2, <span class="string">@"u1key"</span>);</span><br></pre></td></tr></table></figure>
-<p>objc_setAssociatedObject 就是把一个对象关联到另外一个对象上去，比如下面的代码就是把一个字符串@”XXXX”关联到对象u1上面。这样就<strong>类似于对象u1对象上多了一个成员变量。</strong></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objc_setAssociatedObject(u1, <span class="string">@"u1key"</span>, <span class="string">@"XXXX"</span>, OBJC_ASSO<span class="built_in">CIATION_COPY</span>);</span><br></pre></td></tr></table></figure>
-<p>特别注意一点，这里的<strong>关联对象，是关联到某一个具体的对象的，并不是关联到类的</strong>。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *u2 = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"u2"</span>];</span><br><span class="line"><span class="keyword">id</span> get2 = objc_getAssociatedObject(u2, <span class="string">@"u1key"</span>);</span><br></pre></td></tr></table></figure>
-<p>上面的代码中，u2变量并没有关联一个对象，所以，你不能通过objc_getAssociatedObject获取一个值。<br>另外需要注意一点，<strong>对象和被关联对象的生命周期是相互独立的</strong>。</p>
-<blockquote>
-<p>根据WWDC 2011, Session 322 (第36分钟左右)发布的内存销毁时间表，被关联的对象在生命周期内要比对象本身释放的晚很多。它们会在被 NSObject -dealloc 调用的 object_dispose() 方法中释放。</p>
-</blockquote>
-<h3 id="AFNetworking中的例子">AFNetworking中的例子</h3><p>下面我们来看一个例子，相信 AFNetworking 这个类库大家应该都很熟悉。在这个类库中，有一个UIImageView+AFNetworking的类目。</p>
-<p><img src="/img/objc-associated-objects/2.png" alt="image2"></p>
-<p>我们看一下源码：</p>
-<p><img src="/img/objc-associated-objects/3.png" alt="image3"></p>
-<p>我们可以看到，<strong>它声明了一个私有属性af_imageRequestOperation，而它通过自定义 getter / setter 方法，使用objc_getAssociatedObject 和 objc_setAssociatedObject方法来达到类似与添加成员变量的目的</strong>，而这个变量对外部是完全隐藏的。所以，这也就解决了我们最开始描述的那个类目无法扩展成员变量的问题。</p>
-<p>最后，需要注意的一点是，这种objc_setAssociatedObject的方式是运用了 objc runtime 的特性，它确实很强大，但是，相对应的，不正确的使用或者滥用 runtime 会带来比较麻烦的 bug。所以，只有在你确定必须要使用 runtime 特性时，而且你完全明白你这么做所带来的影响时，才使用这种特性。一定不要为了使用这种技术而使用它。</p>
-<h3 id="参考文章：">参考文章：</h3><ul>
-<li><p><a href="http://nshipster.cn/associated-objects/" target="_blank" rel="external">Associated Objects</a></p>
-</li>
-<li><p><a href="http://www.justinyan.me/post/1624" target="_blank" rel="external">理解 Objective-C Runtime</a></p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>转载自codingcoder的博客，<a href="http://blog.codingcoder.com/objc-associated-object/" target="_blank" rel="external">原文地址</a></p>
-<p>今天看了下 objc]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
-    
-      <category term="转载" scheme="http://pascocoder.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Objective-C 中的 meta-class 是什么？]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/"/>
-    <id>http://pascocoder.github.io/2015/09/02/what-is-meta-class-in-objective-c/</id>
-    <published>2015-09-02T02:43:21.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://blog.cocoabit.com/2013-12-08-meta-class/" target="_blank" rel="external">中文翻译转载地址</a></p>
-<p><a href="http://www.cocoawithlove.com/2010/01/what-is-meta-class-in-objective-c.html" target="_blank" rel="external">英文原文地址</a></p>
-<p>在这篇文章中，我关注的是 Objective-C 中的一个陌生的概念—— meta-class。在 Objective-C 中的每个类都有一个相关联的 meta-class，但是你很少会直接使用 meta-class，他们仍旧保持着神秘的面纱。我们从在运行时创建一个类开始。通过查看 “class pair”，我会解释 meta-class 是什么，同时也会谈谈在 Objective-C 中的对象或者类相关的一些一般主题。</p>
-<h3 id="在运行时创建一个类">在运行时创建一个类</h3><p>下面的代码在运行时创建了一个 NSError 的子类同时为它添加了一个方法：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class newClass =</span><br><span class="line">    objc_allocateClassPair([<span class="built_in">NSError</span> class], <span class="string">"RuntimeErrorSubclass"</span>, <span class="number">0</span>);</span><br><span class="line">class_addMethod(newClass, <span class="keyword">@selector</span>(report), (IMP)ReportFunction, <span class="string">"v@:"</span>);</span><br><span class="line">objc_registerClassPair(newClass);</span><br></pre></td></tr></table></figure>
-<p>添加的方法使用叫 ReportFunction 的函数作为实现，定义如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> ReportFunction(<span class="keyword">id</span> <span class="keyword">self</span>, SEL _cmd)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"This object is %p."</span>, <span class="keyword">self</span>);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Class is %@, and super is %@."</span>, [<span class="keyword">self</span> class], [<span class="keyword">self</span> superclass]);</span><br><span class="line"></span><br><span class="line">    Class currentClass = [<span class="keyword">self</span> class];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Following the isa pointer %d times gives %p"</span>, i, currentClass);</span><br><span class="line">        currentClass = object_getClass(currentClass);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"NSObject's class is %p"</span>, [<span class="built_in">NSObject</span> class]);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"NSObject's meta class is %p"</span>, object_getClass([<span class="built_in">NSObject</span> class]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>表面上来看，非常简单。在运行时创建一个类只需要这三步：</p>
-<ol>
-<li>为 “class pair” 创建存储空间（使用 objc_allocateClassPair）。</li>
-<li>为这个类添加所需的 methods 和 ivars（我已经使用 class_addMethod 添加过一个方法了）。</li>
-<li>注册这个类，然后就可以使用了（使用 objc_registerClassPair）。</li>
-</ol>
-<p>然后，中级问题是：“class pair” 是什么？函数 objc_allocateClassPair 只返回了一个值：这个 class。这一对中的另一个在哪？（译注：pair 有 “一对，一双” 的意思）</p>
-<p>我敢肯定你已经猜到了另一半就是 meta-class（就是这篇文章的标题），但是要解释那是什么和你为什么需要它，我需要介绍一些在 Objective-C 中的关于对象和类的背景知识。</p>
-<h3 id="把一个数据结构变为对象需要什么？">把一个数据结构变为对象需要什么？</h3><p>每个对象都有一个类。这是面相对象概念的基础知识，但在 Objective-C 中不是这样，它（译注：class）同样是这个数据的一部分。每个可以被当成对象的数据结构都在恰当的位置有一个指向一个类的指针。</p>
-<p>在 Objective-C，一个对象的类由它的 isa 指针决定。isa 指针指向这个对象的 Class。</p>
-<p>事实上，在 Objective-C 中的对象的定义看起来像这样：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">&#125; *<span class="keyword">id</span>;</span><br></pre></td></tr></table></figure>
-<p>这就是说：任何结构体只要以一个指向 Class 结构的指针开始的就可以被当成是 objc_object。</p>
-<p>在 Objective-C 中的对象的一个重要的特性是，你可以向它们发送消息：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">@"stringValue"</span></span><br><span class="line">    writeToFile:<span class="string">@"/file.txt"</span> atomically:<span class="literal">YES</span> encoding:<span class="built_in">NSUTF8StringEncoding</span> error:<span class="literal">NULL</span>];</span><br></pre></td></tr></table></figure>
-<p>你可以这么做是因为，当你向一个 Objective-C 的对象（像这里的 NSCFString）发送消息的时候，runtime 沿着对象的 isa 指针找到了这个对象的 Class（这里是 NSCFString 的类）结构体。 Class 结构体中包含了一个这个类的方法列表和一个指向父类的指针，用于查找继承的方法。</p>
-<p>关键点是 Class 结构体中定义了你可以向一个对象发送的消息。</p>
-<h3 id="meta-class_是什么？">meta-class 是什么？</h3><p>现在，你可能已经知道，在 Objective-C 中一个 Class 也是一个对象。这就意味着你也可以向一个 Class 发送消息。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSStringEncoding</span> defaultStringEncoding = [<span class="built_in">NSString</span> defaultStringEncoding];</span><br></pre></td></tr></table></figure>
-<p>这里，向 NSString 类发送了 defaultStringEncoding。</p>
-<p>可以这么做是因为在 Objective-C 中每个 Class 它自己同样也是个对象。也就是说 Class 结构体必须以 isa 指针开始，然后就可以在二进制兼容（binary compatible）我上面介绍的 objc_object 结构了，接着下一个字段必须是一个指向它的父类的指针（要是类就是基类就是 nil）。</p>
-<p>我上周已经介绍过，定义一个类有好几种方法，主要依赖于你正在运行的 runtime 的版本。但，是的，都是由一个 isa 字段开始然后是 superclass 字段。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_class *Class;</span><br><span class="line"><span class="keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa;</span><br><span class="line">    Class super_class;</span><br><span class="line">    <span class="comment">/* 以下依赖于 runtime 的具体实现 …… */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>然而，为了让我们在 Class 上调用一个方法，Class 的 isa 指针必须指向一个 Class 结构体，并且那个 Class 结构体必须包含我们可以在那个 Class 上调用的方法的列表。</p>
-<p>这就引出了 meta-class 的定义：meta-class 是 Class 对象的类（the meta-class is the class for a Class object）。</p>
-<p>简单来说：</p>
-<ul>
-<li>当你向一个对象发送消息，就在那个对象的方法列表中查找那个消息。</li>
-<li>当你想一个类发送消息，就再那个类的 meta-class 中查找那个消息。</li>
-</ul>
-<p>meta-class 是必须的，因为它为一个 Class 存储类方法。每个类都必须有一个唯一的 meta-class，因为每个 Class 都有一个可能不一样的类方法。</p>
-<h3 id="meta-class_的类是什么？">meta-class 的类是什么？</h3><p>meta-class，如之前的 Class，同样是个对象。这就意味着你也可以在它上面调用方法。自然的，这就意味着它也必须有一个类（译注：isa 指针）。</p>
-<p>所有的 meta-class 使用它们基类的 meta-class （继承层次中最顶层的 Class 的 meta-class）作为它们自己的类。这就是说所有继承自 NSObject 的类（大部分的类），以 NSObject 的 meta-class 作为自己的 meta-class 的类。</p>
-<p>遵循这个规则，所有的 meta-class 使用基类的 meta-class 作为他们的类，任何基类的 meta-class 将会是他们自己（它们的 isa 指向他们自己）。这就是说 NSObject 的 meta-class 的 isa 指针指向它们自己（是自己的一个实例）。</p>
-<h3 id="class_和_meta-class_的继承">class 和 meta-class 的继承</h3><p>和 Class 以 super_class 指针指向它的父类的方法一样，meta-class 以 super_class 指针指向 Class 的 super_class 的 meta-class。（译注：这句话有点绕，就是 super-class 一个指向 Class 的父类，一个指向 meta-class 的父类。Class 是一般对象的类型，meta-class 是 Class 的类型。）</p>
-<p>进一步来讲，基类的 meta-class 设置 super_class 指针指向基类自己。</p>
-<p>这个继承层次的结果就是，所有在这个继承层次中的的实例，类和 meta-class 都继承了基类的层次。</p>
-<p>对于所有在 NSObject 层次中的实例，类和 meta-class，这就意味着所有 NSObject 的实例方法都是有效的。对于类和 meta-class，所有 NSObject 的类方法也同样是有效的。</p>
-<p>所有这些在字面上相当让人困惑。<a href="http://www.sealiesoftware.com/blog/" target="_blank" rel="external">Greg Parker</a> 已经<a href="http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html" target="_blank" rel="external">把实例，类，meta-class 还有他们的超类以非常棒的图解的方式聚合在一起</a>，展示他们是如何在一起工作的。</p>
-<h3 id="用实验验证这点">用实验验证这点</h3><p>为了验证这些，让我们看看在我文章开头提供的 ReportFunction 的输出。这个函数的目的是顺着 isa 指针打引出它找到的。</p>
-<p>要运行 ReportFunction，我们需要为这个动态创建的类创建一个实例，然后在上面调用这个方法。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">id</span> instanceOfNewClass =</span><br><span class="line">    [[newClass alloc] initWithDomain:<span class="string">@"someDomain"</span> code:<span class="number">0</span> userInfo:<span class="literal">nil</span>];</span><br><span class="line">[instanceOfNewClass performSelector:<span class="keyword">@selector</span>(report)];</span><br><span class="line">[instanceOfNewClass release];</span><br></pre></td></tr></table></figure>
-<p>因为没有这个方法的声明，所以我使用 performSelector: 调用这个方法，这样编译器就不会输出警告了。</p>
-<p>现在 ReportFunction 会沿着 isa 指针告诉我们这个对象使用了哪些类，meta-class 和 meta-class 的类。</p>
-<p>获取一个对象的类：ReportFunction 使用 object_getClass 跟随 isa 指针，因为 isa 指针是一个类中一个受保护的成员变量（你不能直接访问其他对象的 isa 指针）。ReportFunction 没有以类方法的形式这样调用，因为在 Class 对象上调用类方法不会返回 meta-class，而是再次返回 Class 对象（所以 [NSString class] 会返回 NSString 的类而不是 NSString 的 meta-class）。</p>
-<p>这个是程序运行后的结果（省去了 NSLog 的前缀）。</p>
-<pre><code>This object <span class="keyword">is</span> <span class="number">0x10010c810</span>.
-Class <span class="keyword">is</span> RuntimeErrorSubclass, <span class="keyword">and</span> super <span class="keyword">is</span> NSError.
-Following <span class="keyword">the</span> isa pointer <span class="number">1</span> <span class="keyword">times</span> gives <span class="number">0x10010c600</span>
-Following <span class="keyword">the</span> isa pointer <span class="number">2</span> <span class="keyword">times</span> gives <span class="number">0x10010c630</span>
-Following <span class="keyword">the</span> isa pointer <span class="number">3</span> <span class="keyword">times</span> gives <span class="number">0x7fff71038480</span>
-Following <span class="keyword">the</span> isa pointer <span class="number">4</span> <span class="keyword">times</span> gives <span class="number">0x7fff71038480</span>
-NSObject's <span class="type">class</span> <span class="keyword">is</span> <span class="number">0x7fff710384a8</span>
-NSObject's meta <span class="type">class</span> <span class="keyword">is</span> <span class="number">0x7fff71038480</span>
-</code></pre><p>看看通过递归的查看 isa 的地址：</p>
-<pre><code>the <span class="tag">object</span> is <span class="tag">address</span> <span class="number">0</span>x10010c810.
-the class is <span class="tag">address</span> <span class="number">0</span>x10010c600.
-the meta-class is <span class="tag">address</span> <span class="number">0</span>x10010c630.
-the meta-class’s class (<span class="tag">i</span><span class="class">.e</span>. the NSObject meta-class) is <span class="tag">address</span>     <span class="number">0</span>x7fff71038480.
-the NSObject meta-class’ class is itself.
-</code></pre><p>地址的值不是很重要，只是演示了上面讨论的从类到 meta-class 到 NSObject 的 meta-class 的过程。</p>
-<h3 id="结论_meta-class_是_Class_对象的类。">结论 meta-class 是 Class 对象的类。</h3><p>每个 Class 都有个不同的自己的 meta-class（因此每个 Class 都可以有一个自己不同的方法列表）。也就是说每个类的 Class 不完全相同。</p>
-<p>meta-class 总是会保证 Class 对象会有从基类继承的所有的的实例和类方法，加上之后继承的类方法。如从 NSObject 继承的类，就意味着在所有的 Class（和 meta-class）对象中定义了所有从 NSObject 继承的实例和协议方法。</p>
-<p>所有的 meta-class 使用基类的 meta-class（NSObject 的 meta-class 用于继承自 NSObject 的类）作为他们自己的类，包括在运行时自己定义的基础的 meta-class。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://blog.cocoabit.com/2013-12-08-meta-class/" target="_blank" rel="external">中文翻译转载地址</a></p>
-<p><a href="http://www.cocoawit]]>
-    </summary>
-    
-      <category term="meta-class" scheme="http://pascocoder.github.io/tags/meta-class/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="转载" scheme="http://pascocoder.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[JDK6和JDK7中substring() 方法的区别]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/"/>
-    <id>http://pascocoder.github.io/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/</id>
-    <published>2015-09-02T02:43:21.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)</p>
-<h3 id="substring()方法是做什么用的？">substring()方法是做什么用的？</h3><p>其实substring(int beginIndex,int endIndex)方法就是返回一个从beginIndex开始到endIndex-1结束的字符串.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String x = <span class="string">"abcdef"</span>;</span><br><span class="line">x = x.substring(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">System.out.println(x);</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<pre><code>bc
-</code></pre><h3 id="当substring()被调用时，究竟发生了什么！！！">当substring()被调用时，究竟发生了什么！！！</h3><p>你可能认为（但事实并非如此！），因为字符串对象的不变性（详见文章6、字符串的不变性），当x被赋值为x.substring(1,3)时，x储存的引用将会指向一个新的字符串对象（string对象），如下图所示：</p>
-<p><img src="/assets/images/string-immutability1-650x303.jpeg" alt="pic1"></p>
-<p>然而，这个图并没能准确的表示出内存上（堆，the heap）上发生了什么，当substring()方法被调用时，到底发生了什么呢，在JDK6和JDK7上又有什么不同呢？</p>
-<h3 id="JDK6中的substring()方法">JDK6中的substring()方法</h3><p>字符串是通过字符数组实现的，在JDK6中，字符串类（the string class）包含3个字段（即数据成员）：char value[] , int offset , int count . 它们分别用来储存真实的字符数组（char value[]）、第一个字符所在原字符数组的偏移量（int offset）、字符串中字符的数量（int count）。</p>
-<p><img src="/assets/images/string-substring-jdk6-650x389.jpeg" alt="pic2"></p>
-<p>为了解释这个问题的关键点，下面是字符串的简化代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JDK 6</span></span><br><span class="line"> </span><br><span class="line">String(<span class="keyword">int</span> offset, <span class="keyword">int</span> count, <span class="keyword">char</span> value[]) &#123;</span><br><span class="line">  <span class="keyword">this</span>.value = value;</span><br><span class="line">  <span class="keyword">this</span>.offset = offset;</span><br><span class="line">  <span class="keyword">this</span>.count = count;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//check boundary</span></span><br><span class="line">    <span class="keyword">return</span>  <span class="keyword">new</span> String(offset + beginIndex, endIndex - beginIndex, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="JDK6中的substring()方法会导致一个问题！">JDK6中的substring()方法会导致一个问题！</h3><p>如果你有一个特别长的字符串，但你每次只需要很短的一部分，所以你使用substring()方法，这就会导致一个性能问题，因为你只需要很小的一部分，substring()方法得到的字符串对象中的char value[]字段却保留了父数组的全部字符数组（也就是导致了空间浪费）。所以对于JDK6，解决方法如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = x.substring(a, b) + <span class="string">""</span></span><br></pre></td></tr></table></figure>
-<h3 id="JDK7中的substring()方法">JDK7中的substring()方法</h3><p>这个问题在JDK7中得到了改善，JDK7中的substring()方法会再内存堆里创建一个新的字符数组。</p>
-<p><img src="/assets/images/string-substring-jdk71-650x389.jpeg" alt="pic3"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JDK 7</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">char</span> value[], <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//check boundary</span></span><br><span class="line">    <span class="keyword">this</span>.value = Arrays.copyOfRange(value, offset, offset + count);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//check boundary</span></span><br><span class="line">    <span class="keyword">int</span> subLen = endIndex - beginIndex;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(value, beginIndex, subLen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java中的 length 和 length()]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/start-from-length-length-in-java/"/>
-    <id>http://pascocoder.github.io/2015/09/02/start-from-length-length-in-java/</id>
-    <published>2015-09-02T02:43:21.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>首先，你能快速回答下面的问题吗？！</p>
-<blockquote>
-<p>Without code autocompletion of any IDE, how to get the length of an array? And how to get the length of a String?</p>
-<p>在没有代码自动补全的IDE工具的情况下，怎么得到数组的长度？又怎么得到字符串的长度？</p>
-</blockquote>
-<p>我向不同级别的开发者问过这个问题：包括入门的和中级的开发者。他们都不能准确且自信的回答这个问题。IDE工具提供了方便的代码自动补全功能，这也导致了我们停留在表面上的理解。在这篇文章里，我将解释关于Java数组的一些关键概念。</p>
-<p>答案：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">System.out.println(arr.length);<span class="comment">//length for array </span></span><br><span class="line">String str = <span class="string">"abc"</span>;</span><br><span class="line">System.out.println(str.length());<span class="comment">//length() for string</span></span><br></pre></td></tr></table></figure>
-<p>问题是，为什么数组有 length 字段，而字符串却没有呢？或者为什么字符串有 length() 方法，而数组却没有呢？</p>
-<h3 id="问题_1_为什么数组有_length_属性？">问题 1 为什么数组有 length 属性？</h3><p>首先，数组是一个保存固定个数的单一类型值的容器对象，数组一旦被创建后，它的长度就不会在改变。数组的长度可以作为最终实例的长度。因此，length 可以看做是一个数组的定义属性。</p>
-<p>有两种方法创建数组：<br>1、数组创建表达式<br>2、数组初始化</p>
-<p>当数组被创建，大小就被指定了。</p>
-<p>上面的例子使用的就是数组表达式。它指定元素的类型，维数，和至少一个维度的长度（length）。</p>
-<p>下面的数组的声明是合法的，因为它指定了一个维度的长度。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][];</span><br></pre></td></tr></table></figure>
-<p>数组初始化创建数组并给予所有的初始值。这是由逗号分隔的表达式，用花括号{}括起来。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="问题_2_为什么不定义一个像字符串的数组类">问题 2 为什么不定义一个像字符串的数组类</h3><p>因为数组是一个对象，下面的代码是合法的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object obj = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
-<p>数组包含了所有继承自Object类（除克隆）的成员。为什么没有定义一个数组的类呢？我们无法找到Array.java文件。粗略的解释是，他们被隐藏了。你可以想想这个问题 - 如果有数组的类，会是什么模样？它仍然需要一个数组来保存数组数据。所以不定义这样一个类。</p>
-<p>我们可以用下面的代码得到数组的类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">System.out.println(arr.getClass());</span><br></pre></td></tr></table></figure>
-<pre><code><span class="string">Output:</span><span class="class"><span class="keyword">class</span> [<span class="title">I</span></span>
-</code></pre><p>“class [I”代表int型数组再运行时的类型签名。</p>
-<h3 id="问题_3_为什么_String_有_length()_方法？">问题 3 为什么 String 有 length() 方法？</h3><p>字符串的后备的数据结构是字符数组，没有必要为每一个字符串定义一个 length 属性。不像C语言，在Java中字符数组不是字符串。</p>
-<p>参考：</p>
-<p>[1] <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank" rel="external">Arrays</a></p>
-<p>[2] <a href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-10.html#jls-10.7" target="_blank" rel="external">JLS Array</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>首先，你能快速回答下面的问题吗？！</p>
-<blockquote>
-<p>Without code autocompletion of any IDE, how to get the length of an array? And how to get the lengt]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[怎样更有效率的检查一个数组是否包含某个元素]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/check-if-array-contains-a-value-java/"/>
-    <id>http://pascocoder.github.io/2015/09/02/check-if-array-contains-a-value-java/</id>
-    <published>2015-09-02T02:43:21.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>怎样去检验一个数组（未排序）是否包含某个元素？这是Java中的一个非常有用和非常常用的一个操作。这也是stackoverflow网站上的一个投票很高的问题。在投票很高的几个回答中，有很多不同的方法，但是时间复杂度也是不同的，下面我将介绍每种方法的时间成本。</p>
-<h2 id="检查数组是否包含某个元素的四种不同的方法">检查数组是否包含某个元素的四种不同的方法</h2><h3 id="1-_使用_List:">1. 使用 List:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useList</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Arrays.asList(arr).contains(targetValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-_使用_Set:">2. 使用 Set:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useSet</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;(Arrays.asList(arr));</span><br><span class="line">    <span class="keyword">return</span> set.contains(targetValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-_使用简单的循环：">3. 使用简单的循环：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useLoop</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String s: arr)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.equals(targetValue))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-_使用_Arrays-binarySearch():">4. 使用 Arrays.binarySearch():</h3><p>下面的代码是错误的，binarySearch()只能适用于已经排过序的数组。运行下面的代码结果会很奇怪。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">useArraysBinarySearch</span><span class="params">(String[] arr, String targetValue)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> a =  Arrays.binarySearch(arr, targetValue);</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="时间复杂度">时间复杂度</h2><p>需要的时间可以通过使用以下代码来测量。其基本思路是，以搜寻大小分别为5、1000、10000的数组。该方法可能不准确，但这个想法是简单明了的。</p>
-<p>使用大小为5的数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//use list</span></span><br><span class="line">    String[] arr = <span class="keyword">new</span> String[] &#123;<span class="string">"CD"</span>,<span class="string">"BC"</span>,<span class="string">"EF"</span>,<span class="string">"DE"</span>,<span class="string">"AB"</span>&#125;;</span><br><span class="line">        <span class="keyword">long</span> startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useList(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> endTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">long</span> duration = endTime - startTime;</span><br><span class="line">     <span class="comment">//use set</span></span><br><span class="line">    System.out.println(<span class="string">"useList:  "</span> + duration / <span class="number">1000000</span>);</span><br><span class="line">    startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useSet(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    endTime = System.nanoTime();</span><br><span class="line">    duration = endTime - startTime;</span><br><span class="line">    <span class="comment">//use loop</span></span><br><span class="line">    System.out.println(<span class="string">"useSet:  "</span> + duration / <span class="number">1000000</span>);   </span><br><span class="line">    startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useLoop(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    endTime = System.nanoTime();</span><br><span class="line">    duration = endTime - startTime;</span><br><span class="line">    <span class="comment">//use Arrays.binarySearch()</span></span><br><span class="line">    System.out.println(<span class="string">"useLoop:  "</span> + duration / <span class="number">1000000</span>);  </span><br><span class="line">    startTime = System.nanoTime();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        useArraysBinarySearch(arr, <span class="string">"A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    endTime = System.nanoTime();</span><br><span class="line">    duration = endTime - startTime;</span><br><span class="line">    System.out.println(<span class="string">"useArrayBinary:  "</span> + duration / <span class="number">1000000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code><span class="attribute">useList</span>: <span class="string"> 13</span>
-<span class="attribute">useSet</span>: <span class="string"> 72</span>
-<span class="attribute">useLoop</span>: <span class="string"> 5</span>
-<span class="attribute">useArraysBinarySearch</span>: <span class="string"> 9</span>
-</code></pre><p>使用大小为1000的数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] arr = <span class="keyword">new</span> String[<span class="number">1000</span>];</span><br><span class="line">Random s = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">    arr[i] = String.valueOf(s.nextInt());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code><span class="attribute">useList</span>: <span class="string"> 112</span>
-<span class="attribute">useSet</span>: <span class="string"> 2055</span>
-<span class="attribute">useLoop</span>: <span class="string"> 99</span>
-<span class="attribute">useArrayBinary</span>: <span class="string"> 12</span>
-</code></pre><p>使用大小为10000的数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] arr = <span class="keyword">new</span> String[<span class="number">10000</span>];</span><br><span class="line">Random s = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; <span class="number">10000</span>; i++)&#123;</span><br><span class="line">    arr[i] = String.valueOf(s.nextInt());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code><span class="attribute">useList</span>: <span class="string"> 1590</span>
-<span class="attribute">useSet</span>: <span class="string"> 23819</span>
-<span class="attribute">useLoop</span>: <span class="string"> 1526</span>
-<span class="attribute">useArrayBinary</span>: <span class="string"> 12</span>
-</code></pre><p>很显然，使用循环的方法任何Collection的效率高，很多程序员使用第一种（使用 List）,其实效率并不好。把数组放入另一个Collection，在使用Collection处理数据前，需要先把数组中的每一个元素读进Collection中。</p>
-<p>在使用 Arrays.binarySearch()方法之前，数组必须是已经排过序的。本文中的数组没有排序，所以不应该使用它。</p>
-<p>其实，如果你真的需要高效率的检查 数组/Collection 中是否包含某个值，已排序的list或树可以做到在时间复杂度为O(log(N))，HashSet的可以在时间复杂度为O(1)做到这一点。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>怎样去检验一个数组（未排序）是否包含某个元素？这是Java中的一个非常有用和非常常用的一个操作。这也是stackoverflow网站上的一个投票很高的问题。在投票很高的几个回答中，有很多不同的方法，但是时间复杂度也是不同的，下面我将介绍每种方法的时间成本。</p>
-<h2 ]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[leetcode No.198 House Robber]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/"/>
-    <id>http://pascocoder.github.io/2015/09/02/leetcode-no198-house-robber/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
-<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night</strong>.</p>
-<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight <strong>without alerting the police</strong>.</p>
-</blockquote>
-<hr>
-<h2 id="解题思路">解题思路</h2><p>本题采用动态规划思想：</p>
-<pre><code>抢劫<span class="keyword">n</span>间房子的金钱总和＝<span class="literal">MAX</span>( 抢劫<span class="keyword">n</span>-2间房子的金钱总和＋第<span class="keyword">n</span>间房子的金钱 , 抢劫<span class="keyword">n</span>-1间房子的金钱总和 )
-</code></pre><hr>
-<h2 id="Java代码">Java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] num)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//如果总共有0个房子，则返回0</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//如果总共有1个房子，那么返回这个房子里的金钱</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">1</span>)</span><br><span class="line">    		<span class="keyword">return</span> num[<span class="number">0</span>];</span><br><span class="line">	<span class="comment">//如果总共有两个房子，那么抢劫钱多的那个房子</span></span><br><span class="line">    	<span class="keyword">if</span>(num.length==<span class="number">2</span>)</span><br><span class="line">    		<span class="keyword">return</span> Math.max(num[<span class="number">0</span>], num[<span class="number">1</span>]);</span><br><span class="line">	<span class="comment">//如果房屋数大于2</span></span><br><span class="line">	<span class="comment">//先分别算出只有一间房子时抢劫金钱数prior</span></span><br><span class="line">	<span class="comment">//和只有两间房子时的抢劫金钱数next</span></span><br><span class="line">	<span class="comment">//prior可能等于next</span></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> prior=num[<span class="number">0</span>];</span><br><span class="line">    	<span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> next=Math.max(num[<span class="number">0</span>],num[<span class="number">1</span>]);</span><br><span class="line">    	<span class="comment">//当有三间房子的时候</span></span><br><span class="line">	<span class="comment">//抢劫金钱最大数要么等于只有两间房子时的最大数</span></span><br><span class="line">	<span class="comment">//要么等于只有一间房子的金钱数＋第三间房子的金钱数</span></span><br><span class="line">	<span class="comment">//以此类推4间房子、5间房子、等等</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=num.length;i++)&#123;</span><br><span class="line">        	temp=prior;</span><br><span class="line">        	prior=next;</span><br><span class="line">        	next=Math.max(temp+num[i-<span class="number">1</span>], prior);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(prior, next);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目内容">题目内容</h2><blockquote>
-<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount ]]>
-    </summary>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/tags/Algorithm/"/>
-    
-      <category term="Dynamic Programming" scheme="http://pascocoder.github.io/tags/Dynamic-Programming/"/>
-    
-      <category term="Algorithm" scheme="http://pascocoder.github.io/categories/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java中字符串的引用传递]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/string-is-passed-by-reference-in-java/"/>
-    <id>http://pascocoder.github.io/2015/09/02/string-is-passed-by-reference-in-java/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>这是Java中的一个经典问题，stackoverflow网站上有很多类似的问题和很多不正确/不完整的答案。如果你不去多想，这个问题很简单，但是如果你多思考一会，你会觉得这个问题很令人困惑。</p>
-<h3 id="下面的一段代码既令人感兴趣又让人困惑。">下面的一段代码既令人感兴趣又让人困惑。</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String x = <span class="keyword">new</span> String(<span class="string">"ab"</span>);</span><br><span class="line">    change(x);</span><br><span class="line">    System.out.println(x);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(String x)</span> </span>&#123;</span><br><span class="line">    x = <span class="string">"cd"</span>;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">	ab</span><br><span class="line"></span><br><span class="line">在c++中，代码如下：</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(string &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="string">"cd"</span>;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string x = <span class="string">"ab"</span>;</span><br><span class="line">    change(x);</span><br><span class="line">    cout &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出为：</p>
-<pre><code><span class="built_in">cd</span>
-</code></pre><h3 id="常见的令人困惑的问题（高能预警！以下是错误解释！）">常见的令人困惑的问题（高能预警！以下是错误解释！）</h3><p>x储存一个指向内存堆中的字符串的引用，所以当x被当做参数传递给change()方法时，它依然指向这内存中的”ab”如下图</p>
-<p><img src="/assets/images/string-pass-by-reference--650x247.jpeg" alt="pic1"></p>
-<p>因为Java是按值传递的，x的值是指向”ab”的引用，当change()方法被调用，它创建了新的对象”cd”，x现在就指向了字符串对象”cd”,如下图：</p>
-<p><img src="/assets/images/string-pass-by-reference-2-650x247.jpeg" alt="pic2"></p>
-<p>这似乎是一个非常合理的解释。他们明确表示，Java是永远传递按值。但是，什么是错在这里？</p>
-<h3 id="程序究竟是怎么运行的！！！">程序究竟是怎么运行的！！！</h3><p>当字符串”ab”被创建，Java分配内存来储存字符串对象。然后这个对象分配给了变量x，其实变量x只是被分配了对象的引用，并非对象本身。引用就是对象被储存在内存中的地址。</p>
-<p>变量x包含字符串对象的引用，x不是引用，它是一个变量，只不过储存了一个引用（内存地址）（被绕晕了没…）</p>
-<p>Java只能按值传递，当x传递给了change()方法，一个x变量的副本被传递过去了，change()方法创建另一个对象”cd”，它有着和前者不同的引用，是这个变量x改变了把原本的引用改成了指向对象”cd”的引用，并不是改变了引用本身。（我快翻译哭了，原博主解释能力捉急%&gt;_&lt;%）</p>
-<p>下图能解释到底发生了什么。</p>
-<p><img src="/assets/images/string-pass-by-reference-3-650x244.jpeg" alt="pic3"></p>
-<h3 id="错误解释">错误解释</h3><p>这个问题跟前面讲到的字符串对象的不变性没有任何关系。就算是使用StringBuilder来创建，运行结果还是一样的。问题的关键在于储存引用的变量，而不是引用本身！！！</p>
-<h3 id="解决问题的方法">解决问题的方法</h3><p>首先，对象必须是可改变的，如StringBuilding。第二，要确保没有新对象被创建并分配给了参数变量，因为Java是按值传递的。</p>
-<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-    StringBuilder x = <span class="keyword">new</span> StringBuilder(<span class="string">"ab"</span>);
-    change(x);
-    System.out.println(x);
-}
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(StringBuilder x)</span> </span>{
-    x.delete(<span class="number">0</span>, <span class="number">2</span>).append(<span class="string">"cd"</span>);
-}
-</code></pre>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>这是Java中的一个经典问题，stackoverflow网站上有很多类似的问题和很多不正确/不完整的答案。如果你不去多想，这个问题很简单，但是如果你多思考一会，你会觉得这个问题很令人困惑。</p>
-<h3 id="下面的一段代码既令人感兴趣又让人困惑。">下面的一段代码既令]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Start Learning iOS]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/start-learning-ios/"/>
-    <id>http://pascocoder.github.io/2015/09/02/start-learning-ios/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="基础">基础</h2><ul>
-<li>首先要熟悉面向对象编程思想：开发中会一直伴随着OOP思想，封装继承多态，提高代码的重用性，减少代码耦合。</li>
-<li>开发模式：需要先了解常用的单例模式，代理模式，观察者模式，MVC基本的原理。</li>
-<li>Objective-C：OC语法还是相当奇怪的，要对Foundation很熟悉，封装的基本数据类型之类的很了解。</li>
-<li>cocoa touch层：iOS系统分为:cocoa touch，media，core services，core os四层。cocoa touch是初学者最先打交道的一层，而UIKit框架使这层中最重要的框架，要想做iOS开发，要先熟悉UIKit框架中的各种控件，比如UIView，UIScrollView，UITabelView等大部分常见的控件和方法。</li>
-</ul>
-<h2 id="书籍">书籍</h2><ul>
-<li><a href="http://book.douban.com/subject/19962787/" target="_blank" rel="external">Objective-C编程</a></li>
-<li><a href="http://book.douban.com/subject/26287812/" target="_blank" rel="external">iOS编程</a></li>
-<li><a href="http://book.douban.com/subject/25976913/" target="_blank" rel="external">iOS编程实战</a></li>
-<li><a href="http://book.douban.com/subject/25829244/" target="_blank" rel="external">Effective Objective C 2.0</a>｜<a href="http://book.douban.com/subject/21370593/" target="_blank" rel="external">英文版</a></li>
-</ul>
-<h2 id="视频">视频</h2><ul>
-<li><a href="http://v.163.com/special/opencourse/ios7.html" target="_blank" rel="external">斯坦福公开课</a></li>
-<li>英语不好的同学看这个传智播客的<a href="http://ios.itcast.cn/ios/video.shtml" target="_blank" rel="external">培训视频</a></li>
-</ul>
-<h2 id="博客">博客</h2><p>看大牛的博客能加深对iOS的理解，不过需要自己也有一定的基础。</p>
-<ul>
-<li>大牛iOS<a href="https://github.com/tangqiaoboy/iOSBlogCN" target="_blank" rel="external">博客列表</a>(推荐使用软件inoreader来订阅博客)</li>
-</ul>
-<h2 id="网站">网站</h2><ul>
-<li><a href="http://www.objc.io/" target="_blank" rel="external">objc.io</a></li>
-<li><a href="http://objcio.cn/" target="_blank" rel="external">objcio.cn</a></li>
-<li><a href="http://www.cocoachina.com/bbs/" target="_blank" rel="external">cocoaChina</a></li>
-<li><a href="https://developer.apple.com/library/ios/navigation/" target="_blank" rel="external">苹果官网doc</a></li>
-</ul>
-<h2 id="入门开源项目">入门开源项目</h2><ul>
-<li><a href="https://github.com/dingdaojun/iOSProgramming4ed" target="_blank" rel="external">iOS Programming书籍源代码</a></li>
-<li><a href="https://github.com/logy-bai/learning-ios" target="_blank" rel="external">李明杰老师视频源代码</a></li>
-</ul>
-<h2 id="包管理工具">包管理工具</h2><ul>
-<li><a href="http://cocoapods.org/" target="_blank" rel="external">cocoapods</a></li>
-<li><a href="https://github.com/Carthage/Carthage" target="_blank" rel="external">Carthage</a></li>
-</ul>
-<h2 id="常用的开源框架">常用的开源框架</h2><p>简单介绍几个常用的，具体的请看<a href="https://github.com/vsouza/awesome-ios" target="_blank" rel="external">Awesome ios</a>，<a href="http://www.jianshu.com/p/896ea28688dc" target="_blank" rel="external">中文</a></p>
-<ol>
-<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a>: Objective-C下网络请求库。</li>
-<li><a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">MBProgressHUD</a>: 经典的透明指示层控件</li>
-<li><a href="https://github.com/tonymillion/Reachability" target="_blank" rel="external">Reachability</a>: 检测网络连接状态</li>
-</ol>
-<p>还有太多太多很好用的开源框架，全在上面的<a href="https://github.com/vsouza/awesome-ios" target="_blank" rel="external">awesome-ios</a>里面</p>
-<h2 id="其他学习资源">其他学习资源</h2><ol>
-<li><a href="https://github.com/Aufree/trip-to-iOS" target="_blank" rel="external">trip-to-iOS</a></li>
-<li><a href="http://iosdevweekly.com/" target="_blank" rel="external">iOS Dev Weekly</a>订阅邮件</li>
-<li><a href="http://iosdesign.co/" target="_blank" rel="external">iOS Design Weekly</a>订阅邮件</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="基础">基础</h2><ul>
-<li>首先要熟悉面向对象编程思想：开发中会一直伴随着OOP思想，封装继承多态，提高代码的重用性，减少代码耦合。</li>
-<li>开发模式：需要先了解常用的单例模式，代理模式，观察者模式，MVC基本的原理。</li>
-<li>Ob]]>
-    </summary>
-    
-      <category term="how-to" scheme="http://pascocoder.github.io/tags/how-to/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="start" scheme="http://pascocoder.github.io/tags/start/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[网站监控iOS客户端]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/"/>
-    <id>http://pascocoder.github.io/2015/09/02/website-monitor-iOS-client/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
-<h2 id="服务器端的程序">服务器端的程序</h2><p>服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访问的总时间。</p>
-<h2 id="客户端程序的实现">客户端程序的实现</h2><ol>
-<li>使用多组数据，每个网站条目算是一组（section）。</li>
-<li>自定义化每组数据的HeaderView，并添加点击手势识别。</li>
-<li>默认情况下，每组下的行数(row)为0.</li>
-<li>当点击headerView时，为该section添加一行，行的内容就是网站的详细情况。</li>
-<li>再次点击header时，就删除该section的一行数据，从而实现tableView的下拉菜单功能。</li>
-</ol>
-<h2 id="学习到的知识点">学习到的知识点</h2><ol>
-<li>更加熟悉了objective-c的面向对象编程。</li>
-<li>复习了UINavigationController，UITableView的使用，单例模式的使用。</li>
-<li>动手实现自定义的HeaderView</li>
-</ol>
-<h2 id="下一步的打算">下一步的打算</h2><ol>
-<li>把数据固化。假如没有联网，就会显示最后一次请求的数据。（因为数据量较小，不需要保存历史数据，所以不采用CoreData）</li>
-<li>加入APNS,当有新的网站无法访问，或者网站恢复正常，推送提示</li>
-<li>美化外观</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="iOS客户端源代码">iOS客户端源代码</h2><p><a href="https://github.com/logy-bai/Website-Monitor" target="_blank" rel="external">here</a></p>
-<h2 id]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Java可变参数]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/java-varargs-examples/"/>
-    <id>http://pascocoder.github.io/2015/09/02/java-varargs-examples/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"a"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>);</span><br><span class="line">    print(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String ... s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(String a: s)</span><br><span class="line">        System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-_可变参数是怎样工作的？">1. 可变参数是怎样工作的？</h3><p>当使用可变参数功能时，实际上会先创建一个数组，大小为调用位置传过来参数的数量。然后把参数的值放进数组，最后把数组当做参数传进方法（method）中。</p>
-<h3 id="2-_什么时候使用可变参数？">2. 什么时候使用可变参数？</h3><p>作为其定义，当方法需要处理任意数量的对象时，可变参数是非常有用的。Java SDK中的 String.format(String format, Object… args) 就是一个很好的例子。字符串可以格式化任何数目的参数，使用了可变参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"An integer: %d"</span>, i);</span><br><span class="line">String.format(<span class="string">"An integer: %d and a string: %s"</span>, i, s);</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">]]>
-    </summary>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/tags/Java/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-      <category term="Java" scheme="http://pascocoder.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[在GitHub Pages上快速搭建自己的博客]]></title>
-    <link href="http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/"/>
-    <id>http://pascocoder.github.io/2015/09/02/quick-way-to-blog-on-GitHub-Pages/</id>
-    <published>2015-09-01T17:45:57.000Z</published>
-    <updated>2015-09-02T02:43:21.000Z</updated>
-    <content type="html"><![CDATA[<p>###Jekyll-Bootstrap<br><a href="http://jekyllbootstrap.com/" target="_blank" rel="external">Jekyll-Bootstrap</a>是一个基于Jekyll的博客框架。<a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html" target="_blank" rel="external">Jekyll介绍</a>。</p>
-<p>###Jekyll搭建博客的优点</p>
-<ul>
-<li>支持markdown和textile</li>
-<li>使用git管理</li>
-<li>使用terminal发布</li>
-<li>没有数据库</li>
-</ul>
-<p>###3分钟在GitHub-Pages上搭建自己的博客<br><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">Jekyll快速开始</a></p>
-<hr>
-]]></content>
-    <summary type="html">
-    <![CDATA[This is my first GitHub-Pages article.]]>
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://pascocoder.github.io/tags/Blog/"/>
-    
-      <category term="GitHub" scheme="http://pascocoder.github.io/tags/GitHub/"/>
-    
-      <category term="Jekyll-Bootstrap" scheme="http://pascocoder.github.io/tags/Jekyll-Bootstrap/"/>
-    
-      <category term="Pages" scheme="http://pascocoder.github.io/tags/Pages/"/>
-    
-      <category term="GitHub" scheme="http://pascocoder.github.io/categories/GitHub/"/>
     
   </entry>
   
