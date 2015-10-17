@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="configure,nginx,thinkphp," />
 
 
 
@@ -39,16 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="O ever youthful, O ever weeping.">
+<meta name="description" content="URL重写thinkphp通过URL重写隐藏入口文件index.php ，所以需要配置nginx的配置文件来配置转发规则。
+nginx配置文件123456789location / &amp;#123;        root   /usr/share/nginx/html;        index  index.php index.html index.htm;        #try_files">
 <meta property="og:type" content="article">
-<meta property="og:title" content="thinkphp nginx configure">
+<meta property="og:title" content="使用thinkphp搭建网站nginx的配置">
 <meta property="og:url" content="http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/index.html">
 <meta property="og:site_name" content="Pasco's blog">
-<meta property="og:description" content="O ever youthful, O ever weeping.">
-<meta property="og:updated_time" content="2015-10-07T04:03:28.000Z">
+<meta property="og:description" content="URL重写thinkphp通过URL重写隐藏入口文件index.php ，所以需要配置nginx的配置文件来配置转发规则。
+nginx配置文件123456789location / &amp;#123;        root   /usr/share/nginx/html;        index  index.php index.html index.htm;        #try_files">
+<meta property="og:updated_time" content="2015-10-08T08:18:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="thinkphp nginx configure">
-<meta name="twitter:description" content="O ever youthful, O ever weeping.">
+<meta name="twitter:title" content="使用thinkphp搭建网站nginx的配置">
+<meta name="twitter:description" content="URL重写thinkphp通过URL重写隐藏入口文件index.php ，所以需要配置nginx的配置文件来配置转发规则。
+nginx配置文件123456789location / &amp;#123;        root   /usr/share/nginx/html;        index  index.php index.html index.htm;        #try_files">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +61,7 @@
   };
 </script>
 
-  <title> thinkphp nginx configure | Pasco's blog </title>
+  <title> 使用thinkphp搭建网站nginx的配置 | Pasco's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +207,7 @@
           
           
             
-              thinkphp nginx configure
+              使用thinkphp搭建网站nginx的配置
             
           
         </h1>
@@ -218,6 +221,21 @@
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/thinkphp/" itemprop="url" rel="index">
+                  <span itemprop="name">thinkphp</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -239,11 +257,24 @@
       
 
       
-        <span itemprop="articleBody"></span>
+        <span itemprop="articleBody"><h2 id="URL重写">URL重写</h2><p>thinkphp通过URL重写隐藏入口文件index.php ，所以需要配置nginx的配置文件来配置转发规则。</p>
+<h2 id="nginx配置文件">nginx配置文件</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">        root   /usr/share/nginx/html;</span><br><span class="line">        index  index.php index.html index.htm;</span><br><span class="line">        #try_files   <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query</span>_string;</span><br><span class="line">        if (!-e <span class="variable">$request</span>_filename) &#123;</span><br><span class="line">                rewrite ^/(.*)$ /index.php/<span class="variable">$1</span>   last;</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>详细请参见官方文档<a href="http://document.thinkphp.cn/manual_3_2.html#url_rewrite" target="_blank" rel="external">nginx thinkphp URL重写</a></p>
+</span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/configure/" rel="tag">#configure</a>
+          
+            <a href="/tags/nginx/" rel="tag">#nginx</a>
+          
+            <a href="/tags/thinkphp/" rel="tag">#thinkphp</a>
+          
+        </div>
       
 
       
@@ -272,7 +303,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2015/10/07/thinkphp-nginx-configure/"
-     data-title="thinkphp nginx configure"
+     data-title="使用thinkphp搭建网站nginx的配置"
      data-content=""
      data-url="http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/">
   <div class="ds-share-inline">
@@ -301,7 +332,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/10/07/thinkphp-nginx-configure/"
-                   data-title="thinkphp nginx configure" data-url="http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/">
+                   data-title="使用thinkphp搭建网站nginx的配置" data-url="http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/">
               </div>
             
           </div>
@@ -341,21 +372,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -400,7 +431,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL重写"><span class="nav-number">1.</span> <span class="nav-text">URL重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx配置文件"><span class="nav-number">2.</span> <span class="nav-text">nginx配置文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-10-07T04:06:23.000Z</updated>
+  <updated>2015-10-09T06:53:52.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[pip install MySQL-python]]></title>
+    <link href="http://pascocoder.github.io/2015/10/09/pip-install-MySQL-python/"/>
+    <id>http://pascocoder.github.io/2015/10/09/pip-install-MySQL-python/</id>
+    <published>2015-10-09T05:57:44.000Z</published>
+    <updated>2015-10-09T06:53:52.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="issue">issue</h1><p>使用 pip install MySQL-python 安装python的mysql模块失败，感觉是缺少系统相关的依赖包<br>然后使用 yum install MySQL-python 就OK了</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="issue">issue</h1><p>使用 pip install MySQL-python 安装python的mysql模块失败，感觉是缺少系统相关的依赖包<br>然后使用 yum install MySQL-python 就OK了</p>
+]]>
+    </summary>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
+    
+      <category term="pip" scheme="http://pascocoder.github.io/tags/pip/"/>
+    
+      <category term="python" scheme="http://pascocoder.github.io/tags/python/"/>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/categories/linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[digitalOcean referral credit]]></title>
@@ -28,15 +51,169 @@
   </entry>
   
   <entry>
-    <title><![CDATA[vim commands]]></title>
+    <title><![CDATA[vim常用命令]]></title>
     <link href="http://pascocoder.github.io/2015/10/07/vim-commands/"/>
     <id>http://pascocoder.github.io/2015/10/07/vim-commands/</id>
     <published>2015-10-07T04:04:54.000Z</published>
-    <updated>2015-10-07T04:04:54.000Z</updated>
-    <content type="html"></content>
+    <updated>2015-10-08T10:04:18.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Basics">Basics</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:e filename</td>
+<td>open filename for edition</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>save file</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>exit vim</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>quit without saving</td>
+</tr>
+<tr>
+<td>:x</td>
+<td>write file (if changes has been made) and exit</td>
+</tr>
+<tr>
+<td>:sav filename</td>
+<td>saves file as filename</td>
+</tr>
+<tr>
+<td>.</td>
+<td>repeats the last change made in normal mode</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>repeats 5 times the last change made in normal mode</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Moving_in_the_file">Moving in the file</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k or Up Arrow</td>
+<td>move the cursor up one line</td>
+</tr>
+<tr>
+<td>j or Down Arrow</td>
+<td>move the cursor down one line</td>
+</tr>
+<tr>
+<td>e</td>
+<td>move the cursor to the end of the word</td>
+</tr>
+<tr>
+<td>b</td>
+<td>move the cursor to the beginning of the word</td>
+</tr>
+<tr>
+<td>0</td>
+<td>move the cursor to the beginning of the line</td>
+</tr>
+<tr>
+<td>G</td>
+<td>move the cursor to the end of the file</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>move the cursor to the beginning of the file</td>
+</tr>
+<tr>
+<td>L</td>
+<td>move the cursor to the bottom of the screen</td>
+</tr>
+<tr>
+<td>:59</td>
+<td>move the cursor to 59. replace 59 by the desired line number</td>
+</tr>
+<tr>
+<td>20竖杠 (请原谅我这样写。。。)</td>
+<td>move the cursor to colume 20</td>
+</tr>
+<tr>
+<td>%</td>
+<td>move the cursor to matching parenthesis</td>
+</tr>
+<tr>
+<td>[[</td>
+<td>jump to function start</td>
+</tr>
+<tr>
+<td>[{</td>
+<td>jump to block start</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Cut,copy&amp;paste">Cut,copy&amp;paste</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y</td>
+<td>copy the selected text to clipboard</td>
+</tr>
+<tr>
+<td>p</td>
+<td>paste clipboard contents</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>cut current line</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>copy current line</td>
+</tr>
+<tr>
+<td>y$</td>
+<td>copy to end of line</td>
+</tr>
+<tr>
+<td>D</td>
+<td>cut to end of line</td>
+</tr>
+</tbody>
+</table>
+<h1 id="未完待续">未完待续</h1>]]></content>
     <summary type="html">
-    
+    <![CDATA[<h1 id="Basics">Basics</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:e filename</td>
+<td>ope]]>
     </summary>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
+    
+      <category term="vim" scheme="http://pascocoder.github.io/tags/vim/"/>
+    
+      <category term="vim" scheme="http://pascocoder.github.io/categories/vim/"/>
     
   </entry>
   
@@ -54,15 +231,27 @@
   </entry>
   
   <entry>
-    <title><![CDATA[thinkphp nginx configure]]></title>
+    <title><![CDATA[使用thinkphp搭建网站nginx的配置]]></title>
     <link href="http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/"/>
     <id>http://pascocoder.github.io/2015/10/07/thinkphp-nginx-configure/</id>
     <published>2015-10-07T04:03:28.000Z</published>
-    <updated>2015-10-07T04:03:28.000Z</updated>
-    <content type="html"></content>
+    <updated>2015-10-08T08:18:04.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="URL重写">URL重写</h2><p>thinkphp通过URL重写隐藏入口文件index.php ，所以需要配置nginx的配置文件来配置转发规则。</p>
+<h2 id="nginx配置文件">nginx配置文件</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">        root   /usr/share/nginx/html;</span><br><span class="line">        index  index.php index.html index.htm;</span><br><span class="line">        #try_files   <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query</span>_string;</span><br><span class="line">        if (!-e <span class="variable">$request</span>_filename) &#123;</span><br><span class="line">                rewrite ^/(.*)$ /index.php/<span class="variable">$1</span>   last;</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>详细请参见官方文档<a href="http://document.thinkphp.cn/manual_3_2.html#url_rewrite" target="_blank" rel="external">nginx thinkphp URL重写</a></p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<h2 id="URL重写">URL重写</h2><p>thinkphp通过URL重写隐藏入口文件index.php ，所以需要配置nginx的配置文件来配置转发规则。</p>
+<h2 id="nginx配置文件">nginx配置文件</h2><figure class="hig]]>
     </summary>
+    
+      <category term="configure" scheme="http://pascocoder.github.io/tags/configure/"/>
+    
+      <category term="nginx" scheme="http://pascocoder.github.io/tags/nginx/"/>
+    
+      <category term="thinkphp" scheme="http://pascocoder.github.io/tags/thinkphp/"/>
+    
+      <category term="thinkphp" scheme="http://pascocoder.github.io/categories/thinkphp/"/>
     
   </entry>
   
@@ -80,15 +269,30 @@
   </entry>
   
   <entry>
-    <title><![CDATA[linux php session]]></title>
+    <title><![CDATA[linux中PHP的session无法保存]]></title>
     <link href="http://pascocoder.github.io/2015/10/07/linux-php-session/"/>
     <id>http://pascocoder.github.io/2015/10/07/linux-php-session/</id>
     <published>2015-10-07T03:52:22.000Z</published>
-    <updated>2015-10-07T03:52:22.000Z</updated>
-    <content type="html"></content>
+    <updated>2015-10-08T09:09:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="issue">issue</h2><p>今天在阿里云配置网站时，惊奇的发现原来运行好好的代码出了问题。网站登录成功后，显示非法请求，即登录成功后的页面在判断session时出了问题，于是我就在该页面打印了session，发现是空，说明session没有保存下来。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UserModel.class.php</span></span><br><span class="line"></span><br><span class="line">session(<span class="string">'id'</span>,<span class="variable">$id</span>);</span><br><span class="line">session(<span class="string">'name'</span>,<span class="variable">$username</span>);</span><br><span class="line">session(<span class="string">'is_root'</span>,<span class="number">1</span>);</span><br><span class="line">session(<span class="string">'expire'</span>,<span class="number">3600</span>);</span><br><span class="line"><span class="variable">$info</span> = <span class="keyword">array</span>(</span><br><span class="line">     <span class="string">'status'</span> =&gt;<span class="number">2</span>,</span><br><span class="line">     <span class="string">'info'</span> =&gt;session(<span class="string">'name'</span>),</span><br><span class="line">);</span><br><span class="line"><span class="keyword">return</span> <span class="variable">$info</span>;</span><br></pre></td></tr></table></figure></p>
+<p>这里传递的info内容是正确的<br>但是！！！</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//AdminController.class.php</span></span><br><span class="line"></span><br><span class="line">dump(<span class="variable">$_SESSION</span>);</span><br></pre></td></tr></table></figure>
+<p>输出为空！！！！</p>
+<h2 id="solution">solution</h2><p>于是找到/etc/php.ini，查看配置:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session<span class="class">.save_path</span> = <span class="string">"/var/lib/php/session"</span></span><br></pre></td></tr></table></figure>
+<p>再查看linux系统并没有这个目录，于是，你懂得</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session</span><br><span class="line">chmod -R <span class="number">777</span> <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session</span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
-    
+    <![CDATA[<h2 id="issue">issue</h2><p>今天在阿里云配置网站时，惊奇的发现原来运行好好的代码出了问题。网站登录成功后，显示非法请求，即登录成功后的页面在判断session时出了问题，于是我就在该页面打印了session，发现是空，说明session没有保存下来。<]]>
     </summary>
+    
+      <category term="PHP" scheme="http://pascocoder.github.io/tags/PHP/"/>
+    
+      <category term="Web" scheme="http://pascocoder.github.io/tags/Web/"/>
+    
+      <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
+    
+      <category term="PHP" scheme="http://pascocoder.github.io/categories/PHP/"/>
     
   </entry>
   
@@ -466,42 +670,6 @@
       <category term="UIKit" scheme="http://pascocoder.github.io/tags/UIKit/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS开发中View Controllers 的生命周期]]></title>
-    <link href="http://pascocoder.github.io/2015/09/03/lifecycle-of-viewController/"/>
-    <id>http://pascocoder.github.io/2015/09/03/lifecycle-of-viewController/</id>
-    <published>2015-09-03T14:07:54.000Z</published>
-    <updated>2015-09-03T18:40:35.000Z</updated>
-    <content type="html"><![CDATA[<p>译自苹果开发文档，<a href="https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/ViewLoadingandUnloading/ViewLoadingandUnloading.html" target="_blank" rel="external">原文地址</a></p>
-<p>View controllers 是管理app资源非常重要的部分，View controllers 允许你把应用分成多个部分，然后你只需要实例化你需要的那部分。不止这些，view controller管理着不同的资源并在不同的时候实例化。例如，一个视图控制器的 视图层次(view hierarchy) 只有当view能被 获得(accessed) 才能被实例化，也就是说，只有当view 显示在屏幕上才会去实例化视图层次。如果有多个view视图被压入navigationController的栈中（navigation stack）。只有最上面一层view视图内容是可见的，这就意味着只有最上层的view视图 被获得（accessed）。类似的，如果一个view视图控制器没有被 navigation controller 呈现，view视图控制器旧没有必要去实例化它的navigation item。通过延迟大部分的资源分配，直到应用需要的时候，视图控制器会是用更少的资源。</p>
-<p>当app的可获取内存变得很少的时候，所有的视图控制器会自动的被系统通知。通知视图控制器清理缓存和一些等内存充足时能被再次创建的对象。具体的运转情况根据允许在不同版本的iOS上而不同。</p>
-<p>细心管理视图控制器相关的资源对于app有效率的运行是极为重要的。推荐使用 惰性分配（lazy allocation）：创建和维持代价很高的对象，要晚些时候再去分配（当需要使用的时候）。出于这个原因，视图控制器要把整个 视图控制器整个生命周期都要使用的对象 和 只有一些时候有必要使用的对象 分离开。当视图控制器接收到低内存警告通知的时候，如果view controller当前是不可见的，要减少内存使用。</p>
-<h3 id="初始化_view_controller">初始化 view controller</h3><p>当一个view controller 是第一次被初始化，会创建或加载它整个生命都需要的对象。不应该去创建视图层面或和显示内容相关的对象。应该集中于 数据对象 和 需要实现关键性能的对象。</p>
-<p>一般情况下，不要写复杂的初始化方法。相反，实现一个简单的初始化方法，然后提供视图控制器的属性。</p>
-<h3 id="当视图控制器可被获得时，在初始化view_controller_的视图层次">当视图控制器可被获得时，在初始化view controller 的视图层次</h3><p>当应用程序的某些部分请求 view controller 的对象，该对象不是当前在内存中，view controller 加载视图层次到内存中，并将其存储在视图的属性中，好为以后的引用做准备。加载循环发生的步骤是：</p>
-<ol>
-<li>view controller 调用 loadView方法。loadView方法默认实现了 one of two things：<ul>
-<li>如果 view controller 是和 storyboard 相关，它会从storyboard 中加载 view。</li>
-<li>如果不是，则创建一个空的UIView对象并赋值给 view属性。</li>
-</ul>
-</li>
-<li>view controller 调用 viewDidLoad方法，这使你的子类去执行任何额外的加载时任务（load-time task）。</li>
-</ol>
-<p>下图展示了load cycle，你可以根据需要覆盖 loadView方法 和 viewDidLoad方法。例如，如果app没有使用storyboard，但是你想在view视图中添加额外的views，就可以重写 loadView方法编程实现实例化那些views。</p>
-<p>加载view到内存<br><img src="/img/view_controller_life_cycle/loading_a_view_into_memory_2x.png" alt="pic1"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>译自苹果开发文档，<a href="https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/ViewLoadingandUnloading/ViewLoadin]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="翻译" scheme="http://pascocoder.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
     

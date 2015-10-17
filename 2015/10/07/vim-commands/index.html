@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="linux,vim," />
 
 
 
@@ -39,16 +39,106 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="O ever youthful, O ever weeping.">
+<meta name="description" content="Basics
+
+
+command
+operation
+
+
+
+
+:e filename
+open filename for edition
+
+
+:w
+save file
+
+
+:q
+exit vim
+
+
+:q!
+quit without saving
+
+
+:x
+write file (if changes has been made) and exit
+
+
+:sav filename
+saves fi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vim commands">
+<meta property="og:title" content="vim常用命令">
 <meta property="og:url" content="http://pascocoder.github.io/2015/10/07/vim-commands/index.html">
 <meta property="og:site_name" content="Pasco's blog">
-<meta property="og:description" content="O ever youthful, O ever weeping.">
-<meta property="og:updated_time" content="2015-10-07T04:04:54.000Z">
+<meta property="og:description" content="Basics
+
+
+command
+operation
+
+
+
+
+:e filename
+open filename for edition
+
+
+:w
+save file
+
+
+:q
+exit vim
+
+
+:q!
+quit without saving
+
+
+:x
+write file (if changes has been made) and exit
+
+
+:sav filename
+saves fi">
+<meta property="og:updated_time" content="2015-10-08T10:04:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vim commands">
-<meta name="twitter:description" content="O ever youthful, O ever weeping.">
+<meta name="twitter:title" content="vim常用命令">
+<meta name="twitter:description" content="Basics
+
+
+command
+operation
+
+
+
+
+:e filename
+open filename for edition
+
+
+:w
+save file
+
+
+:q
+exit vim
+
+
+:q!
+quit without saving
+
+
+:x
+write file (if changes has been made) and exit
+
+
+:sav filename
+saves fi">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +148,7 @@
   };
 </script>
 
-  <title> vim commands | Pasco's blog </title>
+  <title> vim常用命令 | Pasco's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +294,7 @@
           
           
             
-              vim commands
+              vim常用命令
             
           
         </h1>
@@ -218,6 +308,21 @@
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/vim/" itemprop="url" rel="index">
+                  <span itemprop="name">vim</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -239,11 +344,157 @@
       
 
       
-        <span itemprop="articleBody"></span>
+        <span itemprop="articleBody"><h1 id="Basics">Basics</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:e filename</td>
+<td>open filename for edition</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>save file</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>exit vim</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>quit without saving</td>
+</tr>
+<tr>
+<td>:x</td>
+<td>write file (if changes has been made) and exit</td>
+</tr>
+<tr>
+<td>:sav filename</td>
+<td>saves file as filename</td>
+</tr>
+<tr>
+<td>.</td>
+<td>repeats the last change made in normal mode</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>repeats 5 times the last change made in normal mode</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Moving_in_the_file">Moving in the file</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k or Up Arrow</td>
+<td>move the cursor up one line</td>
+</tr>
+<tr>
+<td>j or Down Arrow</td>
+<td>move the cursor down one line</td>
+</tr>
+<tr>
+<td>e</td>
+<td>move the cursor to the end of the word</td>
+</tr>
+<tr>
+<td>b</td>
+<td>move the cursor to the beginning of the word</td>
+</tr>
+<tr>
+<td>0</td>
+<td>move the cursor to the beginning of the line</td>
+</tr>
+<tr>
+<td>G</td>
+<td>move the cursor to the end of the file</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>move the cursor to the beginning of the file</td>
+</tr>
+<tr>
+<td>L</td>
+<td>move the cursor to the bottom of the screen</td>
+</tr>
+<tr>
+<td>:59</td>
+<td>move the cursor to 59. replace 59 by the desired line number</td>
+</tr>
+<tr>
+<td>20竖杠 (请原谅我这样写。。。)</td>
+<td>move the cursor to colume 20</td>
+</tr>
+<tr>
+<td>%</td>
+<td>move the cursor to matching parenthesis</td>
+</tr>
+<tr>
+<td>[[</td>
+<td>jump to function start</td>
+</tr>
+<tr>
+<td>[{</td>
+<td>jump to block start</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Cut,copy&amp;paste">Cut,copy&amp;paste</h1><table>
+<thead>
+<tr>
+<th>command</th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y</td>
+<td>copy the selected text to clipboard</td>
+</tr>
+<tr>
+<td>p</td>
+<td>paste clipboard contents</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>cut current line</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>copy current line</td>
+</tr>
+<tr>
+<td>y$</td>
+<td>copy to end of line</td>
+</tr>
+<tr>
+<td>D</td>
+<td>cut to end of line</td>
+</tr>
+</tbody>
+</table>
+<h1 id="未完待续">未完待续</h1></span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/vim/" rel="tag">#vim</a>
+          
+        </div>
       
 
       
@@ -272,7 +523,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2015/10/07/vim-commands/"
-     data-title="vim commands"
+     data-title="vim常用命令"
      data-content=""
      data-url="http://pascocoder.github.io/2015/10/07/vim-commands/">
   <div class="ds-share-inline">
@@ -301,7 +552,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/10/07/vim-commands/"
-                   data-title="vim commands" data-url="http://pascocoder.github.io/2015/10/07/vim-commands/">
+                   data-title="vim常用命令" data-url="http://pascocoder.github.io/2015/10/07/vim-commands/">
               </div>
             
           </div>
@@ -341,21 +592,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -400,7 +651,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basics"><span class="nav-number">1.</span> <span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Moving_in_the_file"><span class="nav-number">2.</span> <span class="nav-text">Moving in the file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cut,copy&paste"><span class="nav-number">3.</span> <span class="nav-text">Cut,copy&paste</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未完待续"><span class="nav-number">4.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

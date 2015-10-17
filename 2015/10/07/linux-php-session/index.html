@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="PHP,Web,linux," />
 
 
 
@@ -39,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="O ever youthful, O ever weeping.">
+<meta name="description" content="issue今天在阿里云配置网站时，惊奇的发现原来运行好好的代码出了问题。网站登录成功后，显示非法请求，即登录成功后的页面在判断session时出了问题，于是我就在该页面打印了session，发现是空，说明session没有保存下来。1234567891011//UserModel.class.phpsession(&apos;id&apos;,$id);session(&apos;name&apos;,$username);sessio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux php session">
+<meta property="og:title" content="linux中PHP的session无法保存">
 <meta property="og:url" content="http://pascocoder.github.io/2015/10/07/linux-php-session/index.html">
 <meta property="og:site_name" content="Pasco's blog">
-<meta property="og:description" content="O ever youthful, O ever weeping.">
-<meta property="og:updated_time" content="2015-10-07T03:52:22.000Z">
+<meta property="og:description" content="issue今天在阿里云配置网站时，惊奇的发现原来运行好好的代码出了问题。网站登录成功后，显示非法请求，即登录成功后的页面在判断session时出了问题，于是我就在该页面打印了session，发现是空，说明session没有保存下来。1234567891011//UserModel.class.phpsession(&apos;id&apos;,$id);session(&apos;name&apos;,$username);sessio">
+<meta property="og:updated_time" content="2015-10-08T09:09:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux php session">
-<meta name="twitter:description" content="O ever youthful, O ever weeping.">
+<meta name="twitter:title" content="linux中PHP的session无法保存">
+<meta name="twitter:description" content="issue今天在阿里云配置网站时，惊奇的发现原来运行好好的代码出了问题。网站登录成功后，显示非法请求，即登录成功后的页面在判断session时出了问题，于是我就在该页面打印了session，发现是空，说明session没有保存下来。1234567891011//UserModel.class.phpsession(&apos;id&apos;,$id);session(&apos;name&apos;,$username);sessio">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> linux php session | Pasco's blog </title>
+  <title> linux中PHP的session无法保存 | Pasco's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +204,7 @@
           
           
             
-              linux php session
+              linux中PHP的session无法保存
             
           
         </h1>
@@ -218,6 +218,21 @@
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/PHP/" itemprop="url" rel="index">
+                  <span itemprop="name">PHP</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -239,11 +254,28 @@
       
 
       
-        <span itemprop="articleBody"></span>
+        <span itemprop="articleBody"><h2 id="issue">issue</h2><p>今天在阿里云配置网站时，惊奇的发现原来运行好好的代码出了问题。网站登录成功后，显示非法请求，即登录成功后的页面在判断session时出了问题，于是我就在该页面打印了session，发现是空，说明session没有保存下来。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UserModel.class.php</span></span><br><span class="line"></span><br><span class="line">session(<span class="string">'id'</span>,<span class="variable">$id</span>);</span><br><span class="line">session(<span class="string">'name'</span>,<span class="variable">$username</span>);</span><br><span class="line">session(<span class="string">'is_root'</span>,<span class="number">1</span>);</span><br><span class="line">session(<span class="string">'expire'</span>,<span class="number">3600</span>);</span><br><span class="line"><span class="variable">$info</span> = <span class="keyword">array</span>(</span><br><span class="line">     <span class="string">'status'</span> =&gt;<span class="number">2</span>,</span><br><span class="line">     <span class="string">'info'</span> =&gt;session(<span class="string">'name'</span>),</span><br><span class="line">);</span><br><span class="line"><span class="keyword">return</span> <span class="variable">$info</span>;</span><br></pre></td></tr></table></figure></p>
+<p>这里传递的info内容是正确的<br>但是！！！</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//AdminController.class.php</span></span><br><span class="line"></span><br><span class="line">dump(<span class="variable">$_SESSION</span>);</span><br></pre></td></tr></table></figure>
+<p>输出为空！！！！</p>
+<h2 id="solution">solution</h2><p>于是找到/etc/php.ini，查看配置:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session<span class="class">.save_path</span> = <span class="string">"/var/lib/php/session"</span></span><br></pre></td></tr></table></figure>
+<p>再查看linux系统并没有这个目录，于是，你懂得</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session</span><br><span class="line">chmod -R <span class="number">777</span> <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/Web/" rel="tag">#Web</a>
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+        </div>
       
 
       
@@ -272,7 +304,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2015/10/07/linux-php-session/"
-     data-title="linux php session"
+     data-title="linux中PHP的session无法保存"
      data-content=""
      data-url="http://pascocoder.github.io/2015/10/07/linux-php-session/">
   <div class="ds-share-inline">
@@ -301,7 +333,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/10/07/linux-php-session/"
-                   data-title="linux php session" data-url="http://pascocoder.github.io/2015/10/07/linux-php-session/">
+                   data-title="linux中PHP的session无法保存" data-url="http://pascocoder.github.io/2015/10/07/linux-php-session/">
               </div>
             
           </div>
@@ -341,21 +373,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -400,7 +432,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#issue"><span class="nav-number">1.</span> <span class="nav-text">issue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">2.</span> <span class="nav-text">solution</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
