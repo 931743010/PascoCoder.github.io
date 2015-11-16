@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-11-12T04:34:10.000Z</updated>
+  <updated>2015-11-16T09:10:46.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[UINavigationController使用pushviewcontroller时卡顿]]></title>
+    <link href="http://pascocoder.github.io/2015/11/16/navigationController-pushviewcontroller-animation-is-slow-choppy/"/>
+    <id>http://pascocoder.github.io/2015/11/16/navigationController-pushviewcontroller-animation-is-slow-choppy/</id>
+    <published>2015-11-16T09:05:50.000Z</published>
+    <updated>2015-11-16T09:10:46.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="issue">issue</h3><p>往UInavigationController里面压入新视图时，出现卡顿。新视图是新建的UIViewController，没有添加任何代码，居然这他么都能卡顿</p>
+<h3 id="solution">solution</h3><p><a href="http://stackoverflow.com/questions/8833631/pushviewcontroller-animation-is-slow-choppy" target="_blank" rel="external">stackoverflow</a></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CASE 1: The root view for a UIViewController subclass that had a halting animation</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> ((<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame])) &#123;</span><br><span class="line"></span><br><span class="line">          <span class="comment">// Do some initialization ...</span></span><br><span class="line"></span><br><span class="line">          <span class="comment">// self.backgroundColor was NOT being set</span></span><br><span class="line"></span><br><span class="line">          <span class="comment">// and animation in pushViewController was slow and stopped at 25% and paused</span></span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// CASE 2: HERE IS THE FIX</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> ((<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame])) &#123;</span><br><span class="line"></span><br><span class="line">          <span class="comment">// Do some initialization ...</span></span><br><span class="line"></span><br><span class="line">          <span class="comment">// Set self.backgroundColor for the fix!</span></span><br><span class="line"></span><br><span class="line">          <span class="comment">// and animation in pushViewController is no longer slow and and no longer stopped at 25% and paused</span></span><br><span class="line"></span><br><span class="line">          <span class="keyword">self</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> whiteColor]; <span class="comment">// or some other non-clear color</span></span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="issue">issue</h3><p>往UInavigationController里面压入新视图时，出现卡顿。新视图是新建的UIViewController，没有添加任何代码，居然这他么都能卡顿</p>
+<h3 id="solution">solution</]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[滑动tableview时显示不正常]]></title>
@@ -620,35 +642,6 @@
       <category term="mac" scheme="http://pascocoder.github.io/tags/mac/"/>
     
       <category term="mac" scheme="http://pascocoder.github.io/categories/mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[隐藏iOS的状态栏]]></title>
-    <link href="http://pascocoder.github.io/2015/09/09/ios-statusBar-hidden/"/>
-    <id>http://pascocoder.github.io/2015/09/09/ios-statusBar-hidden/</id>
-    <published>2015-09-08T16:32:00.000Z</published>
-    <updated>2015-09-08T16:41:30.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="隐藏iOS的状态栏">隐藏iOS的状态栏</h3><ol>
-<li><p>在应用的AppDelegate.m文件中的application:didFinishLaunchingWithOptions:方法中添加以下代码</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] setStatusBarHidden:<span class="literal">YES</span> withAnimation:<span class="built_in">UIStatusBarAnimationFade</span>];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在ViewController.m文件中添加prefersStatusBarHidden方法，并返回YES</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)prefersStatusBarHidden</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="隐藏iOS的状态栏">隐藏iOS的状态栏</h3><ol>
-<li><p>在应用的AppDelegate.m文件中的application:didFinishLaunchingWithOptions:方法中添加以下代码</p>
-<figure class="hig]]>
-    </summary>
-    
-      <category term="Tips" scheme="http://pascocoder.github.io/tags/Tips/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
     
   </entry>
   
