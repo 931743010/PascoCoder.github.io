@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="VLC,iOS,media,player,video," />
 
 
 
@@ -39,76 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="维度
-价格
-强度
-时间长度
-
-数据库活动表
-
-
-123
-123
-123
-
-
-
-
-123
-123
-
-
-
-景点表活动景点中间表##">
+<meta name="description" content="视频播放之前做项目，刚好需要一个做视频的项目，网上寻了好久也没有找到合适的。要么是支持的格式不对，要么是太过于复杂，好奇为什么不能有一个封装好的视频模块，遂到v2ex上问，经过大神提示VLC，然后发现可以通过pod安装，所以决定试试。
+安装可以通过编译或pod安装，做工程为了省事，pod install 一下解决，过程比较久，因为实在太大了，后来一看600多兆，耐心等待。。。
+Xcode打开工程，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chuangyejihua">
-<meta property="og:url" content="http://pascocoder.github.io/2015/10/20/chuangyejihua/index.html">
+<meta property="og:title" content="iOS视频模块的库---VLCMobileKit ">
+<meta property="og:url" content="http://pascocoder.github.io/2015/12/18/ios-video-player-library-VLCMobileKit/index.html">
 <meta property="og:site_name" content="Pasco's blog">
-<meta property="og:description" content="维度
-价格
-强度
-时间长度
-
-数据库活动表
-
-
-123
-123
-123
-
-
-
-
-123
-123
-
-
-
-景点表活动景点中间表##">
-<meta property="og:updated_time" content="2015-10-20T14:04:26.000Z">
+<meta property="og:description" content="视频播放之前做项目，刚好需要一个做视频的项目，网上寻了好久也没有找到合适的。要么是支持的格式不对，要么是太过于复杂，好奇为什么不能有一个封装好的视频模块，遂到v2ex上问，经过大神提示VLC，然后发现可以通过pod安装，所以决定试试。
+安装可以通过编译或pod安装，做工程为了省事，pod install 一下解决，过程比较久，因为实在太大了，后来一看600多兆，耐心等待。。。
+Xcode打开工程，">
+<meta property="og:updated_time" content="2015-12-18T07:03:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chuangyejihua">
-<meta name="twitter:description" content="维度
-价格
-强度
-时间长度
-
-数据库活动表
-
-
-123
-123
-123
-
-
-
-
-123
-123
-
-
-
-景点表活动景点中间表##">
+<meta name="twitter:title" content="iOS视频模块的库---VLCMobileKit ">
+<meta name="twitter:description" content="视频播放之前做项目，刚好需要一个做视频的项目，网上寻了好久也没有找到合适的。要么是支持的格式不对，要么是太过于复杂，好奇为什么不能有一个封装好的视频模块，遂到v2ex上问，经过大神提示VLC，然后发现可以通过pod安装，所以决定试试。
+安装可以通过编译或pod安装，做工程为了省事，pod install 一下解决，过程比较久，因为实在太大了，后来一看600多兆，耐心等待。。。
+Xcode打开工程，">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -118,7 +64,7 @@
   };
 </script>
 
-  <title> chuangyejihua | Pasco's blog </title>
+  <title> iOS视频模块的库---VLCMobileKit  | Pasco's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +210,7 @@
           
           
             
-              chuangyejihua
+              iOS视频模块的库---VLCMobileKit 
             
           
         </h1>
@@ -273,19 +219,34 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-20T20:25:04+08:00" content="2015-10-20">
-            2015-10-20
+          <time itemprop="dateCreated" datetime="2015-12-18T13:58:18+08:00" content="2015-12-18">
+            2015-12-18
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/iOS/" itemprop="url" rel="index">
+                  <span itemprop="name">iOS</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/20/chuangyejihua/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/chuangyejihua/" itemprop="commentsCount"></span>
+              <a href="/2015/12/18/ios-video-player-library-VLCMobileKit/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/18/ios-video-player-library-VLCMobileKit/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -299,45 +260,44 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="维度">维度</h1><ol>
-<li>价格</li>
-<li>强度</li>
-<li>时间长度</li>
-</ol>
-<h1 id="数据库">数据库</h1><h2 id="活动表">活动表</h2><table>
-<thead>
-<tr>
-<th>123</th>
-<th>123</th>
-<th>123</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>123</td>
-<td>123</td>
-</tr>
-</tbody>
-</table>
-<h2 id="景点表">景点表</h2><h2 id="活动景点中间表">活动景点中间表</h2><p>## </p>
+        <span itemprop="articleBody"><h3 id="视频播放">视频播放</h3><p>之前做项目，刚好需要一个做视频的项目，网上寻了好久也没有找到合适的。要么是支持的格式不对，要么是太过于复杂，好奇为什么不能有一个封装好的视频模块，遂到v2ex上问，经过大神提示VLC，然后发现可以通过pod安装，所以决定试试。</p>
+<h3 id="安装">安装</h3><p>可以通过编译或pod安装，做工程为了省事，pod install 一下解决，过程比较久，因为实在太大了，后来一看600多兆，耐心等待。。。</p>
+<p>Xcode打开工程，七十多个error，莫慌，VLCMobileKit需要C++的库支持，所以在framework中加入libstdc++的库，一个不行就ok啦！</p>
+<h3 id="文档">文档</h3><p><a href="http://cocoadocs.org/docsets/MobileVLCKit/2.2.1/" target="_blank" rel="external">cocoapod文档地址</a></p>
+<h3 id="简单的使用方法">简单的使用方法</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;MobileVLCKit/MobileVLCKit.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#import <span class="title">&lt;MediaPlayer/MediaPlayer.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">sample</span>()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) VLCMediaPlayer *player;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    <span class="built_in">NSArray</span> *options = @[<span class="string">@"--extraintf="</span>];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.player</span> = [[VLCMediaPlayer alloc] initWithOptions:options];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.player</span><span class="variable">.drawable</span> = <span class="keyword">self</span><span class="variable">.videoView</span>;  <span class="comment">// 设置播放器的播放页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后续">后续</h3><p>VLCMobileKit虽然比我之前试的视频播放要优秀，但无奈网上文档太少，需要读点源程序，后面遇到点坑，大补小补总算能用了，之后我会放到我的github上</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/VLC/" rel="tag">#VLC</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/media/" rel="tag">#media</a>
+          
+            <a href="/tags/player/" rel="tag">#player</a>
+          
+            <a href="/tags/video/" rel="tag">#video</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/12/value-change-when-scroll-my-tableview/" rel="prev">滑动tableview时显示不正常</a>
+              <a href="/2016/01/01/Annual-Summary-2015/" rel="prev">2015年度总结</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/09/pip-install-MySQL-python/" rel="next">pip install MySQL-python</a>
+              <a href="/2015/11/18/hide-footerview-in-uitableview-style-grouped/" rel="next">UITableViewStyleGrouped隐藏footerView</a>
             
           </div>
         </div>
@@ -352,10 +312,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/10/20/chuangyejihua/"
-     data-title="chuangyejihua"
+        <div class="ds-share flat" data-thread-key="2015/12/18/ios-video-player-library-VLCMobileKit/"
+     data-title="iOS视频模块的库---VLCMobileKit "
      data-content=""
-     data-url="http://pascocoder.github.io/2015/10/20/chuangyejihua/">
+     data-url="http://pascocoder.github.io/2015/12/18/ios-video-player-library-VLCMobileKit/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -381,8 +341,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/20/chuangyejihua/"
-                   data-title="chuangyejihua" data-url="http://pascocoder.github.io/2015/10/20/chuangyejihua/">
+              <div class="ds-thread" data-thread-key="2015/12/18/ios-video-player-library-VLCMobileKit/"
+                   data-title="iOS视频模块的库---VLCMobileKit " data-url="http://pascocoder.github.io/2015/12/18/ios-video-player-library-VLCMobileKit/">
               </div>
             
           </div>
@@ -422,21 +382,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">45</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -481,7 +441,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#维度"><span class="nav-number">1.</span> <span class="nav-text">维度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库"><span class="nav-number">2.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#活动表"><span class="nav-number">2.1.</span> <span class="nav-text">活动表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#景点表"><span class="nav-number">2.2.</span> <span class="nav-text">景点表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动景点中间表"><span class="nav-number">2.3.</span> <span class="nav-text">活动景点中间表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#视频播放"><span class="nav-number">1.</span> <span class="nav-text">视频播放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档"><span class="nav-number">3.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的使用方法"><span class="nav-number">4.</span> <span class="nav-text">简单的使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续"><span class="nav-number">5.</span> <span class="nav-text">后续</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -497,8 +457,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright" >
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>

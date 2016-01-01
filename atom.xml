@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2015-11-16T09:10:46.000Z</updated>
+  <updated>2016-01-01T17:00:32.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,117 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2015年度总结]]></title>
+    <link href="http://pascocoder.github.io/2016/01/01/Annual-Summary-2015/"/>
+    <id>http://pascocoder.github.io/2016/01/01/Annual-Summary-2015/</id>
+    <published>2016-01-01T08:53:42.000Z</published>
+    <updated>2016-01-01T17:00:32.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="逝去的2015">逝去的2015</h1><h2 id="学习">学习</h2><p>记得2015年刚开始的时候，面对的眼花缭乱的技术，心中特别激动。想要全部学会，做一个全栈的程序员。现在回想自己的年少无知还是会觉得幼稚可笑。殊不知这么多的编程语言，每个编程语言有涉及到茫茫多的框架和类库，光是哪些浩如烟海的文档，都让我看不完。人的精力是有限的，做完PHP项目做Android项目，做完Android做python，做了一个就忘了另外一个，干到头也是一场空，最后学的不伦不类。</p>
+<p>2015年的第一季度，我一直在PHP、Android、Python的门外游荡，都想学但又都没有精力，蹉跎岁月，惶惶终日。在实验室做一些拿不出手的小作品，水平也一直都是入门级别，没有进展。</p>
+<p>现在想想可能不愿意承认，看到同学使用的MAC系统如此的优雅，于是也萌生了购买MAC笔记本电脑吧，最后我选择了学习iOS编程。算是我学习iOS的第一笔费用吧。毕竟8000元钱的东西，爸爸妈妈对这个又不是很了解。平时除了生活费我也羞于向家里要钱，没想到刚跟妈妈一说她就答应买了，那一晚上挂完电话后我哭的特别伤心。于是下决心好好学习iOS，早日把成本挣回来。</p>
+<p>刚开始的时候跟着慕课网学了几周，发现这个网站上的资源讲的很不系统，有些东西就是为了博人眼球，于是我抛弃了这个华而不实的地方。有一天逛CocoaChina的时候，看到一个哥们写自己的学习历程。于是我找的了李明杰老师的视频，李明杰老师讲课很有激情，思路逻辑清晰。我反复看了几遍，受益匪浅。</p>
+<p>网上的资源虽然新颖，但是分散，要想系统的学习一门技术，还是要看书。我从豆瓣上精选了三本书籍，暑假没有回家，专心学习。</p>
+<ol>
+<li><a href="http://book.douban.com/subject/19962787/" target="_blank" rel="external">objective-c 编程</a></li>
+<li><a href="http://book.douban.com/subject/26287812/" target="_blank" rel="external">iOS编程</a></li>
+<li><a href="http://book.douban.com/subject/25976913/" target="_blank" rel="external">iOS编程实战</a></li>
+<li><a href="http://book.douban.com/subject/25829244/" target="_blank" rel="external">effective objective-c</a></li>
+<li><a href="http://book.douban.com/subject/26287173/" target="_blank" rel="external">iOS开发进阶</a></li>
+</ol>
+<p>看完了前两本书，并且把书上的例子敲了一遍，感觉自己算是入门者了，于是到github上找一些自己感兴趣的项目，读读源码。选中了[v2ex的客户端](<a href="https://github.com/singro/v2ex)。虽说看完了两本书，但是对于读源码还是特别吃力。看了很久耐心调试才慢慢摸索出来。可以说，我现在的编程风格依然受这位大神的影响。在此谢过。" target="_blank" rel="external">https://github.com/singro/v2ex)。虽说看完了两本书，但是对于读源码还是特别吃力。看了很久耐心调试才慢慢摸索出来。可以说，我现在的编程风格依然受这位大神的影响。在此谢过。</a></p>
+<p>10月份师兄邀请我加入他们的团队，帮助他完成毕业设计。其实是老师从外面接到的一个外包项目作为师兄的毕业设计。因为师兄在美团实习了很久，回来后时间上已经来不及做完了，我一开始担心我的编程能力<br>不足以完成这个项目。在师兄的再三邀请下我决定跟着师兄还有一个师弟好好地做这个项目。这段时间我们三个人合作开发，是我今年最开心的一段时光。在师兄的鼓励和耐心教导下，我完成了我一开始不敢想象的项目。谢谢师兄带我真正的走进iOS开发的大门，第一次让我觉得我也可以很棒！</p>
+<p>11月份和另一个人合作做了另一个外包项目，同样是因为他开发时间不够来邀请我加入的。在这个项目中，我对iOS的理解更深了一点。而且也获得了第一桶金。</p>
+<p>2015年我最大的收获就是获得了学习一样技术一套正确的方法论。如何到网上搜索资源。社区的重要性。等等</p>
+<h2 id="生活">生活</h2><p>2015年有太多需要反思，不好的生活习惯，健身也没有坚持下来，经常熬夜，作息吃饭不规律，终于在10月份病倒一次。之后每晚早睡，每晚喝牛奶，才算慢慢好好过来。</p>
+<p>年初打算学的吉他，学会了两三首，现在也没时间弹了，不过等宿舍里没人的时候，弹一曲还是挺爽的。</p>
+<p>为什么现在的人都不知道身体的重要性，没有定期去医院检查的习惯，一是对这笔价格不菲的支出觉得不值得，二是对自己身体的不重视。等到有一天明显感觉身体不舒服的时候，再去医院，基本上就已经病入骨髓了。如扁鹊见蔡桓公中所述。</p>
+<p>然后就是运动，天气好的时候，约上好友，乒乓球羽毛球随便什么的，去操场上跑动一下，也是极好的，只是这一年好像什么都没做。</p>
+<p>做事情要有计划，把心里想的一条一条写下来。心里会踏实很多。</p>
+<p>一直在玩部落冲突这个游戏，部落里的成员也都很有爱，有时候心情不好在群里聊聊也会开心很多。</p>
+<h2 id="爱情">爱情</h2><p>遇到时对彼此的感觉都还不错，就在一起了。正是因为在一起的这么草率，也导致后面的痛苦多于快乐。于是在今天正式分手，反而如释重负。</p>
+<ol>
+<li>一定要深入交往至少6个月</li>
+<li>一定要成熟懂事</li>
+<li>一定要有自己自己喜欢的工作</li>
+</ol>
+<p>暂时只有这么多要求吧，感觉要多交往多谈恋爱才能总结经验最后遇到合适的。</p>
+<h1 id="2016的愿望">2016的愿望</h1><p>2015年几经波折算是走上了正轨，之后打算专心做iOS，不再胡思乱想。人的精力是有限的，所以要合理运用，把一件事情做到极致也是一件很了不起的事情</p>
+<ol>
+<li>把剩下的两本书看完，提高iOS开发必备</li>
+<li>认真阅读优秀源码</li>
+<li>做项目，自己想做的或是外包</li>
+<li>坚持写博客做笔记</li>
+<li>多看找工作面试的问题</li>
+<li>加入社区</li>
+<li>贡献自己的代码</li>
+<li>找到一份自己喜欢的实习工作</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="逝去的2015">逝去的2015</h1><h2 id="学习">学习</h2><p>记得2015年刚开始的时候，面对的眼花缭乱的技术，心中特别激动。想要全部学会，做一个全栈的程序员。现在回想自己的年少无知还是会觉得幼稚可笑。殊不知这么多的编程语言，每个编程语言有]]>
+    </summary>
+    
+      <category term="总结" scheme="http://pascocoder.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="随想" scheme="http://pascocoder.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="个人随想" scheme="http://pascocoder.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS视频模块的库---VLCMobileKit ]]></title>
+    <link href="http://pascocoder.github.io/2015/12/18/ios-video-player-library-VLCMobileKit/"/>
+    <id>http://pascocoder.github.io/2015/12/18/ios-video-player-library-VLCMobileKit/</id>
+    <published>2015-12-18T05:58:18.000Z</published>
+    <updated>2015-12-18T07:03:21.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="视频播放">视频播放</h3><p>之前做项目，刚好需要一个做视频的项目，网上寻了好久也没有找到合适的。要么是支持的格式不对，要么是太过于复杂，好奇为什么不能有一个封装好的视频模块，遂到v2ex上问，经过大神提示VLC，然后发现可以通过pod安装，所以决定试试。</p>
+<h3 id="安装">安装</h3><p>可以通过编译或pod安装，做工程为了省事，pod install 一下解决，过程比较久，因为实在太大了，后来一看600多兆，耐心等待。。。</p>
+<p>Xcode打开工程，七十多个error，莫慌，VLCMobileKit需要C++的库支持，所以在framework中加入libstdc++的库，一个不行就ok啦！</p>
+<h3 id="文档">文档</h3><p><a href="http://cocoadocs.org/docsets/MobileVLCKit/2.2.1/" target="_blank" rel="external">cocoapod文档地址</a></p>
+<h3 id="简单的使用方法">简单的使用方法</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;MobileVLCKit/MobileVLCKit.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#import <span class="title">&lt;MediaPlayer/MediaPlayer.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">sample</span>()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) VLCMediaPlayer *player;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    <span class="built_in">NSArray</span> *options = @[<span class="string">@"--extraintf="</span>];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.player</span> = [[VLCMediaPlayer alloc] initWithOptions:options];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.player</span><span class="variable">.drawable</span> = <span class="keyword">self</span><span class="variable">.videoView</span>;  <span class="comment">// 设置播放器的播放页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后续">后续</h3><p>VLCMobileKit虽然比我之前试的视频播放要优秀，但无奈网上文档太少，需要读点源程序，后面遇到点坑，大补小补总算能用了，之后我会放到我的github上</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="视频播放">视频播放</h3><p>之前做项目，刚好需要一个做视频的项目，网上寻了好久也没有找到合适的。要么是支持的格式不对，要么是太过于复杂，好奇为什么不能有一个封装好的视频模块，遂到v2ex上问，经过大神提示VLC，然后发现可以通过pod安装，所以决定试试。<]]>
+    </summary>
+    
+      <category term="VLC" scheme="http://pascocoder.github.io/tags/VLC/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="media" scheme="http://pascocoder.github.io/tags/media/"/>
+    
+      <category term="player" scheme="http://pascocoder.github.io/tags/player/"/>
+    
+      <category term="video" scheme="http://pascocoder.github.io/tags/video/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UITableViewStyleGrouped隐藏footerView]]></title>
+    <link href="http://pascocoder.github.io/2015/11/18/hide-footerview-in-uitableview-style-grouped/"/>
+    <id>http://pascocoder.github.io/2015/11/18/hide-footerview-in-uitableview-style-grouped/</id>
+    <published>2015-11-18T03:23:48.000Z</published>
+    <updated>2015-11-18T03:27:05.000Z</updated>
+    <content type="html"><![CDATA[<p>UITableViewStyleGrouped居然自带footerView，效果如下<br><img src="" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>UITableViewStyleGrouped居然自带footerView，效果如下<br><img src="" alt=""></p>
+]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[UINavigationController使用pushviewcontroller时卡顿]]></title>
@@ -55,48 +166,6 @@
       <category term="objectivec" scheme="http://pascocoder.github.io/tags/objectivec/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[chuangyejihua]]></title>
-    <link href="http://pascocoder.github.io/2015/10/20/chuangyejihua/"/>
-    <id>http://pascocoder.github.io/2015/10/20/chuangyejihua/</id>
-    <published>2015-10-20T12:25:04.000Z</published>
-    <updated>2015-10-20T14:04:26.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="维度">维度</h1><ol>
-<li>价格</li>
-<li>强度</li>
-<li>时间长度</li>
-</ol>
-<h1 id="数据库">数据库</h1><h2 id="活动表">活动表</h2><table>
-<thead>
-<tr>
-<th>123</th>
-<th>123</th>
-<th>123</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>123</td>
-<td>123</td>
-</tr>
-</tbody>
-</table>
-<h2 id="景点表">景点表</h2><h2 id="活动景点中间表">活动景点中间表</h2><p>## </p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="维度">维度</h1><ol>
-<li>价格</li>
-<li>强度</li>
-<li>时间长度</li>
-</ol>
-<h1 id="数据库">数据库</h1><h2 id="活动表">活动表</h2><table>
-<thead>
-<tr>
-<th>123</]]>
-    </summary>
     
   </entry>
   
@@ -606,42 +675,6 @@
       <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
     
       <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[loadView and viewDidLoad]]></title>
-    <link href="http://pascocoder.github.io/2015/09/16/loadView-and-viewDidLoad/"/>
-    <id>http://pascocoder.github.io/2015/09/16/loadView-and-viewDidLoad/</id>
-    <published>2015-09-15T16:41:25.000Z</published>
-    <updated>2015-09-18T08:38:14.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="LoadView">LoadView</h2>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="LoadView">LoadView</h2>]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[AirDrop 传输失败]]></title>
-    <link href="http://pascocoder.github.io/2015/09/15/AirDrop-transfer-fail/"/>
-    <id>http://pascocoder.github.io/2015/09/15/AirDrop-transfer-fail/</id>
-    <published>2015-09-15T02:00:19.000Z</published>
-    <updated>2015-09-15T02:08:04.000Z</updated>
-    <content type="html"><![CDATA[<p>最近使用AirDrop共享传递文件时，总是提示传输失败，上网搜了一下原因。<br>是翻墙使用代理导致的。所以，先暂时关掉Shadowsocks。就OK了。</p>
-<p>有时会搜不到对方，可以试试下面的 看不到要找得人？搜索旧款mac。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近使用AirDrop共享传递文件时，总是提示传输失败，上网搜了一下原因。<br>是翻墙使用代理导致的。所以，先暂时关掉Shadowsocks。就OK了。</p>
-<p>有时会搜不到对方，可以试试下面的 看不到要找得人？搜索旧款mac。</p>
-]]>
-    </summary>
-    
-      <category term="AirDrop" scheme="http://pascocoder.github.io/tags/AirDrop/"/>
-    
-      <category term="mac" scheme="http://pascocoder.github.io/tags/mac/"/>
-    
-      <category term="mac" scheme="http://pascocoder.github.io/categories/mac/"/>
     
   </entry>
   
