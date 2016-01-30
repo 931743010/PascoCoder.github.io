@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2016-01-01T17:00:32.000Z</updated>
+  <updated>2016-01-30T16:25:05.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[寒假计划]]></title>
+    <link href="http://pascocoder.github.io/2016/01/30/holiday-plans/"/>
+    <id>http://pascocoder.github.io/2016/01/30/holiday-plans/</id>
+    <published>2016-01-30T14:50:20.000Z</published>
+    <updated>2016-01-30T16:25:05.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="回家">回家</h3><p>将近30天的寒假已经开始，回家也有两三天了。吃饱喝足之后，开始规划寒假的任务。</p>
+<h3 id="任务">任务</h3><ol>
+<li>放假是刚刚接触到ReactiveCocoa，到现在也看了一部分的入门介绍，基本明白了reactive的思想，还差实践。</li>
+<li>放假前面基一个朋友，推荐我看<a href="http://book.douban.com/subject/25863515/" target="_blank" rel="external">图解HTTP</a>，下载了电子书，寒假看完希望能有个系统的认识。</li>
+<li>3月份就开始实习的面试了，面试宝典、算法之类的必看，我带回来的<a href="http://book.douban.com/subject/6966465/" target="_blank" rel="external">剑指offer</a>，希望寒假能多读几遍。开始我的<a href="https://leetcode.com/" target="_blank" rel="external">Leecode</a>刷题之旅。</li>
+<li>iOS的只是还是温故而知新。一边看书籍温习旧知识，一边github上star新知识。有时间最好看看师兄的代码。</li>
+<li>老师给我布置的寒假任务，虽说不想做，担忧不得不做，尽快完成吧：1、爬虫抓取一个新闻网站的新闻数据，这个我准备用Python的scrapy来做。2、开始看之前留下来的西电导航iOS源代码，试着修复一些模块。</li>
+<li>我要试着抛弃我纯代码构建界面的习惯，多用storyboard和xib文件。这样做起来效率高些</li>
+<li>寒假其实挺想找个人一起做东西的，但是没有合适的人。</li>
+</ol>
+<h3 id="具体实施">具体实施</h3><p>2016.2.1    学习scrapy，爬虫抓数据。学习资源：YouTube视频，官方文档，中文文档，博客</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="回家">回家</h3><p>将近30天的寒假已经开始，回家也有两三天了。吃饱喝足之后，开始规划寒假的任务。</p>
+<h3 id="任务">任务</h3><ol>
+<li>放假是刚刚接触到ReactiveCocoa，到现在也看了一部分的入门介绍，基本明白了reac]]>
+    </summary>
+    
+      <category term="计划" scheme="http://pascocoder.github.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="随想" scheme="http://pascocoder.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="个人随想" scheme="http://pascocoder.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[objective-c runtime]]></title>
+    <link href="http://pascocoder.github.io/2016/01/15/objective-c-runtime/"/>
+    <id>http://pascocoder.github.io/2016/01/15/objective-c-runtime/</id>
+    <published>2016-01-15T07:31:57.000Z</published>
+    <updated>2016-01-15T09:13:43.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="runtime">runtime</h1>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="runtime">runtime</h1>]]>
+    </summary>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
+    
+      <category term="runtime" scheme="http://pascocoder.github.io/tags/runtime/"/>
+    
+      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2015年度总结]]></title>
@@ -625,56 +676,6 @@
       <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
     
       <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Weakify and strongify]]></title>
-    <link href="http://pascocoder.github.io/2015/09/18/Weakify-and-strongify/"/>
-    <id>http://pascocoder.github.io/2015/09/18/Weakify-and-strongify/</id>
-    <published>2015-09-18T08:48:37.000Z</published>
-    <updated>2015-09-18T09:01:38.000Z</updated>
-    <content type="html"><![CDATA[<p>有两篇文章，现在还没时间深究，先附上链接</p>
-<p><a href="http://each.dog/blog/2015/05/02/weakify-and-strongify/" target="_blank" rel="external">Weakify和strongify探究</a></p>
-<p><a href="http://onevcat.com/2014/01/black-magic-in-macro/" target="_blank" rel="external">宏定义的黑魔法 - 宏菜鸟起飞手册</a></p>
-<p><a href="http://each.dog/blog/2015/04/30/create-your-pod-library/" target="_blank" rel="external">创建你的CocoaPod库简明教程</a></p>
-<p><a href="http://www.cnblogs.com/sunnyxx/p/3544703.html" target="_blank" rel="external">Reactive Cocoa Tutorial [1] = “神奇的Macros”;</a></p>
-<p><a href="http://onevcat.com/2012/06/arc-hand-by-hand/" target="_blank" rel="external">手把手教你ARC——iOS/Mac开发ARC入门和使用</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>有两篇文章，现在还没时间深究，先附上链接</p>
-<p><a href="http://each.dog/blog/2015/05/02/weakify-and-strongify/" target="_blank" rel="external">Weakify和stron]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Objective-C中的点语法]]></title>
-    <link href="http://pascocoder.github.io/2015/09/18/objectivec-dot-grammer/"/>
-    <id>http://pascocoder.github.io/2015/09/18/objectivec-dot-grammer/</id>
-    <published>2015-09-18T07:51:33.000Z</published>
-    <updated>2015-09-18T08:31:33.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Java中的点语法">Java中的点语法</h2><p>在Java中会使用 对象名.成员变量 用来直接访问对象中的成员变量。</p>
-<h2 id="objective-c中的点语法">objective-c中的点语法</h2><p>在 objective-c中 使用 对象名.成员变量 会自动调用该成员变量的set方法，而不是直接访问</p>
-<p>objective-c中的点语法的本质是方法调用，不是直接访问成员变量。</p>
-<h2 id="自定义set方法内部">自定义set方法内部</h2><p>Java中，如果自定义set方法，要给成员变量赋值会使用 this 关键字。this 代表调用该方法的对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setProperty</span><span class="params">(<span class="keyword">int</span> property)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.property = property;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>objective 中的self关键字类似于this，也是代表调用该方法的对象，</p>
-<p>但是如果在类的内部自定义的set方法中使用 self.property 的点语法，如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)setProperty:(<span class="keyword">int</span>) property&#123;</span><br><span class="line">	<span class="keyword">self</span><span class="variable">.property</span> = property;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>点语法会自动调用property的set方法，从而造成循环调用。</p>
-<p>##下划线➕属性<br>为了解决这个问题，在类的内部可以通过 _property来直接访问对象的成员变量。所以方法要写成</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)setProperty:(<span class="keyword">int</span>) property&#123;</span><br><span class="line">	_property = property;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="建议">建议</h2><p>类内部使用下划线，类外部使用点语法。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="Java中的点语法">Java中的点语法</h2><p>在Java中会使用 对象名.成员变量 用来直接访问对象中的成员变量。</p>
-<h2 id="objective-c中的点语法">objective-c中的点语法</h2><p>在 objective-c中 ]]>
-    </summary>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/categories/objective-c/"/>
     
   </entry>
   
