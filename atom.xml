@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2016-01-30T16:25:05.000Z</updated>
+  <updated>2016-02-07T08:42:38.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -15,11 +15,319 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[使用XPath从网页中提取数据]]></title>
+    <link href="http://pascocoder.github.io/2016/02/07/Use-XPath/"/>
+    <id>http://pascocoder.github.io/2016/02/07/Use-XPath/</id>
+    <published>2016-02-07T08:35:55.000Z</published>
+    <updated>2016-02-07T08:42:38.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="XPath">XPath</h1><h2 id="简介">简介</h2><p>XPath 是一门在 XML/HTML 文档中查找信息的语言。XPath 用于在 XML 文档中通过元素和属性进行导航。</p>
+<h2 id="语法">语法</h2><h5 id="选取节点">选取节点</h5><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodename</td>
+<td>选取此节点下所有的子节点</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从根节点下选取</td>
+</tr>
+<tr>
+<td>//</td>
+<td>从匹配选择的当前节点选择文档中的节点，而不考虑他们的位置</td>
+</tr>
+<tr>
+<td>.</td>
+<td>选择当前的节点</td>
+</tr>
+<tr>
+<td>..</td>
+<td>选择当前节点的父节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选取属性</td>
+</tr>
+</tbody>
+</table>
+<h5 id="实例">实例</h5><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bookstore</td>
+<td>选取 bookstore 元素的所有子节点。</td>
+</tr>
+<tr>
+<td>/bookstore</td>
+<td>选取根元素 bookstore。</td>
+</tr>
+<tr>
+<td></td>
+<td>注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！</td>
+</tr>
+<tr>
+<td>bookstore/book</td>
+<td>选取属于 bookstore 的子元素的所有 book 元素。</td>
+</tr>
+<tr>
+<td>//book</td>
+<td>选取所有 book 子元素，而不管它们在文档中的位置。</td>
+</tr>
+<tr>
+<td>bookstore//book</td>
+<td>选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。</td>
+</tr>
+<tr>
+<td>//@lang</td>
+<td>选取名为 lang 的所有属性。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="谓语">谓语</h5><table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bookstore/book[1]</td>
+<td>选取属于 bookstore 子元素的第一个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[last()]</td>
+<td>选取属于 bookstore 子元素的最后一个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[last()-1]</td>
+<td>选取属于 bookstore 子元素的倒数第二个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[position()&lt;3]</td>
+<td>选取最前面的两个属于 bookstore 元素的子元素的 book 元素。</td>
+</tr>
+<tr>
+<td>//title[@lang]</td>
+<td>选取所有拥有名为 lang 的属性的 title 元素。</td>
+</tr>
+<tr>
+<td>//title[@lang=’eng’]</td>
+<td>选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。</td>
+</tr>
+<tr>
+<td>/bookstore/book[price&gt;35.00]</td>
+<td>选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+<tr>
+<td>/bookstore/book[price&gt;35.00]/title</td>
+<td>选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="选取未知节点">选取未知节点</h5><table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bookstore/*</td>
+<td>选取 bookstore 元素的所有子元素。</td>
+</tr>
+<tr>
+<td>//*</td>
+<td>选取文档中的所有元素。</td>
+</tr>
+<tr>
+<td>//title[@*]</td>
+<td>选取所有带有属性的 title 元素。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="选择若干路径">选择若干路径</h5><table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//book/title 管道符（竖杠） //book/price</td>
+<td>选取 book 元素的所有 title 和 price 元素。</td>
+</tr>
+<tr>
+<td>//title 管道符 //price</td>
+<td>选取文档中的所有 title 和 price 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book/title 管道符 //price</td>
+<td>选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="XPath">XPath</h1><h2 id="简介">简介</h2><p>XPath 是一门在 XML/HTML 文档中查找信息的语言。XPath 用于在 XML 文档中通过元素和属性进行导航。</p>
+<h2 id="语法">语法</h2><h5 id="]]>
+    </summary>
+    
+      <category term="XPath" scheme="http://pascocoder.github.io/tags/XPath/"/>
+    
+      <category term="爬虫" scheme="http://pascocoder.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="爬虫" scheme="http://pascocoder.github.io/categories/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[《图解HTTP》读书笔记]]></title>
+    <link href="http://pascocoder.github.io/2016/02/03/%E5%9B%BE%E8%A7%A3HTTP-reading-notes/"/>
+    <id>http://pascocoder.github.io/2016/02/03/图解HTTP-reading-notes/</id>
+    <published>2016-02-03T12:06:05.000Z</published>
+    <updated>2016-02-06T17:29:15.000Z</updated>
+    <content type="html"><![CDATA[<ol>
+<li>通常使用的网络（包括互联网）是在 TCP/IP 协议族的基础上运作的。而 HTTP 属于它内部的一个子集。</li>
+<li>TCP/IP分4层：应用层、传输层、网络层、数据链路层。</li>
+<li>应用层：应用层决定了向用户提供应用服务时通信的活动。TCP/IP 协议族内预存了各类通用的应用服务。比如，<strong>FTP（File Transfer Protocol，文件传输协议）</strong>和 <strong>DNS（Domain Name System，域名系统）</strong>服务就是其中两类。<strong>HTTPH协议也处于该层。</strong></li>
+<li>传输层：传输层对上层应用层提供处于网络连接中的两台计算机之间的数据传输。在传输层有两个性质不同的协议：<strong>TCP（Transmission Control Protocol，传输控制协议）</strong>和 <strong>UDP（User Data Protocol，用户数据报协议）</strong>。</li>
+<li>网络层：网络层用来处理在网络上流动的数据包。数据包是网络传输的最小数据单位。该层规定了通过怎样的路径到达对方的计算机，并把数据包传送给对方。与对方计算机通过多台计算机或网络设备进行传输时，网络层所起的作用就是在众多选项中选择一条传输路线。</li>
+<li>链路层：用来处理连接网络的硬件部分。包括控制操作系统，硬件的设备驱动，网卡，及光纤等物理可见部分。硬件上的范畴均在链路层的作用范围之内。<img src="http://7xqqt8.com1.z0.glb.clouddn.com/TCP%2FIP%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.png" alt="TCP/IP通信传输流"></li>
+<li><strong>IP协议位于网络层</strong>，作用是把各种数据包传送给对方，而要确保传送到对方那里，需要两个重要的条件是IP地址和MAC地址。</li>
+<li>TCP三次握手：发送端首先会发送一个带有SYN标志的数据包给对方，接收方接收后回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端在回传一个带有ACK标志的数据包表示握手结束。若握手过程中某个阶段莫名终止，TCP协议会再次以相同的顺序发送相同的数据包。<img src="http://7xqqt8.com1.z0.glb.clouddn.com/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" alt="TCP三次握手"></li>
+<li>负责解析域名的DNS服务<img src="http://7xqqt8.com1.z0.glb.clouddn.com/DNS%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D.png" alt=""></li>
+<li>HTTP协议是不保存状态的，即无状态协议。协议对于发过的请求和响应都不做持久化处理。</li>
+<li>GET:获取资源。POST:用来传输实体的主题。HEAD:用来获取报文的首部。OPTIONS:查询可用方法。TRACE:追踪路径。CONNECT:要求用隧道协议连接代理。</li>
+<li>持久连接:进行一次TCP连接后进行多次请求和响应。管线化:同时并行发出多个请求，不需要一个接一个的等待响应。</li>
+<li>使用Cookie的状态管理:Cookie会根据服务器发送的响应报文中的Set_Cookie的首部字段信息，通知客户端保存Cookie，当下次客户端再往服务器端发送请求时，会在请求报文的首部加入Cookie。<img src="http://7xqqt8.com1.z0.glb.clouddn.com/Cookie%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt="Cookie工作原理"></li>
+<li>获取部分内容的范围请求(Range Request):断点续传，利用首部的Range来指定资源的byte范围</li>
+<li>内容协商:根据请求报文的首部字段判断。Accept，Accept-Charset，Accept-Encoding，Accept-language，Content-Language。</li>
+<li>HTTP状态码:1XX，信息性状态码，接收的请求正在处理。2XX，成功状态码，请求正常处理完毕。3XX，重定向状态码，需要进行附加操作以完成请求。4XX，客户端错误状态码，服务器无法处理请求。5XX，服务器错误状态码，服务器处理请求出错。</li>
+<li>缓存:代理服务器或客户端保存的资源副本。</li>
+<li>HTTP首部字段的含义。（原书第6章）</li>
+<li>HTTP缺点：使用明文通信，内容可能会被窃听；不验证通信方的身份，有可能遭遇伪装；无法证明报文的完整性，有可能内容已经被篡改。</li>
+<li>HTTPS是在HTTP的通信接口部分用SSL或TSL协议代替<img src="http://7xqqt8.com1.z0.glb.clouddn.com/HTTP%E5%92%8CHTTPS.png" alt=""></li>
+<li>WebSocket:客户端和服务器之间全双工通信标准。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<ol>
+<li>通常使用的网络（包括互联网）是在 TCP/IP 协议族的基础上运作的。而 HTTP 属于它内部的一个子集。</li>
+<li>TCP/IP分4层：应用层、传输层、网络层、数据链路层。</li>
+<li>应用层：应用层决定了向用户提供应用服务时通信的活动。TCP/]]>
+    </summary>
+    
+      <category term="HTTP" scheme="http://pascocoder.github.io/tags/HTTP/"/>
+    
+      <category term="读书笔记" scheme="http://pascocoder.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="reading notes" scheme="http://pascocoder.github.io/categories/reading-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[pyhton爬虫框架scrapy]]></title>
+    <link href="http://pascocoder.github.io/2016/02/01/python-scrapy-1/"/>
+    <id>http://pascocoder.github.io/2016/02/01/python-scrapy-1/</id>
+    <published>2016-02-01T03:42:39.000Z</published>
+    <updated>2016-02-08T15:33:34.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="概要">概要</h2><h3 id="参考文档">参考文档</h3><p><a href="http://scrapy-chs.readthedocs.org/zh_CN/1.0/index.html" target="_blank" rel="external">scrapy中文文档</a></p>
+<h3 id="安装">安装</h3><p>基本上就是一条命令<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> scrapy</span><br></pre></td></tr></table></figure></p>
+<h3 id="创建项目">创建项目</h3><p>输入命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject tutorial</span><br></pre></td></tr></table></figure></p>
+<p>会出现一个tutorial的目录，目录结构如下<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tutorial/</span><br><span class="line">    scrapy<span class="class">.cfg</span></span><br><span class="line">    tutorial/					</span><br><span class="line">        __init__<span class="class">.py</span>			</span><br><span class="line">        items<span class="class">.py</span></span><br><span class="line">        pipelines<span class="class">.py</span></span><br><span class="line">        settings<span class="class">.py</span></span><br><span class="line">        spiders/</span><br><span class="line">            __init__.py</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>scrapy.cfg:部署配置文件</li>
+<li>items.py:项目items文件，定义字典的字段</li>
+<li>pipeline.py:项目管道文件，用于后续处理</li>
+<li>settings.py:项目设置文件</li>
+<li>spider/:用来放爬虫的目录</li>
+</ol>
+<h3 id="定义item">定义item</h3><p>item是保存爬取到的数据的容器，使用方法类似于Python中的字典。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    link = scrapy.Field()</span><br><span class="line">    desc = scrapy.Field()</span><br></pre></td></tr></table></figure></p>
+<h3 id="第一个爬虫">第一个爬虫</h3><p>Spider是从<strong>单一网站</strong>上爬去数据的类。<br>为了创建一个Spider，您必须继承 <code>scrapy.Spider</code> 类， 且定义一些属性:</p>
+<ol>
+<li><code>name</code>: 用于区别Spider。 该名字必须是唯一的，您不可以为不同的Spider设定相同的名字。</li>
+<li><code>start_urls</code>: 包含了Spider在启动时进行爬取的url列表。 因此，第一个被获取到的页面将是其中之一。 后续的URL则从初始的URL获取到的数据中提取。</li>
+<li><code>parse()</code> 是spider的一个方法。 被调用时，每个初始URL完成下载后生成的 Response 对象将会作为唯一的参数传递给该函数。 该方法负责解析返回的数据(response data)，提取数据(生成item)以及生成需要进一步处理的URL的 Request 对象。<br>以下为我们的第一个Spider代码，保存在 tutorial/spiders 目录下的 dmoz_spider.py 文件中:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"dmoz"</span></span><br><span class="line">    allowed_domains = [<span class="string">"dmoz.org"</span>]</span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="string">"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"</span>,</span><br><span class="line">        <span class="string">"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"</span></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        filename = response.url.split(<span class="string">"/"</span>)[-<span class="number">2</span>] + <span class="string">'.html'</span></span><br><span class="line">        <span class="keyword">with</span> open(filename, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.body)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>切换到工程的根目录，执行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl dmoz</span><br></pre></td></tr></table></figure></p>
+<p>会发现工程内多了一个文件，即请求到的结果。</p>
+<h4 id="代码含义解释：">代码含义解释：</h4><p>Scrapy为Spider的 <code>start_urls</code> 属性中的每个URL创建了 <code>scrapy.Request</code> 对象，并将 <code>parse</code> 方法作为回调函数(callback)赋值给了Request。</p>
+<p>Request对象经过调度，执行生成 scrapy.http.Response 对象并送回给spider parse() 方法。</p>
+<h4 id="处理请求结果">处理请求结果</h4><p>从网页中提取数据，这里介绍<a href="/2016/02/07/Use-XPath/">XPath方法</a></p>
+<h4 id="最终的样子">最终的样子</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> tutorial.items <span class="keyword">import</span> DmozItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"dmoz"</span></span><br><span class="line">    allowed_domains = [<span class="string">"dmoz.org"</span>]</span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="string">"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"</span>,</span><br><span class="line">        <span class="string">"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"</span></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> sel <span class="keyword">in</span> response.xpath(<span class="string">'//ul/li'</span>):</span><br><span class="line">            item = DmozItem()</span><br><span class="line">            item[<span class="string">'title'</span>] = sel.xpath(<span class="string">'a/text()'</span>).extract()</span><br><span class="line">            item[<span class="string">'link'</span>] = sel.xpath(<span class="string">'a/@href'</span>).extract()</span><br><span class="line">            item[<span class="string">'desc'</span>] = sel.xpath(<span class="string">'text()'</span>).extract()</span><br><span class="line">            <span class="keyword">yield</span> item</span><br></pre></td></tr></table></figure>
+<h2 id="Spiders">Spiders</h2><p>Spider类定义了如何爬取某个(或某些)网站。包括了爬取的动作(例如:是否跟进链接)以及如何从网页的内容中提取结构化数据(爬取item)。 换句话说，Spider就是您定义爬取的动作及分析某个网页(或者是有些网页)的地方。</p>
+<p>scrapy提供了多种Spider</p>
+<h3 id="scrapy-Spider">scrapy.Spider</h3><p><code>scrapy.Spider</code>:最简单的spider，Spider并没有提供什么特殊的功能。 其仅仅提供了 start_requests() 的默认实现，读取并请求spider属性中的 start_urls, 并根据返回的结果(resulting responses)调用spider的 parse 方法。如上面的那个例子。</p>
+<h3 id="CrawlSpider">CrawlSpider</h3><p><code>CrawlSpider</code>:爬取一般网站常用的spider。其定义了一些规则(rule)来提供跟进link的方便的机制。 也许该spider并不是完全适合特定网站或项目，但其对很多情况都使用。</p>
+<ol>
+<li><code>rules</code>:一个包含一个(或多个) Rule 对象的集合(list)。 每个 Rule 对爬取网站的动作定义了特定表现。 Rule对象在下边会介绍。 如果多个rule匹配了相同的链接，则根据他们在本属性中被定义的顺序，第一个会被使用。</li>
+<li><code>parse_start_url(response)</code>:该spider也提供了一个可复写(overrideable)的方法。当start_url的请求返回时，该方法被调用。 该方法分析最初的返回值并必须返回一个 Item 对象或者 一个 Request 对象或者 一个可迭代的包含二者对象。</li>
+</ol>
+<h4 id="爬取规则：">爬取规则：</h4><p><code>link_extractor</code> 是一个 Link Extractor 对象。 其定义了如何从爬取到的页面提取链接。</p>
+<p><code>callback</code> 是一个callable或string(该spider中同名的函数将会被调用)。 从link_extractor中每获取到链接时将会调用该函数。该回调函数接受一个response作为其第一个参数， 并返回一个包含 Item 以及(或) Request 对象(或者这两者的子类)的列表(list)。</p>
+<blockquote>
+<p>警告</p>
+<p>当编写爬虫规则时，请避免使用 parse 作为回调函数。 由于 CrawlSpider 使用 parse 方法来实现其逻辑，如果 您覆盖了 parse 方法，crawl spider 将会运行失败。</p>
+</blockquote>
+<p><code>cb_kwargs</code> 包含传递给回调函数的参数(keyword argument)的字典。</p>
+<p><code>follow</code> 是一个布尔(boolean)值，指定了根据该规则从response提取的链接是否需要跟进。 如果 callback 为None， follow 默认设置为 True ，否则默认为 False 。</p>
+<p><code>process_links</code> 是一个callable或string(该spider中同名的函数将会被调用)。 从link_extractor中获取到链接列表时将会调用该函数。该方法主要用来过滤。</p>
+<p><code>process_request</code> 是一个callable或string(该spider中同名的函数将会被调用)。 该规则提取到每个request时都会调用该函数。该函数必须返回一个request或者None。 (用来过滤request)</p>
+<h4 id="CrawlSpider样例">CrawlSpider样例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> scrapy.spiders <span class="keyword">import</span> CrawlSpider, Rule</span><br><span class="line"><span class="keyword">from</span> scrapy.linkextractors <span class="keyword">import</span> LinkExtractor</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySpider</span><span class="params">(CrawlSpider)</span>:</span></span><br><span class="line">    name = <span class="string">'example.com'</span></span><br><span class="line">    allowed_domains = [<span class="string">'example.com'</span>]</span><br><span class="line">    start_urls = [<span class="string">'http://www.example.com'</span>]</span><br><span class="line"></span><br><span class="line">    rules = (</span><br><span class="line">        <span class="comment"># 提取匹配 'category.php' (但不匹配 'subsection.php') 的链接并跟进链接(没有callback意味着follow默认为True)</span></span><br><span class="line">        Rule(LinkExtractor(allow=(<span class="string">'category\.php'</span>, ), deny=(<span class="string">'subsection\.php'</span>, ))),</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 提取匹配 'item.php' 的链接并使用spider的parse_item方法进行分析</span></span><br><span class="line">        Rule(LinkExtractor(allow=(<span class="string">'item\.php'</span>, )), callback=<span class="string">'parse_item'</span>),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_item</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        self.logger.info(<span class="string">'Hi, this is an item page! %s'</span>, response.url)</span><br><span class="line"></span><br><span class="line">        item = scrapy.Item()</span><br><span class="line">        item[<span class="string">'id'</span>] = response.xpath(<span class="string">'//td[@id="item_id"]/text()'</span>).re(<span class="string">r'ID: (\d+)'</span>)</span><br><span class="line">        item[<span class="string">'name'</span>] = response.xpath(<span class="string">'//td[@id="item_name"]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'description'</span>] = response.xpath(<span class="string">'//td[@id="item_description"]/text()'</span>).extract()</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<p>该spider将从example.com的首页开始爬取，获取category以及item的链接并对后者使用 parse_item 方法。 当item获得返回(response)时，将使用XPath处理HTML并生成一些数据填入 Item 中。</p>
+<h3 id="Pipeline">Pipeline</h3><p>当Item在Spider中被收集之后，它将会被传递到Item Pipeline，一些组件会按照一定的顺序执行对Item的处理。<br>以下是item pipeline的一些典型应用：</p>
+<ol>
+<li>清理HTML数据</li>
+<li>验证爬取的数据(检查item包含某些字段)</li>
+<li>查重(并丢弃)</li>
+<li>将爬取结果保存到数据库中</li>
+</ol>
+<h3 id="样例">样例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MongoPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    collection_name = <span class="string">'scrapy_items'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, mongo_uri, mongo_db)</span>:</span></span><br><span class="line">        self.mongo_uri = mongo_uri</span><br><span class="line">        self.mongo_db = mongo_db</span><br><span class="line"></span><br><span class="line"><span class="decorator">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">from_crawler</span><span class="params">(cls, crawler)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> cls(</span><br><span class="line">            mongo_uri=crawler.settings.get(<span class="string">'MONGO_URI'</span>),</span><br><span class="line">            mongo_db=crawler.settings.get(<span class="string">'MONGO_DATABASE'</span>, <span class="string">'items'</span>)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.client = pymongo.MongoClient(self.mongo_uri)</span><br><span class="line">        self.db = self.client[self.mongo_db]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.client.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        self.db[self.collection_name].insert(dict(item))</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<h2 id="遇到的问题">遇到的问题</h2><ol>
+<li>爬虫和匹配规则</li>
+<li>防盗链</li>
+<li>图片和文件的下载</li>
+<li>连接数据库</li>
+</ol>
+<h2 id="解决方法">解决方法</h2><ol>
+<li>rule</li>
+<li>HTTP请求时头部伪装</li>
+<li>pipeline</li>
+<li>MySQL</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="概要">概要</h2><h3 id="参考文档">参考文档</h3><p><a href="http://scrapy-chs.readthedocs.org/zh_CN/1.0/index.html" target="_blank" rel="external"]]>
+    </summary>
+    
+      <category term="python" scheme="http://pascocoder.github.io/tags/python/"/>
+    
+      <category term="scrapy" scheme="http://pascocoder.github.io/tags/scrapy/"/>
+    
+      <category term="python" scheme="http://pascocoder.github.io/categories/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[寒假计划]]></title>
     <link href="http://pascocoder.github.io/2016/01/30/holiday-plans/"/>
     <id>http://pascocoder.github.io/2016/01/30/holiday-plans/</id>
     <published>2016-01-30T14:50:20.000Z</published>
-    <updated>2016-01-30T16:25:05.000Z</updated>
+    <updated>2016-02-01T03:23:23.000Z</updated>
     <content type="html"><![CDATA[<h3 id="回家">回家</h3><p>将近30天的寒假已经开始，回家也有两三天了。吃饱喝足之后，开始规划寒假的任务。</p>
 <h3 id="任务">任务</h3><ol>
 <li>放假是刚刚接触到ReactiveCocoa，到现在也看了一部分的入门介绍，基本明白了reactive的思想，还差实践。</li>
@@ -30,7 +338,7 @@
 <li>我要试着抛弃我纯代码构建界面的习惯，多用storyboard和xib文件。这样做起来效率高些</li>
 <li>寒假其实挺想找个人一起做东西的，但是没有合适的人。</li>
 </ol>
-<h3 id="具体实施">具体实施</h3><p>2016.2.1    学习scrapy，爬虫抓数据。学习资源：YouTube视频，官方文档，中文文档，博客</p>
+<h3 id="具体实施">具体实施</h3><p>1.31 &amp; 2.1    学习scrapy，爬虫抓数据。学习资源：YouTube视频，官方文档，中文文档，博客</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="回家">回家</h3><p>将近30天的寒假已经开始，回家也有两三天了。吃饱喝足之后，开始规划寒假的任务。</p>
@@ -516,19 +824,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[python scrapy]]></title>
-    <link href="http://pascocoder.github.io/2015/09/29/python-scrapy/"/>
-    <id>http://pascocoder.github.io/2015/09/29/python-scrapy/</id>
-    <published>2015-09-29T07:03:29.000Z</published>
-    <updated>2015-09-29T07:03:29.000Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
-    </summary>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[linux中常用命令]]></title>
     <link href="http://pascocoder.github.io/2015/09/26/linux-commands/"/>
     <id>http://pascocoder.github.io/2015/09/26/linux-commands/</id>
@@ -607,75 +902,6 @@
       <category term="mysql" scheme="http://pascocoder.github.io/tags/mysql/"/>
     
       <category term="linux" scheme="http://pascocoder.github.io/categories/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS中的block和delegate]]></title>
-    <link href="http://pascocoder.github.io/2015/09/22/delegate-and-block/"/>
-    <id>http://pascocoder.github.io/2015/09/22/delegate-and-block/</id>
-    <published>2015-09-22T12:35:53.000Z</published>
-    <updated>2015-10-20T04:05:19.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="block">block</h1><p><a href="http://fuckingblocksyntax.com/" target="_blank" rel="external">block用法:转自http://fuckingblocksyntax.com/</a></p>
-<p>How Do I Declare A Block in Objective-C?<br>As a local variable:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>As a property:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) returnType (^blockName)(parameterTypes);</span><br></pre></td></tr></table></figure></p>
-<p>As a method parameter:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName;</span><br><span class="line">-</span><br></pre></td></tr></table></figure></p>
-<p>As an argument to a method call:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[someObject someMethodThatTakesABlock:^returnType (parameters) &#123;...&#125;];</span><br></pre></td></tr></table></figure></p>
-<p>As a typedef:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> returnType (^TypeName)(parameterTypes);</span><br><span class="line">TypeName blockName = ^returnType(parameters) &#123;...&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>子控件想要执行的动作在父控件定义的动作,<a href="http://stackoverflow.com/questions/14968321/container-view-controllers-notify-parent-of-action" target="_blank" rel="external">stackoverflow</a><br>在子控件中定义一个block，<br>在父控件中给子空间的block赋值（即添加block要执行的父控件的动作）<br>在做一个侧滑栏时遇到了这样的问题，要求点击侧滑栏中的某一行后，收回侧滑栏并显示该菜单指定的view<br>ViewController -&gt; MenuView -&gt; MenuSectionView 两层父子关系<br>MenuSectionView是table，点击table后，ViewController要显示相应的view<br>这就需要把被选中的行数传递给ViewController，然后ViewController负责调响应的view</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="block">block</h1><p><a href="http://fuckingblocksyntax.com/" target="_blank" rel="external">block用法:转自http://fuckingblocksyntax.com/]]>
-    </summary>
-    
-      <category term="block" scheme="http://pascocoder.github.io/tags/block/"/>
-    
-      <category term="delegate" scheme="http://pascocoder.github.io/tags/delegate/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS视图层次管理]]></title>
-    <link href="http://pascocoder.github.io/2015/09/22/Managing-the-View-Hierarchy/"/>
-    <id>http://pascocoder.github.io/2015/09/22/Managing-the-View-Hierarchy/</id>
-    <published>2015-09-22T04:36:00.000Z</published>
-    <updated>2015-09-22T06:54:55.000Z</updated>
-    <content type="html"><![CDATA[<p>为了让某个view放到最上面，或者将某个view放到下层，经常需要使用bringSubviewToFront:和sendSubviewToBack:两个方法。</p>
-<h3 id="遇到的问题">遇到的问题</h3><p>设置的rootBackgroundButton用来遮盖self.view区域，但换层的时候，rootBackgroundButton被新的层覆盖，不能显示在最上面了。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.viewControllerContainView</span> addSubview:willShowViewController<span class="variable">.view</span>];</span><br><span class="line">willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">320</span>;</span><br><span class="line">     <span class="keyword">if</span> (animated) &#123;</span><br><span class="line">         [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.2</span> animations:^&#123;</span><br><span class="line">              previousViewController<span class="variable">.view</span><span class="variable">.x</span> += <span class="number">20</span>;         </span><br><span class="line">          &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</span><br><span class="line">                <span class="comment">//移除上一个ViewController</span></span><br><span class="line">                [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">          &#125;];</span><br><span class="line">                </span><br><span class="line"><span class="comment">//动画的把新的viewcontroller的origin.x设为0</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.6</span> delay:<span class="number">0</span> usingSpringWithDamping:<span class="number">1</span> initialSpringVelocity:<span class="number">1.2</span> options:<span class="built_in">UIViewAnimationOptionCurveLinear</span> animations:^&#123;</span><br><span class="line">                    willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">                &#125; completion:<span class="literal">nil</span>];</span><br><span class="line">                <span class="comment">//动画的把新的菜单栏缩回</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span> delay:<span class="number">0.1</span> options:<span class="built_in">UIViewAnimationOptionCurveEaseOut</span> animations:^&#123;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">	&#125; completion:<span class="literal">nil</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">     willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line">     <span class="keyword">self</span><span class="variable">.currentSelectedIndex</span> = index;</span><br></pre></td></tr></table></figure>
-<p>出现效果如下：<br><img src="/img/managing_the_view_hierarchy/1.png" alt="pic1"></p>
-<p>修改代码，添加<br>[self.viewControllerContainView bringSubviewToFront:self.rootBackgroundButton]</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.viewControllerContainView</span> addSubview:willShowViewController<span class="variable">.view</span>];</span><br><span class="line">willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">320</span>;</span><br><span class="line"><span class="comment">//rootBackgroundButton放在最上面</span></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.viewControllerContainView</span> bringSubviewToFront:<span class="keyword">self</span><span class="variable">.rootBackgroundButton</span>];</span><br><span class="line">     <span class="keyword">if</span> (animated) &#123;</span><br><span class="line">         [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.2</span> animations:^&#123;</span><br><span class="line">              previousViewController<span class="variable">.view</span><span class="variable">.x</span> += <span class="number">20</span>;         </span><br><span class="line">          &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</span><br><span class="line">                <span class="comment">//移除上一个ViewController</span></span><br><span class="line">                [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">          &#125;];</span><br><span class="line">                </span><br><span class="line"><span class="comment">//动画的把新的viewcontroller的origin.x设为0</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.6</span> delay:<span class="number">0</span> usingSpringWithDamping:<span class="number">1</span> initialSpringVelocity:<span class="number">1.2</span> options:<span class="built_in">UIViewAnimationOptionCurveLinear</span> animations:^&#123;</span><br><span class="line">                    willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">                &#125; completion:<span class="literal">nil</span>];</span><br><span class="line">                <span class="comment">//动画的把新的菜单栏缩回</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.3</span> delay:<span class="number">0.1</span> options:<span class="built_in">UIViewAnimationOptionCurveEaseOut</span> animations:^&#123;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">	&#125; completion:<span class="literal">nil</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    [previousViewController<span class="variable">.view</span> removeFromSuperview];</span><br><span class="line">     willShowViewController<span class="variable">.view</span><span class="variable">.x</span> = <span class="number">0</span>;</span><br><span class="line">    [<span class="keyword">self</span> setMenuOffset:<span class="number">0.0</span>f];</span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line">     <span class="keyword">self</span><span class="variable">.currentSelectedIndex</span> = index;</span><br></pre></td></tr></table></figure>
-<p>正常了！<br><img src="/img/managing_the_view_hierarchy/2.png" alt="pic2"></p>
-<h3 id="更多">更多</h3><ul>
-<li>superview    (Property)</li>
-<li>subviews    (Property)</li>
-<li>window    (Property)</li>
-<li>addSubview:</li>
-<li>bringSubviewToFront:</li>
-<li>sendSubviewToBack:</li>
-<li>removeFromSuperview</li>
-<li>insertSubview:atIndex:</li>
-<li>insertSubview:aboveSubview:</li>
-<li>insertSubview:belowSubview:</li>
-<li>exchangeSubviewAtIndex:withSubviewAtIndex:</li>
-<li>isDescendantOfView:</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>为了让某个view放到最上面，或者将某个view放到下层，经常需要使用bringSubviewToFront:和sendSubviewToBack:两个方法。</p>
-<h3 id="遇到的问题">遇到的问题</h3><p>设置的rootBackgroundButton用来]]>
-    </summary>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
-    
-      <category term="objective-c" scheme="http://pascocoder.github.io/tags/objective-c/"/>
-    
-      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
     
   </entry>
   

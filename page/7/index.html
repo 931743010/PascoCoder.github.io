@@ -205,8 +205,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" itemprop="url">
-                JDK6和JDK7中substring() 方法的区别
+              <a class="post-title-link" href="/2015/09/02/dig-into-objc/" itemprop="url">
+                深入学习Objective-C（一）：揭开NSObject的面纱
               </a>
             
           
@@ -216,7 +216,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
+          <time itemprop="dateCreated" datetime="2015-09-02T21:14:46+08:00" content="2015-09-02">
             2015-09-02
           </time>
         </span>
@@ -226,8 +226,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
+                <a href="/categories/objective-c/" itemprop="url" rel="index">
+                  <span itemprop="name">objective-c</span>
                 </a>
               </span>
 
@@ -242,8 +242,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" itemprop="commentsCount"></span>
+              <a href="/2015/09/02/dig-into-objc/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/dig-into-objc/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -260,12 +260,106 @@
         
           <span itemprop="articleBody">
             
-            JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)
-substring()方
+            对于NSObject来说，我们可是非常熟悉的了，它是objc中大多数类的基类。注意，并不是所有的类都继承于NSObject，比如NSProxy类。详细的类图可以参考这篇文章IOS 整体框架类图，讲的很详细。
+既然要深入学习objc，我们不妨从最熟悉的NSObject类开始，让我们来看一看它的源码吧！
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/#more" rel="contents">
+            <a class="btn" href="/2015/09/02/dig-into-objc/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/02/objc-associated-object/" itemprop="url">
+                深入学习Objective-C（二）理解 objc 关联对象 (Associated Objects)
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-02T17:12:42+08:00" content="2015-09-02">
+            2015-09-02
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/objective-c/" itemprop="url" rel="index">
+                  <span itemprop="name">objective-c</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/02/objc-associated-object/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/objc-associated-object/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            转载自codingcoder的博客，原文地址
+今天看了下 objc 2.0 引入的强大特性：关联对象，下面把我的理解与大家分享一下。
+使用类目遇到的问题我们都知道，我们在普通的 objc 类中，一般我们都会把成员变量声明在@interface中，如果你想把成员变量暴露在头文件中，你可以把它声明在实现
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/02/objc-associated-object/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -393,99 +487,6 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
           
           
             
-              <a class="post-title-link" href="/2015/09/02/check-if-array-contains-a-value-java/" itemprop="url">
-                怎样更有效率的检查一个数组是否包含某个元素
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/check-if-array-contains-a-value-java/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/check-if-array-contains-a-value-java/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            怎样去检验一个数组（未排序）是否包含某个元素？这是Java中的一个非常有用和非常常用的一个操作。这也是stackoverflow网站上的一个投票很高的问题。在投票很高的几个回答中，有很多不同的方法，但是时间复杂度也是不同的，下面我将介绍每种方法的时间成本。
-检查数组是否包含某个元素的四种不同的方法1
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/check-if-array-contains-a-value-java/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
               <a class="post-title-link" href="/2015/09/02/what-is-meta-class-in-objective-c/" itemprop="url">
                 Objective-C 中的 meta-class 是什么？
               </a>
@@ -580,8 +581,8 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
           
           
             
-              <a class="post-title-link" href="/2015/09/02/what-exactly-is-null-in-java/" itemprop="url">
-                Java中的 null 到底是什么？
+              <a class="post-title-link" href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" itemprop="url">
+                JDK6和JDK7中substring() 方法的区别
               </a>
             
           
@@ -591,7 +592,7 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
+          <time itemprop="dateCreated" datetime="2015-09-02T10:43:21+08:00" content="2015-09-02">
             2015-09-02
           </time>
         </span>
@@ -617,8 +618,8 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/02/what-exactly-is-null-in-java/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/what-exactly-is-null-in-java/" itemprop="commentsCount"></span>
+              <a href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -635,15 +636,12 @@ Without code autocompletion of any IDE, how to get the length of an array? And h
         
           <span itemprop="articleBody">
             
-            先看下面的声明语句
-1String = null;
-这个声明语句到底做了什么
-回想一下，什么是变量？什么是值？一个常见的比喻就是：变量就像是一个盒子，你可以用盒子来存放东西，你可以用变量来存放值。当声明一个变量，我们需要设置它的类型。
-Java中主要有两大类：基本数据类型和引用。声明为基本数据类型的
+            JDK6和JDK7中的 substring(int beginIndex，int endIndex)方法是不同的，了解这些能帮助我们更好的使用它们，简单起见，下文中用 substring()代替 substrings(int beginIndex,int endIndex)
+substring()方
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/what-exactly-is-null-in-java/#more" rel="contents">
+            <a class="btn" href="/2015/09/02/the-substring-method-in-jdk-6-and-jdk-7/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -703,21 +701,21 @@ Java中主要有两大类：基本数据类型和引用。声明为基本数据�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">47</span>
+              <span class="site-state-item-count">51</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
