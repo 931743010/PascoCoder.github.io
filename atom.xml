@@ -4,7 +4,7 @@
   <subtitle><![CDATA[subtitle]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pascocoder.github.io/"/>
-  <updated>2016-02-11T07:24:45.000Z</updated>
+  <updated>2016-02-25T15:53:33.000Z</updated>
   <id>http://pascocoder.github.io/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Enjoy The Solitude]]></title>
+    <link href="http://pascocoder.github.io/2016/02/25/Enjoy-The-Solitude/"/>
+    <id>http://pascocoder.github.io/2016/02/25/Enjoy-The-Solitude/</id>
+    <published>2016-02-25T15:53:33.000Z</published>
+    <updated>2016-02-25T15:53:33.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS开发中storyboard教程笔记]]></title>
+    <link href="http://pascocoder.github.io/2016/02/23/start-learning-storyboard-in-ios/"/>
+    <id>http://pascocoder.github.io/2016/02/23/start-learning-storyboard-in-ios/</id>
+    <published>2016-02-23T03:02:41.000Z</published>
+    <updated>2016-02-25T12:51:36.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="我为什么要学习storyboard，明明纯代码更炫酷啊！">我为什么要学习storyboard，明明纯代码更炫酷啊！</h1><p>刚开始学习iOS开发的时候，我也对storyboard和.xib文件嗤之以鼻，认为太low了，纯代码的逼格比起这些啊，不知道高到哪里去。程序员怎么能动手点点拖拖线就完事了呢。</p>
+<p>(￣ε(#￣)☆╰╮(￣▽￣///)ß</p>
+<p>直到我和别人合作做完两个项目之后才发现以前的想法，图森破！</p>
+<p>关于objective-c的布局的库，比较常用的就是<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a>了。尽管是使用这个库，当界面上的控件稍多一点的时候，控件的声明，布局，设置，基本上一个ViewController就四五百行代码了，代码量上去了，你后面再出问题修改的时候就会很犯愁。再者，这种代码写多了之后也就变得千篇一律，很浪费时间。</p>
+<p>然后我发现和我合作开发的另外两个同学，使用的都是storyboard和xib文件，代码量一下子就下去了。之后又在github上看到很赞的项目也是大量使用，所以我决定一定要好好学习一下这个新姿势。</p>
+<h1 id="环境">环境</h1><ol>
+<li>XCode: Version 7.2 (7C68)</li>
+<li>iOS Deployment Target: 9.2</li>
+</ol>
+<h1 id="新建项目">新建项目</h1>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="我为什么要学习storyboard，明明纯代码更炫酷啊！">我为什么要学习storyboard，明明纯代码更炫酷啊！</h1><p>刚开始学习iOS开发的时候，我也对storyboard和.xib文件嗤之以鼻，认为太low了，纯代码的逼格比起这些啊，不知道高到哪里]]>
+    </summary>
+    
+      <category term="XCode" scheme="http://pascocoder.github.io/tags/XCode/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/tags/iOS/"/>
+    
+      <category term="iOS" scheme="http://pascocoder.github.io/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[set custom domain at github pages with hexo]]></title>
@@ -853,49 +894,6 @@
       <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
     
       <category term="PHP" scheme="http://pascocoder.github.io/categories/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[encrypt a message with RSA in python]]></title>
-    <link href="http://pascocoder.github.io/2015/09/29/encrypt-a-message-with-RSA-in-python/"/>
-    <id>http://pascocoder.github.io/2015/09/29/encrypt-a-message-with-RSA-in-python/</id>
-    <published>2015-09-29T07:57:57.000Z</published>
-    <updated>2015-09-29T07:57:57.000Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[linux中常用命令]]></title>
-    <link href="http://pascocoder.github.io/2015/09/26/linux-commands/"/>
-    <id>http://pascocoder.github.io/2015/09/26/linux-commands/</id>
-    <published>2015-09-26T14:29:08.000Z</published>
-    <updated>2015-09-27T09:22:21.000Z</updated>
-    <content type="html"><![CDATA[<p>好记性不如烂笔头，linux常用命令很多，虽然可以 man ，但还是写篇文章记录一下，这篇文章就记下我常忘记的命令吧。便于我查阅。</p>
-<ol>
-<li>远程拷贝 scp</li>
-<li>压缩解压 tar</li>
-<li>sed &amp; awk</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>好记性不如烂笔头，linux常用命令很多，虽然可以 man ，但还是写篇文章记录一下，这篇文章就记下我常忘记的命令吧。便于我查阅。</p>
-<ol>
-<li>远程拷贝 scp</li>
-<li>压缩解压 tar</li>
-<li>sed &amp; awk</li>
-</o]]>
-    </summary>
-    
-      <category term="command line" scheme="http://pascocoder.github.io/tags/command-line/"/>
-    
-      <category term="linux" scheme="http://pascocoder.github.io/tags/linux/"/>
-    
-      <category term="linux" scheme="http://pascocoder.github.io/categories/linux/"/>
     
   </entry>
   

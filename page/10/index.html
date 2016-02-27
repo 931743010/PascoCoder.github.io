@@ -205,8 +205,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/02/what-exactly-is-null-in-java/" itemprop="url">
-                Java中的 null 到底是什么？
+              <a class="post-title-link" href="/2015/09/02/why-string-is-immutable-in-java/" itemprop="url">
+                为什么Java中的字符串具有不可变性?
               </a>
             
           
@@ -242,8 +242,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/02/what-exactly-is-null-in-java/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/what-exactly-is-null-in-java/" itemprop="commentsCount"></span>
+              <a href="/2015/09/02/why-string-is-immutable-in-java/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/why-string-is-immutable-in-java/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -260,15 +260,105 @@
         
           <span itemprop="articleBody">
             
-            先看下面的声明语句
-1String = null;
-这个声明语句到底做了什么
-回想一下，什么是变量？什么是值？一个常见的比喻就是：变量就像是一个盒子，你可以用盒子来存放东西，你可以用变量来存放值。当声明一个变量，我们需要设置它的类型。
-Java中主要有两大类：基本数据类型和引用。声明为基本数据类型的
+            java中的字符串（string）是一个不可变的类，不可变的类就是这个类的实例不能被修改，当实例被创建后，这个实例的所有信息都被初始化，这些信息将不能再被修改。不可变的类有很多优点。本文总结为什么字符串类被设计为不可变的类。要回答这个问题需要深入理解内存，同步，数据结构等知识。
+字符串池（strin
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/what-exactly-is-null-in-java/#more" rel="contents">
+            <a class="btn" href="/2015/09/02/why-string-is-immutable-in-java/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/02/website-monitor-iOS-client/" itemprop="url">
+                网站监控iOS客户端
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
+            2015-09-02
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/iOS/" itemprop="url" rel="index">
+                  <span itemprop="name">iOS</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/02/website-monitor-iOS-client/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/website-monitor-iOS-client/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            iOS客户端源代码here
+服务器端的程序服务器端维护一个被监控网站的列表，然后对列表中的每个网站固定间隔的轮询，当某个网站出现无法访问时，再请求一次改网站，确认无法访问后改变数据库中该网站的状态，同时将监控该网站的频率减小至2分钟一次。当该网站恢复正常时，再将监控频率恢复至正常，并计算网站的无法访
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/02/website-monitor-iOS-client/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -576,99 +666,6 @@ sortedArrayUsingDescriptors:
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/02/java-varargs-examples/" itemprop="url">
-                Java可变参数
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-02T01:45:57+08:00" content="2015-09-02">
-            2015-09-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/02/java-varargs-examples/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/02/java-varargs-examples/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            可变参数（可变参数）是在Java 1.5中引入的功能。它允许一个方法使用任意数量的值作为参数。
-123456789public static void main(String[] args) &#123;    print("a");    print("a", "b");    print("a"
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/02/java-varargs-examples/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -707,7 +704,7 @@ sortedArrayUsingDescriptors:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-count">53</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -721,7 +718,7 @@ sortedArrayUsingDescriptors:
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
